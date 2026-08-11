@@ -60,14 +60,14 @@ export default function Hero() {
   };
 
   const handleCopyCode = () => {
-    const infoString = `Dede Juniar Putra | Junior System Analyst & Software Engineer`;
+    const infoString = `Dede Juniar Putra | Junior Software Engineer`;
     navigator.clipboard.writeText(infoString);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-4rem)] bg-black text-white flex items-center justify-center py-16 overflow-hidden select-none">
+    <section id="hero" className="relative w-full min-h-[calc(100vh-4rem)] bg-black text-white flex items-center justify-center py-16 overflow-hidden select-none">
       {/* Background Micro Grid */}
       <div className="absolute inset-0 bg-grid-soft pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_75%,transparent_100%)]" />
 
@@ -180,22 +180,43 @@ export default function Hero() {
 
         </div>
 
-        {/* Right Column: Clean Photo Terminal Card */}
-        <div className="lg:col-span-6 flex justify-center items-center w-full">
-          <div
-            ref={cardRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            onTouchMove={(e) => {
-              if (e.touches[0]) {
-                const touch = e.touches[0];
-                handleMouseMove({ clientX: touch.clientX, clientY: touch.clientY } as any);
-              }
-            }}
-            onTouchEnd={handleMouseLeave}
-            style={tiltStyle}
-            className="relative w-full max-w-xs sm:max-w-sm md:max-w-[410px] bg-zinc-950 border border-zinc-800/90 rounded-2xl p-4 sm:p-5 shadow-2xl backdrop-blur-2xl transition-transform duration-200 ease-out"
-          >
+        {/* Right Column: Clean Photo Terminal Card with Floating Badges */}
+        <div className="lg:col-span-6 flex justify-center items-center w-full py-6">
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-[410px]">
+            
+            {/* Floating Pill Card 1: WEBSITE */}
+            <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-5 z-30 px-3 py-1.5 bg-zinc-950/90 border border-zinc-800/90 rounded-xl shadow-2xl backdrop-blur-xl flex items-center gap-2 animate-float-slow hover:border-[#13ec7b]/60 transition-all duration-300">
+              <div className="w-2 h-2 rounded-full bg-[#13ec7b] shadow-[0_0_8px_#13ec7b]" />
+              <span className="text-[11px] font-mono font-bold tracking-wider text-white">WEBSITE</span>
+            </div>
+
+            {/* Floating Pill Card 2: MOBILE */}
+            <div className="absolute top-1/2 -right-3 sm:-right-5 -translate-y-1/2 z-30 px-3 py-1.5 bg-zinc-950/90 border border-zinc-800/90 rounded-xl shadow-2xl backdrop-blur-xl flex items-center gap-2 animate-float-reverse hover:border-sky-400/60 transition-all duration-300">
+              <div className="w-2 h-2 rounded-full bg-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.8)]" />
+              <span className="text-[11px] font-mono font-bold tracking-wider text-white">MOBILE</span>
+            </div>
+
+            {/* Floating Pill Card 3: AI Enthusiast */}
+            <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 z-30 px-3 py-1.5 bg-zinc-950/90 border border-zinc-800/90 rounded-xl shadow-2xl backdrop-blur-xl flex items-center gap-2 animate-float-delayed hover:border-purple-400/60 transition-all duration-300">
+              <div className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.8)]" />
+              <span className="text-[11px] font-mono font-bold tracking-wider text-white">AI Enthusiast</span>
+            </div>
+
+            {/* Terminal Photo Card */}
+            <div
+              ref={cardRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              onTouchMove={(e) => {
+                if (e.touches[0]) {
+                  const touch = e.touches[0];
+                  handleMouseMove({ clientX: touch.clientX, clientY: touch.clientY } as any);
+                }
+              }}
+              onTouchEnd={handleMouseLeave}
+              style={tiltStyle}
+              className="relative w-full bg-zinc-950 border border-zinc-800/90 rounded-2xl p-4 sm:p-5 shadow-2xl backdrop-blur-2xl transition-transform duration-200 ease-out"
+            >
             {/* macOS Traffic Lights Header */}
             <div className="flex items-center justify-between pb-3 border-b border-zinc-800/70 mb-3.5">
               <div className="flex items-center gap-2">
@@ -237,6 +258,7 @@ export default function Hero() {
               />
             </div>
 
+          </div>
           </div>
         </div>
 

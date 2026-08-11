@@ -16,6 +16,19 @@ body {
   background-color: #000000;
   color: var(--foreground);
   font-family: var(--font-sans), sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ─── Hide Browser Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 /* Soft Modern Tech Grid Background (Wider & Elegant) */
@@ -25,3 +38,144 @@ body {
     linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
 }
+
+/* ─── Global Scroll Reveal Animations ───────────────────────────────── */
+@keyframes sr-fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sr-fade-down {
+  from { opacity: 0; transform: translateY(-24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sr-fade-left {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes sr-fade-right {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes sr-zoom-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes sr-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base hidden state */
+.sr-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Visible — pop (default) */
+.sr-visible-pop {
+  animation: sr-pop 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sr-visible-fade {
+  animation: sr-pop 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sr-visible {
+  animation: sr-fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sr-visible-down {
+  animation: sr-fade-down 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sr-visible-left {
+  animation: sr-fade-left 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sr-visible-right {
+  animation: sr-fade-right 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.sr-visible-zoom {
+  animation: sr-zoom-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ─── Global Star Particle Trail ────────────────────────────────────── */
+@keyframes star-trail-fade {
+  0% {
+    opacity: 0.95;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.2) rotate(35deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25) rotate(70deg);
+  }
+}
+
+.star-trail-particle {
+  animation: star-trail-fade 0.75s ease-out forwards;
+}
+
+/* ─── Floating Pill Badges Animation ────────────────────────────────── */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-1.5deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 4.5s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 5.2s ease-in-out infinite;
+}
+
+/* ─── Smooth Reveal & Popup Animation for Project Cards ───────────────── */
+@keyframes smooth-card-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-smooth-reveal {
+  animation: smooth-card-reveal 0.35s ease-out forwards;
+}
+
+.animate-float-delayed {
+  animation: float-slow 4.8s ease-in-out 1.5s infinite;
+}
+

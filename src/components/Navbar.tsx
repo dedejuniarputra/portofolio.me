@@ -8,6 +8,7 @@ export default function Navbar() {
   const [activeMenuId, setActiveMenuId] = useState('about');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [viewsCount, setViewsCount] = useState<number | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -55,11 +56,68 @@ export default function Navbar() {
     };
   }, []);
 
+  // ── Scroll blur & ScrollSpy & Hash Sync ───────────────────────────
+  useEffect(() => {
+    // Handle initial hash routing on page load
+    if (typeof window !== 'undefined' && window.location.hash) {
+      const initialHash = window.location.hash;
+      try {
+        const targetElement = document.querySelector(initialHash);
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }, 300);
+        }
+      } catch {
+        // Ignore invalid selectors
+      }
+    }
+
+    const sectionIds = ['hero', 'about', 'skills', 'projects', 'journey', 'certificates', 'contact'];
+
+    const handleScrollSpy = () => {
+      setScrolled(window.scrollY > 12);
+
+      const viewportThreshold = window.innerHeight * 0.45;
+      let currentActiveId = '';
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // Active candidate if section top has reached or passed the viewport focal area
+          if (rect.top <= viewportThreshold) {
+            currentActiveId = id;
+          }
+        }
+      }
+
+      if (currentActiveId) {
+        setActiveMenuId(currentActiveId);
+        if (typeof window !== 'undefined') {
+          const newHash = currentActiveId === 'hero' ? '#' : `#${currentActiveId}`;
+          if (window.location.hash !== newHash) {
+            setTimeout(() => {
+              window.history.replaceState(null, '', newHash);
+            }, 0);
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollSpy, { passive: true });
+    handleScrollSpy(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', handleScrollSpy);
+    };
+  }, []);
+
   const menuItems = [
     { id: 'about', name: t.nav.about, href: '#about' },
     { id: 'skills', name: t.nav.skills, href: '#skills' },
     { id: 'projects', name: t.nav.projects, href: '#projects' },
-    { id: 'github', name: t.nav.github, href: 'https://github.com/dedejuniarputra' },
+    { id: 'github', name: t.nav.github, href: '#' },
     { id: 'journey', name: t.nav.journey, href: '#journey' },
     { id: 'certificates', name: t.nav.certificates, href: '#certificates' },
     { id: 'contact', name: t.nav.contact, href: '#contact' },
@@ -69,25 +127,54 @@ export default function Navbar() {
     setActiveMenuId(item.id);
     if (item.href.startsWith('#')) {
       e.preventDefault();
-      const targetElement = document.querySelector(item.href);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' });
+      if (item.href.length > 1) {
+        try {
+          const targetElement = document.querySelector(item.href);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+            if (typeof window !== 'undefined') {
+              window.history.pushState(null, '', item.href);
+            }
+          }
+        } catch {
+          // Prevent runtime exception on invalid query selectors
+        }
       }
     }
   };
 
   return (
-    <nav className="w-full bg-black/90 backdrop-blur-md border-b border-zinc-900 text-zinc-300 sticky top-0 z-50 font-sans select-none">
+    <nav
+      className={`w-full text-zinc-300 sticky top-0 z-50 font-sans select-none
+        transition-all duration-300 ease-in-out
+        ${
+          scrolled
+            ? 'bg-black/50 backdrop-blur-xl border-b border-white/10 shadow-xl shadow-black/30'
+            : 'bg-black/20 backdrop-blur-sm border-b border-transparent'
+        }
+      `}
+    >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex items-center justify-between h-16">
           
           {/* Logo Section */}
-          <div className="flex items-center gap-1.5 cursor-pointer group shrink-0">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setActiveMenuId('hero');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              if (typeof window !== 'undefined') {
+                window.history.pushState(null, '', '#');
+              }
+            }}
+            className="flex items-center gap-1.5 cursor-pointer group shrink-0"
+          >
             <span className="text-zinc-500 text-xl font-bold font-mono group-hover:text-[#13ec7b] transition-colors">&lt;</span>
             <div className="relative flex flex-col justify-center px-0.5">
               <div className="flex items-baseline gap-1 text-2xl font-black italic tracking-tighter">
-                <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">PORTO</span>
-                <span className="text-[#13ec7b] drop-shadow-[0_0_15px_rgba(19,236,123,0.6)]">FOLIO</span>
+                <span className="text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]">WHUSZ</span>
+                <span className="text-[#13ec7b] drop-shadow-[0_0_15px_rgba(19,236,123,0.6)]">.ME</span>
               </div>
               {/* Circuit Underline Graphic */}
               <div className="absolute -bottom-1.5 left-0 w-full h-3 overflow-visible pointer-events-none">
@@ -104,7 +191,7 @@ export default function Navbar() {
               </div>
             </div>
             <span className="text-zinc-500 text-xl font-bold font-mono group-hover:text-[#13ec7b] transition-colors">&gt;</span>
-          </div>
+          </a>
 
           {/* Navigation Links + Language & Visitor Counter (Desktop) */}
           <div className="hidden md:flex items-center gap-5 lg:gap-7 xl:gap-8">
@@ -114,6 +201,8 @@ export default function Navbar() {
                 <a
                   key={item.id}
                   href={item.href}
+                  target={item.href.startsWith('http') ? '_blank' : undefined}
+                  rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   onClick={(e) => handleNavClick(e, item)}
                   className={`relative py-2 text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                     isActive 
@@ -123,14 +212,14 @@ export default function Navbar() {
                 >
                   {item.name}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#13ec7b] rounded-full shadow-[0_0_8px_#13ec7b]" />
+                    <span className="absolute bottom-0 left-0 w-full h-[2.5px] bg-[#13ec7b] rounded-full shadow-[0_0_8px_#13ec7b] animate-[sr-pop_0.35s_cubic-bezier(0.16,1,0.3,1)_forwards]" />
                   )}
                 </a>
               );
             })}
 
             {/* Glassmorphism Capsule for Language & Realtime Views */}
-            <div className="flex items-center gap-2.5 px-3 py-1.5 bg-zinc-950/80 border border-zinc-800/80 rounded-full backdrop-blur-md shadow-2xl hover:border-[#13ec7b]/40 transition-all duration-300">
+            <div className="flex items-center gap-2.5 px-3 py-1.5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md shadow-2xl hover:border-[#13ec7b]/40 transition-all duration-300">
               {/* Globe / EN & ID Switcher */}
               <button 
                 onClick={toggleLanguage}
@@ -196,6 +285,8 @@ export default function Navbar() {
               <a
                 key={item.id}
                 href={item.href}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 onClick={(e) => {
                   handleNavClick(e, item);
                   setIsMobileMenuOpen(false);
@@ -211,7 +302,7 @@ export default function Navbar() {
             );
           })}
           <div className="pt-3 border-t border-zinc-800/60 flex items-center justify-between px-3">
-            <div className="flex items-center gap-2.5 px-3 py-1.5 bg-zinc-950/80 border border-zinc-800/80 rounded-full backdrop-blur-md">
+            <div className="flex items-center gap-2.5 px-3 py-1.5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md">
               <button 
                 onClick={toggleLanguage}
                 className="flex items-center gap-1.5 text-zinc-300 hover:text-[#13ec7b] text-xs font-medium"
