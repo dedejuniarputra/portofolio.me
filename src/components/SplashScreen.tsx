@@ -7,10 +7,9 @@ interface SplashScreenProps {
 }
 
 export default function SplashScreen({ onComplete }: SplashScreenProps) {
-  const [mounted, setMounted] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [typedSubtext, setTypedSubtext] = useState('');
+  const [typedSubtext, setTypedSubtext] = useState('> INITIALIZING SYSTEM CORE...');
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [isDone, setIsDone] = useState(false);
 
@@ -21,14 +20,13 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   ];
 
   useEffect(() => {
-    setMounted(true);
-
     if (typeof window !== 'undefined') {
       if ('scrollRestoration' in window.history) {
         window.history.scrollRestoration = 'manual';
       }
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
       window.history.replaceState(null, '', '#');
+      document.body.style.overflow = 'hidden';
     }
 
     // Smooth progress counter 0 to 100%
@@ -46,8 +44,6 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   }, []);
 
   useEffect(() => {
-    if (!mounted) return;
-
     // Typewriter effect for console subtext
     if (currentTextIndex < subtextSequence.length) {
       const fullText = subtextSequence[currentTextIndex];
@@ -69,34 +65,33 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
 
       return () => clearInterval(typeInterval);
     }
-  }, [currentTextIndex, mounted]);
+  }, [currentTextIndex]);
 
   useEffect(() => {
-    if (!mounted) return;
-
     // When progress hits 100%, trigger smooth fade out
     if (progress >= 100) {
       const fadeTimeout = setTimeout(() => {
         setIsFadingOut(true);
-      }, 800);
+      }, 300);
 
       const hideTimeout = setTimeout(() => {
         setIsDone(true);
         if (typeof window !== 'undefined') {
+          document.body.style.overflow = '';
           window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
           window.history.replaceState(null, '', '#');
         }
         if (onComplete) onComplete();
-      }, 1400);
+      }, 1000);
 
       return () => {
         clearTimeout(fadeTimeout);
         clearTimeout(hideTimeout);
       };
     }
-  }, [progress, onComplete, mounted]);
+  }, [progress, onComplete]);
 
-  if (!mounted || isDone) return null;
+  if (isDone) return null;
 
   return (
     <div 
