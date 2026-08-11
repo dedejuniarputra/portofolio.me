@@ -7,48 +7,30 @@ export default function Navbar() {
   const { language, toggleLanguage, t } = useLanguage();
   const [activeMenuId, setActiveMenuId] = useState('about');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [viewsCount, setViewsCount] = useState<number | null>(null);
+  const [apiLatency, setApiLatency] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
 
-    const fetchViews = async () => {
+    const checkLatency = async () => {
+      const start = performance.now();
       try {
-        const hasVisited = sessionStorage.getItem('portfolio_visited');
-        const endpoint = hasVisited ? '/api/views?peek=true' : '/api/views';
-        
-        const res = await fetch(endpoint);
+        const res = await fetch('/api/ping', { cache: 'no-store' });
         if (res.ok) {
-          const data = await res.json();
-          if (isMounted && typeof data.count === 'number') {
-            setViewsCount(data.count);
-            if (!hasVisited) {
-              sessionStorage.setItem('portfolio_visited', 'true');
-            }
-          }
+          const end = performance.now();
+          const latency = Math.max(1, Math.round(end - start));
+          if (isMounted) setApiLatency(latency);
         }
-      } catch (err) {
-        console.error('Failed to fetch realtime views:', err);
+      } catch {
+        if (isMounted) setApiLatency(null);
       }
     };
 
-    fetchViews();
+    checkLatency();
 
-    // Live polling every 10 seconds to update count in real-time when new visitors view the site
-    const interval = setInterval(async () => {
-      try {
-        const res = await fetch('/api/views?peek=true');
-        if (res.ok) {
-          const data = await res.json();
-          if (isMounted && typeof data.count === 'number') {
-            setViewsCount(data.count);
-          }
-        }
-      } catch {
-        // Silent error handling for background polling
-      }
-    }, 10000);
+    // Ping API latency every 5 seconds to keep signal realtime
+    const interval = setInterval(checkLatency, 5000);
 
     return () => {
       isMounted = false;
@@ -73,7 +55,7 @@ export default function Navbar() {
       }
     }
 
-    const sectionIds = ['hero', 'about', 'skills', 'projects', 'journey', 'certificates', 'contact'];
+    const sectionIds = ['hero', 'about', 'skills', 'projects', 'github', 'journey', 'certificates', 'contact'];
 
     const handleScrollSpy = () => {
       setScrolled(window.scrollY > 12);
@@ -117,7 +99,7 @@ export default function Navbar() {
     { id: 'about', name: t.nav.about, href: '#about' },
     { id: 'skills', name: t.nav.skills, href: '#skills' },
     { id: 'projects', name: t.nav.projects, href: '#projects' },
-    { id: 'github', name: t.nav.github, href: '#' },
+    { id: 'github', name: t.nav.github, href: '#github' },
     { id: 'journey', name: t.nav.journey, href: '#journey' },
     { id: 'certificates', name: t.nav.certificates, href: '#certificates' },
     { id: 'contact', name: t.nav.contact, href: '#contact' },
@@ -236,20 +218,13 @@ export default function Navbar() {
               {/* Vertical Line Separator */}
               <div className="h-3.5 w-[1px] bg-zinc-800/90" />
 
-              {/* Realtime Visitor Counter Badge */}
-              <div className="flex items-center gap-1.5 text-zinc-300 cursor-default" title="Realtime Website Views">
-                <div className="relative flex items-center justify-center">
-                  <svg className="w-3.5 h-3.5 text-[#13ec7b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                  </svg>
-                  <span className="absolute -top-0.5 -right-0.5 flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#13ec7b]" />
-                  </span>
-                </div>
-                <span className="font-mono text-xs font-semibold text-zinc-200">
-                  {viewsCount !== null ? viewsCount.toLocaleString() : '0'}
+              {/* Realtime API Latency Badge */}
+              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-xs font-bold" title="Realtime API Signal Latency">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#13ec7b]" />
                 </span>
+                <span>API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
               </div>
             </div>
           </div>
@@ -316,19 +291,12 @@ export default function Navbar() {
 
               <div className="h-3.5 w-[1px] bg-zinc-800/90" />
 
-              <div className="flex items-center gap-1.5 text-zinc-300">
-                <div className="relative flex items-center justify-center">
-                  <svg className="w-3.5 h-3.5 text-[#13ec7b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                  </svg>
-                  <span className="absolute -top-0.5 -right-0.5 flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#13ec7b]" />
-                  </span>
-                </div>
-                <span className="font-mono text-xs font-semibold text-zinc-200">
-                  {viewsCount !== null ? viewsCount.toLocaleString() : '0'}
+              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-xs font-bold" title="Realtime API Signal Latency">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#13ec7b]" />
                 </span>
+                <span>API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
               </div>
             </div>
           </div>

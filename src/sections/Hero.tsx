@@ -105,10 +105,10 @@ export default function Hero() {
           </div>
 
           {/* Call to Action Buttons */}
-          <div className="flex flex-wrap items-center gap-3.5 pt-2 w-full">
+          <div className="flex items-center gap-2 sm:gap-3.5 pt-2 w-full max-w-full overflow-x-auto scrollbar-none">
             <a
               href="#projects"
-              className="px-6 py-3.5 bg-[#13ec7b] text-black font-semibold text-sm rounded-2xl hover:bg-[#10d46e] transition-all duration-200 shadow-[0_0_20px_rgba(19,236,123,0.35)] hover:shadow-[0_0_25px_rgba(19,236,123,0.55)] cursor-pointer whitespace-nowrap"
+              className="px-3.5 sm:px-6 py-2.5 sm:py-3.5 bg-[#13ec7b] text-black font-semibold text-xs sm:text-sm rounded-xl sm:rounded-2xl hover:bg-[#10d46e] transition-all duration-200 shadow-[0_0_20px_rgba(19,236,123,0.35)] hover:shadow-[0_0_25px_rgba(19,236,123,0.55)] cursor-pointer whitespace-nowrap shrink-0"
             >
               {t.hero.ctaProjects}
             </a>
@@ -116,14 +116,14 @@ export default function Hero() {
             <a
               href="#"
               download
-              className="px-6 py-3.5 bg-zinc-900/90 text-white font-semibold text-sm rounded-2xl border border-zinc-700/80 hover:border-[#13ec7b]/50 hover:text-[#13ec7b] transition-all duration-200 cursor-pointer whitespace-nowrap"
+              className="px-3.5 sm:px-6 py-2.5 sm:py-3.5 bg-zinc-900/90 text-white font-semibold text-xs sm:text-sm rounded-xl sm:rounded-2xl border border-zinc-700/80 hover:border-[#13ec7b]/50 hover:text-[#13ec7b] transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
             >
               Download CV
             </a>
 
             <a
               href="#contact"
-              className="px-6 py-3.5 bg-zinc-950/80 text-white font-semibold text-sm rounded-2xl border border-zinc-800/80 hover:border-[#13ec7b]/50 hover:text-[#13ec7b] transition-all duration-200 cursor-pointer whitespace-nowrap"
+              className="px-3.5 sm:px-6 py-2.5 sm:py-3.5 bg-zinc-950/80 text-white font-semibold text-xs sm:text-sm rounded-xl sm:rounded-2xl border border-zinc-800/80 hover:border-[#13ec7b]/50 hover:text-[#13ec7b] transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
             >
               {t.hero.ctaContact}
             </a>

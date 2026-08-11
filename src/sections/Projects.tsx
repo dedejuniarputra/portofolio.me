@@ -69,7 +69,7 @@ export default function Projects() {
         language === 'EN'
           ? 'LivesoStory.co is a web-based photography platform built with Laravel and Tailwind CSS. Integrated with REST API and WhatsApp API to automate seamless booking workflows and deliver a responsive digital showcase.'
           : 'LivesoStory.co adalah platform fotografi berbasis web yang dibangun dengan Laravel dan Tailwind CSS. Terintegrasi dengan REST API dan WhatsApp API untuk otomatisasi alur pemesanan layanan yang cepat dan responsif.',
-      tech: ['Laravel', 'Tailwind CSS', 'JavaScript', 'MySQL', 'WhatsApp API', 'Git'],
+      tech: ['Laravel', 'Tailwind CSS', 'JavaScript', 'MySQL', 'Git'],
       liveUrl: 'https://livesostory.online',
       image: livesostoryImg,
       architectureSubtitle:
@@ -524,14 +524,14 @@ export default function Projects() {
             sectionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-md shadow-xl">
+          <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-md shadow-xl max-w-full overflow-x-auto">
             {(['ALL', 'WEB', 'MOBILE', 'UI/UX'] as const).map((filter) => {
               const isActive = activeFilter === filter;
               return (
                 <button
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
-                  className={`px-5 py-1.5 rounded-full text-xs font-mono tracking-wide transition-all duration-300 cursor-pointer select-none ${
+                  className={`px-3.5 sm:px-5 py-1.5 rounded-full text-xs font-mono tracking-wide transition-all duration-300 cursor-pointer select-none whitespace-nowrap ${
                     isActive
                       ? 'bg-[#13ec7b]/10 border border-[#13ec7b]/40 text-[#13ec7b] font-semibold shadow-[0_0_15px_rgba(19,236,123,0.12)]'
                       : 'text-zinc-400 hover:text-white border border-transparent hover:bg-zinc-800/50'

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/src/context/LanguageContext';
 
-/* ─── Brand logo map — uses Simple Icons CDN ────────────────────────── */
+/* ─── Brand logo map — uses Simple Icons & Devicon CDN ───────────────── */
 interface SkillMeta {
   iconUrl: string;   // CDN URL or empty string for fallback
   bg: string;        // icon container background
@@ -13,13 +13,13 @@ interface SkillMeta {
 const SKILL_META: Record<string, SkillMeta> = {
   // ── Frontend ──────────────────────────────────────────────────────────
   'React.js':       { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',                 bg: '#61DAFB15', fallback: '⚛' },
-  'Next.js':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',               bg: '#ffffff12', fallback: '▲' },
+  'Next.js':        { iconUrl: 'https://cdn.simpleicons.org/nextdotjs/white',                                                         bg: '#ffffff15', fallback: '▲' },
   'TypeScript':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',       bg: '#3178C615', fallback: 'TS' },
   'Tailwind CSS':   { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',     bg: '#06B6D415', fallback: '~' },
   'JavaScript':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',       bg: '#F7DF1E15', fallback: 'JS' },
   'HTML & CSS':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',                 bg: '#E34F2615', fallback: '</>' },
   // ── Backend ───────────────────────────────────────────────────────────
-  'Laravel':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg',             bg: '#FF2D2015', fallback: 'Lv' },
+  'Laravel':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg', bg: '#FF2D2015', fallback: 'Lv' },
   'PHP':            { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg',                     bg: '#8892BF15', fallback: 'PHP' },
   'Node.js':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',               bg: '#33993315', fallback: '⬡' },
   'REST API':       { iconUrl: '',                                                                                                    bg: '#13ec7b15', fallback: '⇄' },
@@ -34,7 +34,7 @@ const SKILL_META: Record<string, SkillMeta> = {
   'MySQL':          { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',                 bg: '#4479A115', fallback: 'My' },
   'PostgreSQL':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',       bg: '#4169E115', fallback: 'Pg' },
   'Git':            { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',                     bg: '#F0503215', fallback: '⎇' },
-  'GitHub':         { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg',              bg: '#ffffff0c', fallback: '⊙' },
+  'GitHub':         { iconUrl: 'https://cdn.simpleicons.org/github/white',                                                            bg: '#ffffff15', fallback: '⊙' },
   'Postman':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg',             bg: '#FF6C3715', fallback: '📮' },
   'VS Code':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg',              bg: '#007ACC15', fallback: '</>' },
 };

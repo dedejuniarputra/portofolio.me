@@ -109,6 +109,175 @@ export const translations = {
       seeMore: 'See More Projects',
       seeLess: 'See Less',
     },
+    github: {
+      sectionTag: '// GITHUB_ACTIVITY',
+      titlePart1: 'GitHub',
+      titleHighlight: 'Activity',
+      titlePart2: '& Contributions',
+      subtitle: '"Interactive GitHub snake animation and contribution activity showcase."',
+      contributionTitle: 'CONTRIBUTION ACTIVITY',
+      viewProfile: 'Visit GitHub Profile',
+      repositories: 'Public Repositories',
+      contributions: 'Annual Contributions',
+      followers: 'Followers',
+      stars: 'GitHub Stars',
+    },
+    journey: {
+      sectionTag: '// MY_EVOLUTION',
+      titlePart1: 'Career',
+      titleHighlight: 'Journey',
+      titlePart2: '& Experience',
+      subtitle: '"My professional trajectory, work experience, teaching assistantships, and organizational milestones."',
+      showDetails: 'Show details',
+      hideDetails: 'Hide details',
+      present: 'Present',
+      items: [
+        {
+          id: 'freelance',
+          role: 'Freelance',
+          company: 'Freelance',
+          location: 'REMOTE / ON-SITE',
+          type: 'PART-TIME',
+          year: '2026',
+          period: 'Jan 2026 - Present',
+          duration: '8 MONTHS',
+          skills: 'Full-Stack Web Development, React.js, Laravel, Flutter & +10 skills',
+          details: [
+            'Developing custom full-stack web and mobile applications tailored to client requirements.',
+            'Architecting robust REST APIs and database models using Laravel, Next.js, and React.js.',
+            'Collaborating directly with clients to deliver performant, user-centered digital solutions.'
+          ]
+        },
+        {
+          id: 'diskominfo',
+          role: 'Front-end Developer',
+          company: 'DISKOMINFO',
+          location: 'BANDAR LAMPUNG',
+          type: 'INTERNSHIP',
+          year: '2025',
+          period: 'Jun 2025 - Agust 2025',
+          duration: '3 MONTHS',
+          workType: 'ON-SITE',
+          details: [
+            'Built and optimized front-end web interfaces for regional government digital services.',
+            'Translated UI/UX designs into responsive, accessible code using modern web frameworks.',
+            'Participated in system testing, UI component refactoring, and performance optimizations.'
+          ]
+        },
+        {
+          id: 'asdos-amp',
+          role: 'Assistant Lecturer – Advanced Mobile Programming',
+          company: 'UNIVERSITAS LAMPUNG',
+          location: 'FMIPA UNILA',
+          type: 'PART-TIME',
+          year: '2025',
+          period: 'Agust 2025 - Des 2025',
+          duration: '6 MONTHS',
+          workType: 'ON-SITE',
+          details: [
+            'Taught undergraduate students advanced mobile application engineering using Flutter and Dart.',
+            'Guided students in state management (GetX/Provider), REST API consumption, and clean architecture.',
+            'Evaluated lab assignments, provided technical mentoring, and conducted code reviews.'
+          ]
+        },
+        {
+          id: 'asdos-mat',
+          role: 'Assistant Lecturer – Mobile Application and Technology',
+          company: 'UNIVERSITAS LAMPUNG',
+          location: 'FMIPA UNILA',
+          type: 'PART-TIME',
+          year: '2025',
+          period: 'Agust 2025 - Des 2025',
+          duration: '6 MONTHS',
+          workType: 'ON-SITE',
+          details: [
+            'Facilitated laboratory practical sessions on mobile development fundamentals.',
+            'Mentored students on UI layout building, event handling, and Android app lifecycle.',
+            'Prepared practical guidelines and assisted course professors in grading semester projects.'
+          ]
+        },
+        {
+          id: 'himakom',
+          role: 'Volunter Panitia Acara',
+          company: 'HIMAKOM UNILA',
+          location: 'FMIPA UNILA',
+          type: 'PART-TIME',
+          year: '2022 - 2023',
+          period: 'Sept 2022 - Okto 2023',
+          duration: '1 TAHUN 2 BULAN',
+          workType: 'ON-SITE',
+          details: [
+            'Organized tech seminars, workshops, and computer science competitions at Universitas Lampung.',
+            'Managed event logistics, speaker coordination, and participant registration systems.',
+            'Fostered collaborative teamwork across student committees to ensure successful event execution.'
+          ]
+        }
+      ]
+    },
+    certificates: {
+      sectionTag: '// ACHIEVEMENTS',
+      titlePart1: 'Certificates',
+      titleHighlight: '& Achievements',
+      titlePart2: '',
+      subtitle: '"Official certifications, technical courses, and skill verification credentials."',
+      viewCredential: 'View Credential',
+      seeMore: 'See More Certificates',
+      seeLess: 'See Less',
+      items: [
+        { id: 1, title: 'Project Express & MongoDB', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 2, title: 'Node.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 3, title: 'Express & EJS', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 4, title: 'Middleware Express', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 5, title: 'Express.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 6, title: 'Mongoose', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 7, title: 'MongoDB', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 8, title: 'Tailwind CSS', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 9, title: 'Go (Golang)', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 10, title: 'React.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+      ]
+    },
+    contact: {
+      sectionTag: '// GET IN TOUCH',
+      titlePart1: "Let's Build",
+      titleHighlight: 'Something',
+      titlePart2: 'Together',
+      subtitle: "If you'd like to collaborate, discuss a project, or just connect, feel free to send me a message. I'm always open to learning opportunities and interesting ideas.",
+      directEmailTitle: 'Direct Email',
+      directEmailSub: 'Send me a direct email for project inquiries',
+      footerCopyright: '© 2026 Dede Juniar Putra. All rights reserved.',
+      cards: {
+        youtube: {
+          title: 'Watch My Content',
+          description: 'Subscribe to my YouTube channel for creative content, tutorials, and latest updates.',
+          button: 'Watch on YouTube',
+          url: 'https://youtube.com/@dedejuniarputra',
+        },
+        instagram: {
+          title: 'Follow My Journey',
+          description: 'Follow my creative journey.',
+          button: 'Go to Instagram',
+          url: 'https://instagram.com/dedejuniarputra',
+        },
+        linkedin: {
+          title: "Let's Connect",
+          description: 'Connect with me professionally.',
+          button: 'Go to Linkedin',
+          url: 'https://linkedin.com/in/dedejuniarputra',
+        },
+        tiktok: {
+          title: 'Join the Fun',
+          description: 'Watch interesting and fun content.',
+          button: 'Go to Tiktok',
+          url: 'https://tiktok.com/@dedejuniarputra',
+        },
+        github: {
+          title: 'Explore the Code',
+          description: 'Explore my open-source work.',
+          button: 'Go to Github',
+          url: 'https://github.com/dedejuniarputra',
+        },
+      }
+    }
   },
   ID: {
     nav: {
@@ -214,6 +383,175 @@ export const translations = {
       seeMore: 'Lihat Lebih Banyak Proyek',
       seeLess: 'Tampilkan Lebih Sedikit',
     },
+    github: {
+      sectionTag: '// AKTIVITAS_GITHUB',
+      titlePart1: 'Aktivitas &',
+      titleHighlight: 'Kontribusi',
+      titlePart2: 'GitHub',
+      subtitle: '"Animasi kontribusi snake interaktif dan riwayat aktivitas di GitHub."',
+      contributionTitle: 'CONTRIBUTION ACTIVITY',
+      viewProfile: 'Kunjungi Profil GitHub',
+      repositories: 'Repositori Publik',
+      contributions: 'Kontribusi Tahunan',
+      followers: 'Pengikut',
+      stars: 'Bintang GitHub',
+    },
+    journey: {
+      sectionTag: '// TRAJEKTORI_KARIER',
+      titlePart1: 'Perjalanan',
+      titleHighlight: 'Karier',
+      titlePart2: '& Pengalaman',
+      subtitle: '"Jejak rekam profesional, pengalaman kerja, asisten dosen, dan aktivitas organisasi saya."',
+      showDetails: 'Tampilkan detail',
+      hideDetails: 'Sembunyikan detail',
+      present: 'Sekarang',
+      items: [
+        {
+          id: 'freelance',
+          role: 'Freelance',
+          company: 'Freelance',
+          location: 'REMOTE / ON-SITE',
+          type: 'PART-TIME',
+          year: '2026',
+          period: 'Jan 2026 - Sekarang',
+          duration: '8 BULAN',
+          skills: 'Full-Stack Web Development, React.js, Laravel, Flutter & +10 keahlian',
+          details: [
+            'Mengembangkan aplikasi web dan mobile full-stack sesuai kebutuhan klien.',
+            'Merancang REST API andal dan arsitektur database menggunakan Laravel, Next.js, dan React.js.',
+            'Berkomunikasi dan berkolaborasi langsung dengan klien untuk menghadirkan solusi digital berkinerja tinggi.'
+          ]
+        },
+        {
+          id: 'diskominfo',
+          role: 'Front-end Developer',
+          company: 'DISKOMINFO',
+          location: 'BANDAR LAMPUNG',
+          type: 'INTERNSHIP',
+          year: '2025',
+          period: 'Jun 2025 - Agust 2025',
+          duration: '3 BULAN',
+          workType: 'ON-SITE',
+          details: [
+            'Membangun dan mengoptimalkan antarmuka web frontend untuk layanan digital instansi pemerintah.',
+            'Menerjemahkan desain UI/UX menjadi kode responsif dan terstruktur dengan framework modern.',
+            'Melakukan pengujian sistem, refactoring komponen UI, serta pemeliharaan tampilan aplikasi.'
+          ]
+        },
+        {
+          id: 'asdos-amp',
+          role: 'Assistant Lecturer – Advanced Mobile Programming',
+          company: 'UNIVERSITAS LAMPUNG',
+          location: 'FMIPA UNILA',
+          type: 'PART-TIME',
+          year: '2025',
+          period: 'Agust 2025 - Des 2025',
+          duration: '6 BULAN',
+          workType: 'ON-SITE',
+          details: [
+            'Membimbing mahasiswa dalam praktikum pemrograman mobile tingkat lanjut menggunakan Flutter & Dart.',
+            'Mengajarkan manajemen state (GetX/Provider), konsumsi REST API, dan arsitektur aplikasi mobile.',
+            'Menilai tugas praktikum, memberikan bantuan teknis, dan melakukan peninjauan kode mahasiswa.'
+          ]
+        },
+        {
+          id: 'asdos-mat',
+          role: 'Assistant Lecturer – Mobile Application and Technology',
+          company: 'UNIVERSITAS LAMPUNG',
+          location: 'FMIPA UNILA',
+          type: 'PART-TIME',
+          year: '2025',
+          period: 'Agust 2025 - Des 2025',
+          duration: '6 BULAN',
+          workType: 'ON-SITE',
+          details: [
+            'Memfasilitasi sesi praktikum laboratorium terkait konsep dasar pembuatan aplikasi mobile.',
+            'Membimbing pembuatan tata letak UI, penanganan event, serta siklus hidup aplikasi Android.',
+            'Menyiapkan modul practical dan membantu dosen pengampu dalam penilaian proyek akhir semester.'
+          ]
+        },
+        {
+          id: 'himakom',
+          role: 'Volunter Panitia Acara',
+          company: 'HIMAKOM UNILA',
+          location: 'FMIPA UNILA',
+          type: 'PART-TIME',
+          year: '2022 - 2023',
+          period: 'Sept 2022 - Okto 2023',
+          duration: '1 TAHUN 2 BULAN',
+          workType: 'ON-SITE',
+          details: [
+            'Mengordinasikan penyelenggaraan seminar teknologi, workshop, dan perlombaan ilmu komputer.',
+            'Mengelola logistik acara, koordinasi pemateri, serta sistem pendaftaran peserta.',
+            'Membangun kerja sama tim antar panitia mahasiswa untuk memastikan kesuksesan seluruh rangkaian acara.'
+          ]
+        }
+      ]
+    },
+    certificates: {
+      sectionTag: '// PENCAPAIAN',
+      titlePart1: 'Sertifikat',
+      titleHighlight: '& Pencapaian',
+      titlePart2: '',
+      subtitle: '"Kumpulan sertifikasi resmi, kursus teknis, dan verifikasi keahlian yang telah saya selesaikan."',
+      viewCredential: 'Lihat Kredensial',
+      seeMore: 'Lihat Lebih Banyak Sertifikat',
+      seeLess: 'Tampilkan Lebih Sedikit',
+      items: [
+        { id: 1, title: 'Project Express & MongoDB', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 2, title: 'Node.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 3, title: 'Express & EJS', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 4, title: 'Middleware Express', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 5, title: 'Express.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 6, title: 'Mongoose', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 7, title: 'MongoDB', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 8, title: 'Tailwind CSS', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 9, title: 'Go (Golang)', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 10, title: 'React.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+      ]
+    },
+    contact: {
+      sectionTag: '// SEGERA TERHUBUNG',
+      titlePart1: 'Mari Membangun',
+      titleHighlight: 'Sesuatu',
+      titlePart2: 'Bersama',
+      subtitle: 'Jika Anda ingin berkolaborasi, mendiskusikan proyek, atau sekadar terhubung, jangan ragu untuk mengirim pesan. Saya selalu terbuka untuk peluang belajar dan ide-ide menarik.',
+      directEmailTitle: 'Email Langsung',
+      directEmailSub: 'Kirimkan email langsung untuk diskusi proyek',
+      footerCopyright: '© 2026 Dede Juniar Putra. Hak cipta dilindungi undang-undang.',
+      cards: {
+        youtube: {
+          title: 'Watch My Content',
+          description: 'Subscribe channel YouTube saya untuk konten kreatif, tutorial, dan update terbaru.',
+          button: 'Watch on YouTube',
+          url: 'https://youtube.com/@dedejuniarputra',
+        },
+        instagram: {
+          title: 'Follow My Journey',
+          description: 'Ikuti perjalanan kreatif saya.',
+          button: 'Go to Instagram',
+          url: 'https://instagram.com/dedejuniarputra',
+        },
+        linkedin: {
+          title: "Let's Connect",
+          description: 'Terhubung dengan saya secara profesional.',
+          button: 'Go to Linkedin',
+          url: 'https://linkedin.com/in/dedejuniarputra',
+        },
+        tiktok: {
+          title: 'Join the Fun',
+          description: 'Tonton konten menarik dan seru.',
+          button: 'Go to Tiktok',
+          url: 'https://tiktok.com/@dedejuniarputra',
+        },
+        github: {
+          title: 'Explore the Code',
+          description: 'Jelajahi kode dan proyek open-source saya.',
+          button: 'Go to Github',
+          url: 'https://github.com/dedejuniarputra',
+        },
+      }
+    }
   },
 };
 

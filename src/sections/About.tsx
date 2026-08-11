@@ -255,19 +255,19 @@ export default function About() {
           <div className="p-6 sm:p-8 space-y-5">
 
             {/* Bio 1 — Intro */}
-            <p className="text-sm sm:text-base text-zinc-200 leading-loose tracking-wide font-normal">
+            <p className="text-sm sm:text-base text-zinc-200 leading-loose tracking-wide font-normal text-justify">
               {t.about.bio1Prefix}
               <span className="text-[#13ec7b] font-semibold">{t.about.name}</span>
               {t.about.bio1Suffix}
             </p>
 
             {/* Bio 2 — Background */}
-            <p className="text-sm sm:text-base text-zinc-200 leading-loose tracking-wide font-normal">
+            <p className="text-sm sm:text-base text-zinc-200 leading-loose tracking-wide font-normal text-justify">
               {t.about.bio2}
             </p>
 
             {/* Bio 3 — Philosophy */}
-            <p className="text-sm sm:text-base text-zinc-200 leading-loose tracking-wide font-normal">
+            <p className="text-sm sm:text-base text-zinc-200 leading-loose tracking-wide font-normal text-justify">
               {t.about.bio3}
             </p>
 

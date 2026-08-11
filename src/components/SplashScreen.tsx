@@ -23,6 +23,14 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   useEffect(() => {
     setMounted(true);
 
+    if (typeof window !== 'undefined') {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      window.history.replaceState(null, '', '#');
+    }
+
     // Smooth progress counter 0 to 100%
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
@@ -74,6 +82,10 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
 
       const hideTimeout = setTimeout(() => {
         setIsDone(true);
+        if (typeof window !== 'undefined') {
+          window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+          window.history.replaceState(null, '', '#');
+        }
         if (onComplete) onComplete();
       }, 1400);
 
