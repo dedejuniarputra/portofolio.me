@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://dedejuniarputra.me';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dedejuniarputra.vercel.app';
   const currentDate = new Date();
 
   return [
