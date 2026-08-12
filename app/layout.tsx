@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "@/src/components/Navbar";
 import SplashScreen from "@/src/components/SplashScreen";
 import FloatingWhatsApp from "@/src/components/FloatingWhatsApp";
@@ -159,6 +160,7 @@ export default function RootLayout({
             <FloatingWhatsApp />
           </LanguageProvider>
         </div>
+        <SpeedInsights />
       </body>
     </html>
   );
