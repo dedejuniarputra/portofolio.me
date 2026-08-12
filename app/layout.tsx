@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/src/components/Navbar";
 import SplashScreen from "@/src/components/SplashScreen";
+import FloatingWhatsApp from "@/src/components/FloatingWhatsApp";
 import { LanguageProvider } from "@/src/context/LanguageContext";
 import "./globals.css";
 
@@ -106,8 +107,8 @@ const jsonLd = {
   sameAs: [
     "https://github.com/dedejuniarputra",
     "https://www.linkedin.com/in/dedejuniarputraaa/",
-    "https://instagram.com/dedejuniarputraaa",
-    "https://youtube.com/@dedejuniarputra",
+    "https://www.instagram.com/dezxz__?igsh=MWY0Y294YW1pZmF3Yg%3D%3D",
+    "https://www.youtube.com/@dedejuniarputraunila6525",
     "https://tiktok.com/@dedejuniarputra",
   ],
   knowsAbout: [
@@ -155,6 +156,7 @@ export default function RootLayout({
             <SplashScreen />
             <Navbar />
             {children}
+            <FloatingWhatsApp />
           </LanguageProvider>
         </div>
       </body>

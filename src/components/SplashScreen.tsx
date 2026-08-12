@@ -45,6 +45,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
 
   useEffect(() => {
     // Typewriter effect for console subtext
+    let delayTimer: NodeJS.Timeout;
     if (currentTextIndex < subtextSequence.length) {
       const fullText = subtextSequence[currentTextIndex];
       let charIdx = 0;
@@ -55,7 +56,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           charIdx++;
         } else {
           clearInterval(typeInterval);
-          setTimeout(() => {
+          delayTimer = setTimeout(() => {
             if (currentTextIndex < subtextSequence.length - 1) {
               setCurrentTextIndex((prev) => prev + 1);
             }
@@ -63,7 +64,10 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         }
       }, 30);
 
-      return () => clearInterval(typeInterval);
+      return () => {
+        clearInterval(typeInterval);
+        clearTimeout(delayTimer);
+      };
     }
   }, [currentTextIndex]);
 
@@ -95,7 +99,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
 
   return (
     <div 
-      className={`fixed inset-0 z-[100] bg-black text-white font-mono flex flex-col items-center justify-center px-6 transition-opacity duration-700 select-none overflow-hidden ${
+      className={`fixed inset-0 z-[100] bg-black text-white font-mono flex flex-col items-center justify-center px-4 sm:px-6 transition-opacity duration-700 select-none overflow-hidden ${
         isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
@@ -103,26 +107,26 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a15_1px,transparent_1px),linear-gradient(to_bottom,#0f172a15_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 
       {/* Main Glassmorphic Central Box */}
-      <div className="relative z-10 w-full max-w-2xl bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-8 sm:p-12 backdrop-blur-xl shadow-[0_0_40px_rgba(19,236,123,0.12)] flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-[calc(100vw-2rem)] sm:max-w-2xl bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-5 sm:p-12 backdrop-blur-xl shadow-[0_0_40px_rgba(19,236,123,0.12)] flex flex-col items-center text-center">
         
         {/* Top Header Tag */}
-        <div className="flex items-center gap-2 px-3 py-1 bg-[#052615] border border-[#13ec7b]/30 rounded-full text-xs font-mono text-[#13ec7b] mb-6 shadow-[0_0_10px_rgba(19,236,123,0.2)]">
-          <span className="w-2 h-2 rounded-full bg-[#13ec7b] animate-ping" />
+        <div className="flex items-center gap-2 px-3 py-1 bg-[#052615] border border-[#13ec7b]/30 rounded-full text-[10px] sm:text-xs font-mono text-[#13ec7b] mb-4 sm:mb-6 shadow-[0_0_10px_rgba(19,236,123,0.2)] whitespace-nowrap">
+          <span className="w-2 h-2 rounded-full bg-[#13ec7b] animate-ping flex-shrink-0" />
           <span>SYSTEM_INIT // PORTOFOLIO_ME</span>
         </div>
 
         {/* Big Name Reveal */}
-        <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-[#13ec7b] drop-shadow-[0_0_25px_rgba(19,236,123,0.3)] mb-4">
+        <h1 className="text-xl min-[400px]:text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-[#13ec7b] drop-shadow-[0_0_25px_rgba(19,236,123,0.3)] mb-3 sm:mb-4 whitespace-nowrap max-w-full text-center">
           DEDE JUNIAR PUTRA
         </h1>
 
         {/* Subtitle / Role Tag */}
-        <p className="text-xs sm:text-sm font-semibold tracking-widest text-zinc-400 uppercase mb-8">
+        <p className="text-[10px] min-[400px]:text-xs sm:text-sm font-semibold tracking-wider sm:tracking-widest text-zinc-400 uppercase mb-6 sm:mb-8 whitespace-nowrap max-w-full overflow-hidden text-ellipsis">
           Junior Software Engineer & AI Enthusiast
         </p>
 
         {/* Animated Progress Bar */}
-        <div className="w-full max-w-md bg-zinc-900/90 h-2 rounded-full overflow-hidden border border-zinc-800 mb-6 relative">
+        <div className="w-full max-w-md bg-zinc-900/90 h-2 rounded-full overflow-hidden border border-zinc-800 mb-5 sm:mb-6 relative">
           <div 
             className="h-full bg-gradient-to-r from-[#13ec7b]/60 to-[#13ec7b] rounded-full transition-all duration-75 shadow-[0_0_12px_#13ec7b]"
             style={{ width: `${progress}%` }}
@@ -130,12 +134,12 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         </div>
 
         {/* Bottom Console Typewriter Line & Percentage */}
-        <div className="flex items-center justify-between w-full max-w-md text-xs font-mono text-zinc-400 px-1">
-          <div className="flex items-center gap-1.5 text-[#13ec7b] font-medium min-h-[20px]">
+        <div className="flex items-center justify-between w-full max-w-md text-[10px] sm:text-xs font-mono text-zinc-400 px-1 gap-2">
+          <div className="flex items-center gap-1.5 text-[#13ec7b] font-medium min-h-[20px] whitespace-nowrap overflow-hidden text-ellipsis">
             <span>{typedSubtext}</span>
-            <span className="w-2 h-3.5 bg-[#13ec7b] animate-pulse inline-block shadow-[0_0_8px_#13ec7b]" />
+            <span className="w-2 h-3.5 bg-[#13ec7b] animate-pulse inline-block shadow-[0_0_8px_#13ec7b] flex-shrink-0" />
           </div>
-          <span className="text-[#13ec7b] font-bold">{progress}%</span>
+          <span className="text-[#13ec7b] font-bold flex-shrink-0">{progress}%</span>
         </div>
 
       </div>
