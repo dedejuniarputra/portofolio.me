@@ -3,42 +3,80 @@
 import { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/src/context/LanguageContext';
 
-/* ─── Company / Organization SVG Logos ───────────────────────────────── */
+import Image from 'next/image';
+import himakomImg from '@/src/assets/Himakom.jpg';
+import unilaImg from '@/src/assets/Unila.jpg';
+import komdigiImg from '@/src/assets/Komdigi.png';
+import lvImg from '@/src/assets/lv.png';
+import auroraImg from '@/src/assets/logo_aurora.png';
+
+/* ─── Company / Organization SVG & Image Logos ───────────────────────── */
+function AuroraLogo() {
+  return (
+    <div className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-700/60 flex items-center justify-center p-0.5 shrink-0 shadow-md overflow-hidden relative">
+      <Image
+        src={auroraImg}
+        alt="AURORABABYSPA Logo"
+        width={44}
+        height={44}
+        className="w-full h-full object-cover rounded-lg"
+      />
+    </div>
+  );
+}
+
+function LivesostoryLogo() {
+  return (
+    <div className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-700/60 flex items-center justify-center p-0.5 shrink-0 shadow-md overflow-hidden relative">
+      <Image
+        src={lvImg}
+        alt="LIVESOSTORY.CO Logo"
+        width={44}
+        height={44}
+        className="w-full h-full object-cover rounded-lg"
+      />
+    </div>
+  );
+}
+
 function DiskominfoLogo() {
   return (
-    <div className="w-11 h-11 rounded-xl bg-white border border-zinc-200 flex items-center justify-center p-1.5 shrink-0 shadow-md">
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        {/* Simplified Komdigi / Diskominfo Geometric Emblem */}
-        <rect x="15" y="15" width="32" height="32" rx="6" fill="#0052cc" />
-        <rect x="53" y="15" width="32" height="32" rx="6" fill="#ffd700" />
-        <rect x="15" y="53" width="32" height="32" rx="6" fill="#0052cc" />
-        <circle cx="69" cy="69" r="16" fill="#0080ff" />
-      </svg>
+    <div className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-700/60 flex items-center justify-center p-0.5 shrink-0 shadow-md overflow-hidden relative">
+      <Image
+        src={komdigiImg}
+        alt="Diskominfo / Komdigi Logo"
+        width={44}
+        height={44}
+        className="w-full h-full object-cover rounded-lg"
+      />
     </div>
   );
 }
 
 function UnilaLogo() {
   return (
-    <div className="w-11 h-11 rounded-xl bg-white border border-zinc-200 flex items-center justify-center p-1.5 shrink-0 shadow-md">
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        {/* Simplified Universitas Lampung Shield Emblem */}
-        <path d="M50 8 L85 25 L85 60 C85 78 50 92 50 92 C50 92 15 78 15 60 L15 25 Z" fill="#ffd700" stroke="#0033aa" strokeWidth="4" />
-        <circle cx="50" cy="50" r="22" fill="#0033aa" />
-        <path d="M50 32 L54 44 L66 44 L56 52 L60 64 L50 56 L40 64 L44 52 L34 44 L46 44 Z" fill="#ffffff" />
-      </svg>
+    <div className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-700/60 flex items-center justify-center p-0.5 shrink-0 shadow-md overflow-hidden relative">
+      <Image
+        src={unilaImg}
+        alt="Universitas Lampung Logo"
+        width={44}
+        height={44}
+        className="w-full h-full object-cover rounded-lg"
+      />
     </div>
   );
 }
 
 function HimakomLogo() {
   return (
-    <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 border border-amber-400/40 flex items-center justify-center p-1.5 shrink-0 shadow-md">
-      <svg viewBox="0 0 100 100" className="w-full h-full">
-        {/* HIMAKOM Shield Badge Logo */}
-        <path d="M50 10 L85 28 L85 65 C85 80 50 90 50 90 C50 90 15 80 15 65 L15 28 Z" fill="#111111" stroke="#ffd700" strokeWidth="5" />
-        <text x="50" y="58" textAnchor="middle" fill="#ffd700" fontSize="32" fontWeight="bold" fontFamily="monospace">H</text>
-      </svg>
+    <div className="w-11 h-11 rounded-xl bg-zinc-900 border border-zinc-700/60 flex items-center justify-center p-0.5 shrink-0 shadow-md overflow-hidden relative">
+      <Image
+        src={himakomImg}
+        alt="HIMAKOM UNILA Logo"
+        width={44}
+        height={44}
+        className="w-full h-full object-cover rounded-lg"
+      />
     </div>
   );
 }
@@ -65,6 +103,10 @@ function FreelanceLogo() {
 
 function getLogo(id: string) {
   switch (id) {
+    case 'aurorababyspa':
+      return <AuroraLogo />;
+    case 'livesostory':
+      return <LivesostoryLogo />;
     case 'diskominfo':
       return <DiskominfoLogo />;
     case 'asdos-amp':
@@ -262,10 +304,10 @@ export default function Journey() {
                   {/* Expanded Content Drawer */}
                   {isExpanded && (
                     <div className="pt-3 border-t border-zinc-800/80 space-y-2 animate-[sr-pop_0.3s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-                      <ul className="space-y-2 text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed">
+                      <ul className="space-y-2.5 text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed">
                         {item.details.map((detail, dIdx) => (
                           <li key={dIdx} className="flex items-start gap-2.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#13ec7b] mt-2 shrink-0" />
+                            <span className="text-[#13ec7b] font-bold text-xs sm:text-sm mt-0.5 shrink-0 select-none">✓</span>
                             <span>{detail}</span>
                           </li>
                         ))}

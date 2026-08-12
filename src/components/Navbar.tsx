@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/src/context/LanguageContext';
 
 export default function Navbar() {
@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [apiLatency, setApiLatency] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const activeIdRef = useRef('about');
 
   useEffect(() => {
     let isMounted = true;
@@ -58,7 +59,8 @@ export default function Navbar() {
     const sectionIds = ['hero', 'about', 'skills', 'projects', 'github', 'journey', 'certificates', 'contact'];
 
     const handleScrollSpy = () => {
-      setScrolled(window.scrollY > 12);
+      const isScrolled = window.scrollY > 12;
+      setScrolled((prev) => (prev !== isScrolled ? isScrolled : prev));
 
       const viewportThreshold = window.innerHeight * 0.45;
       let currentActiveId = '';
@@ -67,21 +69,19 @@ export default function Navbar() {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
-          // Active candidate if section top has reached or passed the viewport focal area
           if (rect.top <= viewportThreshold) {
             currentActiveId = id;
           }
         }
       }
 
-      if (currentActiveId) {
+      if (currentActiveId && currentActiveId !== activeIdRef.current) {
+        activeIdRef.current = currentActiveId;
         setActiveMenuId(currentActiveId);
         if (typeof window !== 'undefined') {
           const newHash = currentActiveId === 'hero' ? '#' : `#${currentActiveId}`;
           if (window.location.hash !== newHash) {
-            setTimeout(() => {
-              window.history.replaceState(null, '', newHash);
-            }, 0);
+            window.history.replaceState(null, '', newHash);
           }
         }
       }
@@ -106,6 +106,7 @@ export default function Navbar() {
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, item: { id: string; name: string; href: string }) => {
+    activeIdRef.current = item.id;
     setActiveMenuId(item.id);
     if (item.href.startsWith('#')) {
       e.preventDefault();
@@ -144,6 +145,7 @@ export default function Navbar() {
             href="#"
             onClick={(e) => {
               e.preventDefault();
+              activeIdRef.current = 'hero';
               setActiveMenuId('hero');
               window.scrollTo({ top: 0, behavior: 'smooth' });
               if (typeof window !== 'undefined') {
@@ -229,11 +231,40 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="flex items-center md:hidden gap-3">
+          {/* Mobile Right Controls: Language & API Capsule + Hamburger Button */}
+          <div className="flex items-center md:hidden gap-2">
+            {/* Glassmorphism Capsule for Language & Realtime Views (Mobile) */}
+            <div className="flex items-center gap-2 px-2.5 py-1 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md shadow-lg">
+              {/* Globe / EN & ID Switcher */}
+              <button 
+                onClick={toggleLanguage}
+                className="flex items-center gap-1.5 text-zinc-300 hover:text-[#13ec7b] text-xs font-medium transition-colors cursor-pointer focus:outline-none"
+                title="Switch Language (EN / ID)"
+              >
+                <svg className="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" strokeWidth="1.8"/>
+                  <path strokeWidth="1.8" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10z"/>
+                </svg>
+                <span className="font-mono text-xs font-bold tracking-wider">{language}</span>
+              </button>
+
+              {/* Vertical Line Separator */}
+              <div className="h-3.5 w-[1px] bg-zinc-800/90" />
+
+              {/* Realtime API Latency Badge */}
+              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-xs font-bold" title="Realtime API Signal Latency">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#13ec7b]" />
+                </span>
+                <span>API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
+              </div>
+            </div>
+
+            {/* Hamburger Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-zinc-400 hover:text-[#13ec7b] rounded-lg hover:bg-zinc-900 transition-colors focus:outline-none"
+              className="p-1.5 sm:p-2 text-zinc-400 hover:text-[#13ec7b] rounded-lg hover:bg-zinc-900 transition-colors focus:outline-none"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -253,7 +284,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-black border-b border-zinc-900 px-4 pt-2 pb-4 space-y-1">
+        <div className="md:hidden bg-black/95 backdrop-blur-xl border-b border-zinc-900 px-4 pt-2 pb-4 space-y-1">
           {menuItems.map((item) => {
             const isActive = activeMenuId === item.id;
             return (
@@ -276,30 +307,6 @@ export default function Navbar() {
               </a>
             );
           })}
-          <div className="pt-3 border-t border-zinc-800/60 flex items-center justify-between px-3">
-            <div className="flex items-center gap-2.5 px-3 py-1.5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md">
-              <button 
-                onClick={toggleLanguage}
-                className="flex items-center gap-1.5 text-zinc-300 hover:text-[#13ec7b] text-xs font-medium"
-              >
-                <svg className="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="10" strokeWidth="1.8"/>
-                  <path strokeWidth="1.8" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10z"/>
-                </svg>
-                <span className="font-mono font-bold text-xs">{language}</span>
-              </button>
-
-              <div className="h-3.5 w-[1px] bg-zinc-800/90" />
-
-              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-xs font-bold" title="Realtime API Signal Latency">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#13ec7b]" />
-                </span>
-                <span>API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
-              </div>
-            </div>
-          </div>
         </div>
       )}
     </nav>

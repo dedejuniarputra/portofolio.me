@@ -18,11 +18,11 @@ export const translations = {
     hero: {
       badgeText: 'HI, HOW ARE YOU?',
       roles: [
-        'Junior Software Engineer & AI Enthusiast',
+        'Junior Software Engineer & System Analyst',
         'Mobile Developer',
-        'Frontend Web Developer',
+        'Web Developer',
       ],
-      description: 'Specializing in software engineering, frontend web & mobile development, and modern AI integration to build efficient, scalable digital solutions.',
+      description: '"Every day is a process." That is how I approach every project I work on — building clean, fast, and user-friendly systems like website or mobile apps.',
       ctaProjects: 'Explore Projects',
       ctaContact: 'Contact Me',
       terminalFile: 'profile.config.tsx',
@@ -35,11 +35,11 @@ export const translations = {
       titleHighlight: 'Know',
       titlePart2: 'Me',
       subtitle: 'Software Engineer & AI Enthusiast — Universitas Lampung',
-      bio1Prefix: "I'm ",
+      bio1Prefix: "Hello, I'm ",
       name: "Dede Juniar Putra",
-      bio1Suffix: ", a Software Engineer & AI Enthusiast passionate about building scalable web and mobile applications and transforming real-world requirements into reliable, user-centered digital solutions.",
-      bio2: "I’m a Software Engineer & AI Enthusiast with a strong focus on web development and a solid foundation in mobile application development. I hold a Bachelor’s degree in Computer Science from Universitas Lampung, with over 2 years of experience in Web Development and 1 year in Mobile Development. Throughout my journey, I have worked on 7+ digital projects using Laravel, React.js, and Flutter. I have experience building scalable, structured, and user-centered applications, as well as working with REST APIs, database management, Git, system testing, debugging, troubleshooting, and application maintenance.",
-      bio3: "I’m passionate about designing modular and maintainable application architectures while paying close attention to performance, usability, and user experience. Beyond technical expertise, I bring strong problem-solving, communication, and adaptability skills, allowing me to work effectively both independently and as part of a team. I enjoy transforming real-world requirements and challenges into effective digital solutions, and I believe great software is not simply about writing code, but about understanding problems, creating meaningful solutions, and delivering real value to users and businesses.",
+      bio1Suffix: ", a Software Engineer based in Bandar Lampung, Indonesia — specializing in web and mobile development, with a strong interest in System Analysis and IT Support. I am experienced in building systems end-to-end, from frontend UI to backend logic and database design, while understanding system requirements and troubleshooting.",
+      bio2: "For web development, I build with Laravel, React.js, and Tailwind CSS, while for mobile development, I utilize Flutter. I am proficient in working with REST APIs, MySQL, Firebase, Git, as well as testing, debugging, troubleshooting, and system maintenance.",
+      bio3: "I hold a Bachelor's degree in Computer Science from the University of Lampung, with 2+ years of experience in Web Development and 1 year in Mobile Development. Currently, I am open to roles as a Software Engineer, Web Developer, Mobile Developer, System Analyst, or IT Support, as well as freelance opportunities.",
       stats: {
         projects: 'Projects Built',
         commits: 'Commits (2022 - 2026)',
@@ -70,28 +70,40 @@ export const translations = {
     skills: {
       sectionTag: '// TECH_STACK',
       titlePart1: 'Skills &',
-      titleHighlight: 'Technologies',
+      titleHighlight: 'Tech Stack',
       subtitle: 'Technologies, tools, and frameworks I use to build robust digital products.',
+      totalBadgeCount: '26',
+      totalBadgeLabel: 'TECHNOLOGIES',
+      sideDescription: 'Grouped into five categories: Frontend for user interfaces, Backend & Database for server logic, Mobile for cross-platform apps, Tools for daily workflow, and AI Tools for productivity.',
       codeShowcaseTitle: 'Code Snippets Showcase',
       codeShowcaseSubtitle: 'Interactive preview of how I write clean, structured code across stack technologies.',
       copy: 'Copy',
       copied: 'Copied!',
       categories: [
         {
-          label: 'Frontend',
-          items: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'HTML & CSS'],
+          num: '01',
+          label: 'FRONTEND',
+          items: ['HTML', 'React.js', 'Next.js', 'Bootstrap', 'Tailwind CSS'],
         },
         {
-          label: 'Backend',
-          items: ['Laravel', 'PHP', 'Node.js', 'REST API'],
+          num: '02',
+          label: 'BACKEND & DATABASE',
+          items: ['Laravel', 'MySQL', 'Firebase', 'PostgreSQL', 'Node.js'],
         },
         {
-          label: 'Mobile',
-          items: ['Flutter', 'Dart', 'Android Studio', 'Firebase', 'GetX', 'Provider'],
+          num: '03',
+          label: 'MOBILE DEVELOPMENT',
+          items: ['Android Studio', 'Flutter', 'Kotlin', 'GetX', 'Provider'],
         },
         {
-          label: 'Database & Tools',
-          items: ['MySQL', 'PostgreSQL', 'Git', 'GitHub', 'Postman', 'VS Code'],
+          num: '04',
+          label: 'TOOLS & HOSTING',
+          items: ['VS Code', 'Antigravity', 'Git', 'GitHub', 'Laragon', 'Vercel', 'Hostinger', 'Figma'],
+        },
+        {
+          num: '05',
+          label: 'AI TOOLS',
+          items: ['ChatGPT', 'Claude', 'Gemini'],
         },
       ],
     },
@@ -143,9 +155,49 @@ export const translations = {
           duration: '8 MONTHS',
           skills: 'Full-Stack Web Development, React.js, Laravel, Flutter & +10 skills',
           details: [
-            'Developing custom full-stack web and mobile applications tailored to client requirements.',
-            'Architecting robust REST APIs and database models using Laravel, Next.js, and React.js.',
-            'Collaborating directly with clients to deliver performant, user-centered digital solutions.'
+            'Developing custom full-stack web and mobile applications using Next.js, React.js, Laravel, and Flutter tailored to client needs.',
+            'Architecting robust REST APIs, secure authentication systems, and scalable database models using MySQL/PostgreSQL.',
+            'Implementing modern, highly responsive, and interactive UI/UX interfaces adhering to professional design standards.',
+            'Performing end-to-end testing, debugging, performance optimization, and ongoing maintenance to ensure application stability.',
+            'Communicating and collaborating directly with diverse clients to deliver performant, user-centered digital solutions.'
+          ]
+        },
+        {
+          id: 'aurorababyspa',
+          role: 'Mobile Flutter Developer',
+          company: 'AURORABABYSPA',
+          location: 'BANDAR LAMPUNG',
+          type: 'PART-TIME',
+          year: '2026',
+          period: 'Feb 2026 - Jun 2026',
+          duration: '5 MONTHS',
+          workType: 'ON-SITE',
+          skills: 'Mobile Development, Flutter, Firebase, GetX, REST API & +5 skills',
+          details: [
+            'Developed a multiplatform mobile application using Flutter, Firebase, and GetX to digitalize Aurora Baby Spa booking services.',
+            'Implemented authentication, service booking, payment, notification, and transaction history features to enhance user experience.',
+            'Integrated Firebase Authentication, Cloud Firestore, Firebase Storage, and REST APIs for real-time data management.',
+            'Performed testing, debugging, troubleshooting, and app optimization to ensure performance, stability, and maintainability.',
+            'Collaborated throughout requirements analysis, development, testing, and application refinement until production deployment.'
+          ]
+        },
+        {
+          id: 'livesostory',
+          role: 'FullStack Web Developer',
+          company: 'LIVESOSTORY.CO',
+          location: 'BANDAR LAMPUNG',
+          type: 'PART-TIME',
+          year: '2026',
+          period: 'Jan 2026 - Mar 2026',
+          duration: '3 MONTHS',
+          workType: 'ON-SITE',
+          skills: 'Full-Stack Web Development, Laravel, Tailwind CSS, REST API, WhatsApp API & +5 skills',
+          details: [
+            'Developed and maintained a professional photography website built with Laravel and Tailwind CSS.',
+            'Performed troubleshooting, debugging, testing, and application fixes to ensure high stability and performance.',
+            'Integrated REST APIs and WhatsApp API to automate service booking workflows.',
+            'Managed MySQL databases and assisted in system maintenance to support operational requirements.',
+            'Collaborated with the team using Git, documented development processes, and provided technical support throughout application deployment.'
           ]
         },
         {
@@ -154,46 +206,36 @@ export const translations = {
           company: 'DISKOMINFO',
           location: 'BANDAR LAMPUNG',
           type: 'INTERNSHIP',
-          year: '2025',
-          period: 'Jun 2025 - Agust 2025',
+          year: '2026',
+          period: 'Jan 2026 - Mar 2026',
           duration: '3 MONTHS',
           workType: 'ON-SITE',
+          skills: 'Frontend Development, Laravel, Bootstrap, Figma, JavaScript, Git & +5 skills',
           details: [
-            'Built and optimized front-end web interfaces for regional government digital services.',
-            'Translated UI/UX designs into responsive, accessible code using modern web frameworks.',
-            'Participated in system testing, UI component refactoring, and performance optimizations.'
-          ]
-        },
-        {
-          id: 'asdos-amp',
-          role: 'Assistant Lecturer – Advanced Mobile Programming',
-          company: 'UNIVERSITAS LAMPUNG',
-          location: 'FMIPA UNILA',
-          type: 'PART-TIME',
-          year: '2025',
-          period: 'Agust 2025 - Des 2025',
-          duration: '6 MONTHS',
-          workType: 'ON-SITE',
-          details: [
-            'Taught undergraduate students advanced mobile application engineering using Flutter and Dart.',
-            'Guided students in state management (GetX/Provider), REST API consumption, and clean architecture.',
-            'Evaluated lab assignments, provided technical mentoring, and conducted code reviews.'
+            'Developed and maintained the SIADIK Attendance Website built with Laravel to support administrative digitalization and employee data management.',
+            'Designed and implemented responsive user interfaces based on Figma designs using HTML, CSS, JavaScript, and Bootstrap.',
+            'Performed troubleshooting, testing, debugging, and application optimization to ensure system stability, security, and user alignment.',
+            'Documented system development, testing outcomes, and code changes while providing technical support during application deployment.',
+            'Collaborated with the team using Git, documented development processes, and provided technical support throughout application implementation.'
           ]
         },
         {
           id: 'asdos-mat',
-          role: 'Assistant Lecturer – Mobile Application and Technology',
+          role: 'Coordinator & Assistant Lecturer – Mobile Application and Technology',
           company: 'UNIVERSITAS LAMPUNG',
-          location: 'FMIPA UNILA',
+          location: 'FEB & FMIPA UNILA',
           type: 'PART-TIME',
           year: '2025',
           period: 'Agust 2025 - Des 2025',
-          duration: '6 MONTHS',
+          duration: '5 MONTHS',
           workType: 'ON-SITE',
+          skills: 'Mobile Development, Flutter, Kotlin, Android Studio, Mentoring & +5 skills',
           details: [
-            'Facilitated laboratory practical sessions on mobile development fundamentals.',
-            'Mentored students on UI layout building, event handling, and Android app lifecycle.',
-            'Prepared practical guidelines and assisted course professors in grading semester projects.'
+            'Mentored over 130 students in Mobile Application & Technology practical sessions using Flutter and Kotlin.',
+            'Assisted students in resolving technical challenges through troubleshooting, debugging, and code review processes.',
+            'Prepared and managed practical modules, learning documentation, and administration using Microsoft Word, Excel, and PowerPoint.',
+            'Provided technical mentorship and coordinated with lecturers to ensure effective learning processes.',
+            'Developed communication, service, problem-solving, and teamwork skills through direct academic mentorship.'
           ]
         },
         {
@@ -206,10 +248,13 @@ export const translations = {
           period: 'Sept 2022 - Okto 2023',
           duration: '1 TAHUN 2 BULAN',
           workType: 'ON-SITE',
+          skills: 'Public Relations (Humas), Event Management, Teamwork, Communication & +5 skills',
           details: [
-            'Organized tech seminars, workshops, and computer science competitions at Universitas Lampung.',
-            'Managed event logistics, speaker coordination, and participant registration systems.',
-            'Fostered collaborative teamwork across student committees to ensure successful event execution.'
+            'Contributed as a committee member in various HIMAKOM events, including PRINTER 2023, LKMMIK-TD, PRJXHT, and KWI, specifically within the Public Relations Division (Humas).',
+            'Coordinated with committee members and key stakeholders to ensure smooth event execution, including communication with participants and stakeholders.',
+            'Assisted in event planning, coordination, and execution to ensure activities ran according to schedule and target objectives.',
+            'Handled operational challenges during events by prioritizing effective communication, teamwork, and rapid problem solving.',
+            'Developed communication, service, time management, adaptability, and collaboration skills within a dynamic working environment.'
           ]
         }
       ]
@@ -224,16 +269,39 @@ export const translations = {
       seeMore: 'See More Certificates',
       seeLess: 'See Less',
       items: [
-        { id: 1, title: 'Project Express & MongoDB', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 2, title: 'Node.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 3, title: 'Express & EJS', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 4, title: 'Middleware Express', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 5, title: 'Express.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 6, title: 'Mongoose', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 7, title: 'MongoDB', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 8, title: 'Tailwind CSS', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 9, title: 'Go (Golang)', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 10, title: 'React.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 1, title: 'Front-end Untuk Pemula', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: '#' },
+        { id: 2, title: 'Dasar Pemrograman Javascript', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: '#' },
+        { id: 3, title: 'Dasar Pemrograman Web', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: '#' },
+        { id: 4, title: 'Belajar Dasar AI', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: '#' },
+        { id: 5, title: 'Belajar Dasar IT Support', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: '#' },
+        { id: 6, title: 'Belajar Membuat Aplikasi Flutter untuk Pemula', issuer: 'DICODING INDONESIA', date: '2026', category: 'MOBILE', url: '#' },
+        { id: 7, title: 'Belajar Dasar Pengembangan Aplikasi Mobile', issuer: 'DICODING INDONESIA', date: '2026', category: 'MOBILE', url: '#' },
+        { id: 8, title: 'Memulai Pemrograman dengan Dart', issuer: 'DICODING INDONESIA', date: '2026', category: 'MOBILE', url: '#' },
+        { id: 9, title: 'Introduction to Financial Literacy', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: '#' },
+        { id: 10, title: 'Short Class UI/UX DESAIN', issuer: 'Myskill', date: '2025', category: 'OTHER', url: '#' },
+        { id: 11, title: 'Tutorial CRUD dengan PHP', issuer: 'DUNIA CODING', date: '2025', category: 'WEB', url: '#' },
+        { id: 12, title: 'Advanced Mobile Programming', issuer: 'UNIVERSITAS LAMPUNG', date: '2025', category: 'MOBILE', url: '#' },
+        { id: 13, title: 'Mobile Apps and Technology', issuer: 'UNIVERSITAS LAMPUNG', date: '2025', category: 'MOBILE', url: '#' },
+        { id: 14, title: 'Operating Systems', issuer: 'UNIVERSITAS LAMPUNG', date: '2024', category: 'OTHER', url: '#' },
+        { id: 15, title: 'HTML', issuer: 'Sololearn', date: '2024', category: 'WEB', url: '#' },
+        { id: 16, title: 'Google Analytics untuk pemula', issuer: 'GOOGLE', date: '2024', category: 'OTHER', url: '#' },
+        { id: 17, title: 'Git Learning Class', issuer: 'DICODING INDONESIA', date: '2024', category: 'OTHER', url: '#' },
+        { id: 18, title: 'Belajar Git', issuer: 'CODEPOLITAN', date: '2024', category: 'OTHER', url: '#' },
+        { id: 19, title: 'UI/UX Designer', issuer: 'DIGITALENT', date: '2024', category: 'OTHER', url: '#' },
+        { id: 20, title: 'Worskhop Nasional HIMAKOM x XDEMIA', issuer: 'XDEMIA', date: '2024', category: 'OTHER', url: '#' },
+        { id: 21, title: 'Graphic Design Training', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 22, title: 'General Lecture Participant', issuer: 'FMIPA UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 23, title: 'HINCAR Participant', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 24, title: 'Public Lecture on Blockchain', issuer: 'FMIPA UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 25, title: 'Scientific Study Tour', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 26, title: 'Computer Science Showdown', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 27, title: 'PANITIA PRJXHT 2023', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 28, title: 'PANITIA LKMMIK-TD 2023', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 29, title: 'PANITIA PRINTER 2023', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 30, title: 'PESERTA - LKMMIK-TD 2022', issuer: 'HIMAKOM UNILA', date: '2022', category: 'OTHER', url: '#' },
+        { id: 31, title: 'PESERTA PRINTER 2022', issuer: 'HIMAKOM UNILA', date: '2022', category: 'OTHER', url: '#' },
+        { id: 32, title: '2nd Place in Valorant', issuer: 'HIMAKOM UNILA', date: '2022', category: 'OTHER', url: '#' },
+        { id: 33, title: 'BIMTEK Artificial Intelligence', issuer: 'BRIN 2026', date: '2026', category: 'OTHER', url: '#' }
       ]
     },
     contact: {
@@ -250,19 +318,19 @@ export const translations = {
           title: 'Watch My Content',
           description: 'Subscribe to my YouTube channel for creative content, tutorials, and latest updates.',
           button: 'Watch on YouTube',
-          url: 'https://youtube.com/@dedejuniarputra',
+          url: 'https://www.youtube.com/@dedejuniarputraunila6525',
         },
         instagram: {
           title: 'Follow My Journey',
           description: 'Follow my creative journey.',
           button: 'Go to Instagram',
-          url: 'https://instagram.com/dedejuniarputra',
+          url: 'https://www.instagram.com/dezxz__?igsh=MWY0Y294YW1pZmF3Yg%3D%3D',
         },
         linkedin: {
           title: "Let's Connect",
           description: 'Connect with me professionally.',
           button: 'Go to Linkedin',
-          url: 'https://linkedin.com/in/dedejuniarputra',
+          url: 'https://www.linkedin.com/in/dedejuniarputraaa/',
         },
         tiktok: {
           title: 'Join the Fun',
@@ -292,11 +360,11 @@ export const translations = {
     hero: {
       badgeText: 'HALO, APA KABAR MU?',
       roles: [
-        'Junior Software Engineer & AI Enthusiast',
+        'Junior Software Engineer & System Analyst',
         'Mobile Developer',
-        'Frontend Web Developer',
+        'Web Developer',
       ],
-      description: 'Berfokus pada rekayasa perangkat lunak, pengembangan web frontend & aplikasi mobile, serta integrasi AI modern untuk membangun solusi digital yang efisien dan responsif.',
+      description: '"Setiap hari adalah proses." Setiap proyek yang saya kerjakan dengan cara itu — membangun sebuah sistem website atau mobile yang rapi, cepat, dan nyaman dipakai.',
       ctaProjects: 'Jelajahi Proyek',
       ctaContact: 'Hubungi Saya',
       terminalFile: 'profile.config.tsx',
@@ -309,11 +377,11 @@ export const translations = {
       titleHighlight: 'Saya',
       titlePart2: 'Lebih Jauh',
       subtitle: 'Software Engineer — Universitas Lampung',
-      bio1Prefix: "Saya ",
+      bio1Prefix: "Halo, saya ",
       name: "Dede Juniar Putra",
-      bio1Suffix: ", seorang Software Engineer yang berdedikasi dalam membangun aplikasi web dan mobile yang responsif serta merancang alur sistem digital yang efisien.",
-      bio2: "Saya adalah seorang Software Engineer yang berfokus pada pengembangan web dengan fondasi kuat dalam pengembangan aplikasi mobile. Saya memegang gelar Sarjana Komputer (S.Kom) dari Universitas Lampung, dengan pengalaman lebih dari 2 tahun di bidang Web Development dan 1 tahun di Mobile Development. Dalam perjalanan karier saya, saya telah mengerjakan 7+ proyek digital menggunakan Laravel, React.js, dan Flutter. Saya berpengalaman membangun aplikasi yang terstruktur dan berpusat pada pengguna, serta terbiasa bekerja dengan REST API, manajemen basis data, Git, pengujian sistem, debugging, troubleshooting, dan pemeliharaan aplikasi.",
-      bio3: "Saya memiliki minat besar dalam merancang arsitektur aplikasi yang modular dan mudah dirawat dengan memperhatikan performa serta kenyamanan pengguna. Selain keahlian teknis, saya memiliki kemampuan penyelesaian masalah, komunikasi, dan adaptasi yang baik untuk bekerja secara mandiri maupun dalam tim. Saya percaya bahwa perangkat lunak yang hebat tidak hanya tentang menulis kode, melainkan tentang memahami masalah dan memberikan solusi digital yang memberikan nilai nyata bagi pengguna dan bisnis.",
+      bio1Suffix: ", seorang Software Engineer asal Bandar Lampung, Lampung — berfokus pada pengembangan web dan mobile, serta memiliki ketertarikan pada System Analyst dan IT Support. Saya terbiasa mengerjakan sistem dari sisi tampilan hingga backend dan basis data, sekaligus memahami alur kebutuhan sistem dan troubleshooting.",
+      bio2: "Untuk pengembangan web saya menggunakan Laravel, React.js, dan Tailwind CSS, sedangkan untuk mobile development saya menggunakan Flutter. Saya juga terbiasa bekerja dengan REST API, MySQL, Firebase, Git, serta melakukan testing, debugging, troubleshooting, dan pemeliharaan sistem.",
+      bio3: "Saya merupakan lulusan S1 Ilmu Komputer Universitas Lampung dengan pengalaman 2+ tahun di Web Development dan 1 tahun di Mobile Development. Saat ini saya terbuka untuk peluang sebagai Software Engineer, Web Developer, Mobile Developer, System Analyst, maupun IT Support, serta menerima project freelance.",
       stats: {
         projects: 'Proyek Selesai',
         commits: 'Komit Git (2025 - 2026)',
@@ -346,26 +414,38 @@ export const translations = {
       titlePart1: 'Keahlian &',
       titleHighlight: 'Teknologi',
       subtitle: 'Teknologi, alat, dan framework yang saya gunakan untuk membangun produk digital.',
+      totalBadgeCount: '26',
+      totalBadgeLabel: 'TEKNOLOGI',
+      sideDescription: 'Dikelompokkan jadi lima: yang membangun tampilan, yang menjalankan data di belakang layar, aplikasi mobile, alat pendukung sehari-hari, dan AI untuk mempercepat kerja.',
       codeShowcaseTitle: 'Showcase Kode Interaktif',
       codeShowcaseSubtitle: 'Pratinjau interaktif bagaimana saya menulis kode yang bersih dan terstruktur.',
       copy: 'Salin',
       copied: 'Tersalin!',
       categories: [
         {
-          label: 'Frontend',
-          items: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'HTML & CSS'],
+          num: '01',
+          label: 'FRONTEND',
+          items: ['HTML', 'React.js', 'Next.js', 'Bootstrap', 'Tailwind CSS'],
         },
         {
-          label: 'Backend',
-          items: ['Laravel', 'PHP', 'Node.js', 'REST API'],
+          num: '02',
+          label: 'BACKEND & DATABASE',
+          items: ['Laravel', 'MySQL', 'Firebase', 'PostgreSQL', 'Node.js'],
         },
         {
-          label: 'Mobile',
-          items: ['Flutter', 'Dart', 'Android Studio', 'Firebase', 'GetX', 'Provider'],
+          num: '03',
+          label: 'MOBILE DEVELOPMENT',
+          items: ['Android Studio', 'Flutter', 'Kotlin', 'GetX', 'Provider'],
         },
         {
-          label: 'Database & Tools',
-          items: ['MySQL', 'PostgreSQL', 'Git', 'GitHub', 'Postman', 'VS Code'],
+          num: '04',
+          label: 'TOOLS & HOSTING',
+          items: ['VS Code', 'Antigravity', 'Git', 'GitHub', 'Laragon', 'Vercel', 'Hostinger', 'Figma'],
+        },
+        {
+          num: '05',
+          label: 'AI TOOLS',
+          items: ['ChatGPT', 'Claude', 'Gemini'],
         },
       ],
     },
@@ -417,9 +497,49 @@ export const translations = {
           duration: '8 BULAN',
           skills: 'Full-Stack Web Development, React.js, Laravel, Flutter & +10 keahlian',
           details: [
-            'Mengembangkan aplikasi web dan mobile full-stack sesuai kebutuhan klien.',
-            'Merancang REST API andal dan arsitektur database menggunakan Laravel, Next.js, dan React.js.',
-            'Berkomunikasi dan berkolaborasi langsung dengan klien untuk menghadirkan solusi digital berkinerja tinggi.'
+            'Mengembangkan aplikasi web dan mobile full-stack kustom berbasis Next.js, React.js, Laravel, dan Flutter sesuai kebutuhan spesifik klien.',
+            'Merancang arsitektur REST API yang andal, aman, serta pemodelan database MySQL/PostgreSQL untuk mendukung performa tinggi.',
+            'Mendesain serta mengimplementasikan antarmuka pengguna (UI/UX) yang responsif, modern, dan interaktif sesuai standar profesional.',
+            'Melakukan testing, debugging, optimasi performa, serta pemeliharaan berkala guna memastikan keamanan dan stabilitas aplikasi.',
+            'Berkomunikasi dan berkolaborasi secara langsung dengan klien untuk menghadirkan solusi digital yang inovatif dan berkinerja tinggi.'
+          ]
+        },
+        {
+          id: 'aurorababyspa',
+          role: 'Mobile Flutter Developer',
+          company: 'AURORABABYSPA',
+          location: 'BANDAR LAMPUNG',
+          type: 'PART-TIME',
+          year: '2026',
+          period: 'Feb 2026 - Jun 2026',
+          duration: '5 BULAN',
+          workType: 'ON-SITE',
+          skills: 'Mobile Development, Flutter, Firebase, GetX, REST API & +5 keahlian',
+          details: [
+            'Mengembangkan aplikasi mobile multiplatform menggunakan Flutter, Firebase, dan GetX untuk digitalisasi layanan pemesanan Aurora Baby Spa.',
+            'Mengimplementasikan fitur autentikasi, pemesanan layanan, pembayaran, notifikasi, dan riwayat transaksi guna meningkatkan pengalaman pengguna.',
+            'Mengintegrasikan Firebase Authentication, Cloud Firestore, Firebase Storage, serta REST API untuk pengelolaan data secara real-time.',
+            'Melakukan testing, debugging, troubleshooting, dan optimasi aplikasi guna memastikan performa, stabilitas, dan kemudahan pemeliharaan aplikasi.',
+            'Berkolaborasi dalam proses analisis kebutuhan, pengembangan, pengujian, dan penyempurnaan aplikasi hingga siap digunakan.'
+          ]
+        },
+        {
+          id: 'livesostory',
+          role: 'FullStack Web Developer',
+          company: 'LIVESOSTORY.CO',
+          location: 'BANDAR LAMPUNG',
+          type: 'PART-TIME',
+          year: '2026',
+          period: 'Jan 2026 - Mar 2026',
+          duration: '3 BULAN',
+          workType: 'ON-SITE',
+          skills: 'Full-Stack Web Development, Laravel, Tailwind CSS, REST API, WhatsApp API & +5 keahlian',
+          details: [
+            'Mengembangkan dan memelihara website fotografi profesional berbasis Laravel dan Tailwind CSS.',
+            'Melakukan troubleshooting, debugging, testing, serta perbaikan aplikasi untuk memastikan sistem berjalan stabil dan optimal.',
+            'Mengintegrasikan REST API dan WhatsApp API untuk mendukung otomatisasi proses pemesanan layanan.',
+            'Mengelola database MySQL serta membantu pemeliharaan sistem sesuai kebutuhan operasional.',
+            'Berkolaborasi dengan tim menggunakan Git, mendokumentasikan proses pengembangan, serta memberikan dukungan teknis selama proses implementasi aplikasi.'
           ]
         },
         {
@@ -428,46 +548,36 @@ export const translations = {
           company: 'DISKOMINFO',
           location: 'BANDAR LAMPUNG',
           type: 'INTERNSHIP',
-          year: '2025',
-          period: 'Jun 2025 - Agust 2025',
+          year: '2026',
+          period: 'Jan 2026 - Mar 2026',
           duration: '3 BULAN',
           workType: 'ON-SITE',
+          skills: 'Frontend Development, Laravel, Bootstrap, Figma, JavaScript, Git & +5 keahlian',
           details: [
-            'Membangun dan mengoptimalkan antarmuka web frontend untuk layanan digital instansi pemerintah.',
-            'Menerjemahkan desain UI/UX menjadi kode responsif dan terstruktur dengan framework modern.',
-            'Melakukan pengujian sistem, refactoring komponen UI, serta pemeliharaan tampilan aplikasi.'
-          ]
-        },
-        {
-          id: 'asdos-amp',
-          role: 'Assistant Lecturer – Advanced Mobile Programming',
-          company: 'UNIVERSITAS LAMPUNG',
-          location: 'FMIPA UNILA',
-          type: 'PART-TIME',
-          year: '2025',
-          period: 'Agust 2025 - Des 2025',
-          duration: '6 BULAN',
-          workType: 'ON-SITE',
-          details: [
-            'Membimbing mahasiswa dalam praktikum pemrograman mobile tingkat lanjut menggunakan Flutter & Dart.',
-            'Mengajarkan manajemen state (GetX/Provider), konsumsi REST API, dan arsitektur aplikasi mobile.',
-            'Menilai tugas praktikum, memberikan bantuan teknis, dan melakukan peninjauan kode mahasiswa.'
+            'Mengembangkan dan memelihara Website Absensi SIADIK berbasis Laravel untuk mendukung digitalisasi proses administrasi dan pengelolaan data pegawai.',
+            'Mendesain serta mengimplementasikan antarmuka pengguna yang responsif berdasarkan desain Figma menggunakan HTML, CSS, JavaScript, dan Bootstrap.',
+            'Melakukan troubleshooting, testing, debugging, dan optimasi aplikasi untuk memastikan sistem berjalan stabil, aman, dan sesuai kebutuhan pengguna.',
+            'Mendokumentasikan hasil pengembangan, pengujian, dan perubahan sistem, serta memberikan dukungan teknis selama implementasi aplikasi.',
+            'Berkolaborasi dengan tim menggunakan Git, mendokumentasikan proses pengembangan, serta memberikan dukungan teknis selama proses implementasi aplikasi.'
           ]
         },
         {
           id: 'asdos-mat',
-          role: 'Assistant Lecturer – Mobile Application and Technology',
+          role: 'Coordinator & Assistant Lecturer – Mobile Application and Technology',
           company: 'UNIVERSITAS LAMPUNG',
-          location: 'FMIPA UNILA',
+          location: 'FEB & FMIPA UNILA',
           type: 'PART-TIME',
           year: '2025',
           period: 'Agust 2025 - Des 2025',
-          duration: '6 BULAN',
+          duration: '5 BULAN',
           workType: 'ON-SITE',
+          skills: 'Mobile Development, Flutter, Kotlin, Android Studio, Mentoring & +5 keahlian',
           details: [
-            'Memfasilitasi sesi praktikum laboratorium terkait konsep dasar pembuatan aplikasi mobile.',
-            'Membimbing pembuatan tata letak UI, penanganan event, serta siklus hidup aplikasi Android.',
-            'Menyiapkan modul practical dan membantu dosen pengampu dalam penilaian proyek akhir semester.'
+            'Membimbing lebih dari 130 mahasiswa dalam praktikum Mobile Application & Technology menggunakan Flutter dan Kotlin.',
+            'Membantu mahasiswa menyelesaikan kendala teknis melalui proses troubleshooting, debugging, dan code review.',
+            'Menyusun serta mengelola modul praktikum, dokumentasi pembelajaran, dan administrasi menggunakan Microsoft Word, Excel, dan PowerPoint.',
+            'Memberikan pendampingan teknis serta berkoordinasi dengan dosen untuk memastikan proses pembelajaran berjalan efektif.',
+            'Mengembangkan kemampuan komunikasi, pelayanan, problem solving, dan kerja sama tim melalui pendampingan akademik secara langsung.'
           ]
         },
         {
@@ -480,10 +590,13 @@ export const translations = {
           period: 'Sept 2022 - Okto 2023',
           duration: '1 TAHUN 2 BULAN',
           workType: 'ON-SITE',
+          skills: 'Public Relations (Humas), Event Management, Teamwork, Communication & +5 keahlian',
           details: [
-            'Mengordinasikan penyelenggaraan seminar teknologi, workshop, dan perlombaan ilmu komputer.',
-            'Mengelola logistik acara, koordinasi pemateri, serta sistem pendaftaran peserta.',
-            'Membangun kerja sama tim antar panitia mahasiswa untuk memastikan kesuksesan seluruh rangkaian acara.'
+            'Berkontribusi sebagai panitia dalam berbagai kegiatan HIMAKOM, seperti PRINTER 2023, LKMMIK-TD, PRJXHT, dan KWI, khususnya pada Divisi Hubungan Masyarakat (Humas).',
+            'Berkoordinasi dengan panitia dan berbagai pihak untuk mendukung kelancaran pelaksanaan kegiatan, termasuk komunikasi dengan peserta dan stakeholder.',
+            'Membantu proses perencanaan, koordinasi, dan pelaksanaan acara agar berjalan sesuai jadwal dan target yang telah ditentukan.',
+            'Menangani berbagai kendala operasional selama kegiatan dengan mengutamakan komunikasi yang efektif, kerja sama tim, dan penyelesaian masalah secara cepat.',
+            'Mengembangkan kemampuan komunikasi, pelayanan, manajemen waktu, adaptasi, serta kolaborasi dalam lingkungan kerja yang dinamis.'
           ]
         }
       ]
@@ -498,16 +611,39 @@ export const translations = {
       seeMore: 'Lihat Lebih Banyak Sertifikat',
       seeLess: 'Tampilkan Lebih Sedikit',
       items: [
-        { id: 1, title: 'Project Express & MongoDB', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 2, title: 'Node.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 3, title: 'Express & EJS', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 4, title: 'Middleware Express', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 5, title: 'Express.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 6, title: 'Mongoose', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 7, title: 'MongoDB', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 8, title: 'Tailwind CSS', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 9, title: 'Go (Golang)', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
-        { id: 10, title: 'React.js', issuer: 'CodePolitan', date: 'September 2025', url: '#' },
+        { id: 1, title: 'Front-end Untuk Pemula', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: '#' },
+        { id: 2, title: 'Dasar Pemrograman Javascript', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: '#' },
+        { id: 3, title: 'Dasar Pemrograman Web', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: '#' },
+        { id: 4, title: 'Belajar Dasar AI', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: '#' },
+        { id: 5, title: 'Belajar Dasar IT Support', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: '#' },
+        { id: 6, title: 'Belajar Membuat Aplikasi Flutter untuk Pemula', issuer: 'DICODING INDONESIA', date: '2026', category: 'MOBILE', url: '#' },
+        { id: 7, title: 'Belajar Dasar Pengembangan Aplikasi Mobile', issuer: 'DICODING INDONESIA', date: '2026', category: 'MOBILE', url: '#' },
+        { id: 8, title: 'Memulai Pemrograman dengan Dart', issuer: 'DICODING INDONESIA', date: '2026', category: 'MOBILE', url: '#' },
+        { id: 9, title: 'Introduction to Financial Literacy', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: '#' },
+        { id: 10, title: 'Short Class UI/UX DESAIN', issuer: 'Myskill', date: '2025', category: 'OTHER', url: '#' },
+        { id: 11, title: 'Tutorial CRUD dengan PHP', issuer: 'DUNIA CODING', date: '2025', category: 'WEB', url: '#' },
+        { id: 12, title: 'Advanced Mobile Programming', issuer: 'UNIVERSITAS LAMPUNG', date: '2025', category: 'MOBILE', url: '#' },
+        { id: 13, title: 'Mobile Apps and Technology', issuer: 'UNIVERSITAS LAMPUNG', date: '2025', category: 'MOBILE', url: '#' },
+        { id: 14, title: 'Operating Systems', issuer: 'UNIVERSITAS LAMPUNG', date: '2024', category: 'OTHER', url: '#' },
+        { id: 15, title: 'HTML', issuer: 'Sololearn', date: '2024', category: 'WEB', url: '#' },
+        { id: 16, title: 'Google Analytics untuk pemula', issuer: 'GOOGLE', date: '2024', category: 'OTHER', url: '#' },
+        { id: 17, title: 'Git Learning Class', issuer: 'DICODING INDONESIA', date: '2024', category: 'OTHER', url: '#' },
+        { id: 18, title: 'Belajar Git', issuer: 'CODEPOLITAN', date: '2024', category: 'OTHER', url: '#' },
+        { id: 19, title: 'UI/UX Designer', issuer: 'DIGITALENT', date: '2024', category: 'OTHER', url: '#' },
+        { id: 20, title: 'Worskhop Nasional HIMAKOM x XDEMIA', issuer: 'XDEMIA', date: '2024', category: 'OTHER', url: '#' },
+        { id: 21, title: 'Graphic Design Training', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 22, title: 'General Lecture Participant', issuer: 'FMIPA UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 23, title: 'HINCAR Participant', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 24, title: 'Public Lecture on Blockchain', issuer: 'FMIPA UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 25, title: 'Scientific Study Tour', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 26, title: 'Computer Science Showdown', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 27, title: 'PANITIA PRJXHT 2023', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 28, title: 'PANITIA LKMMIK-TD 2023', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 29, title: 'PANITIA PRINTER 2023', issuer: 'HIMAKOM UNILA', date: '2023', category: 'OTHER', url: '#' },
+        { id: 30, title: 'PESERTA - LKMMIK-TD 2022', issuer: 'HIMAKOM UNILA', date: '2022', category: 'OTHER', url: '#' },
+        { id: 31, title: 'PESERTA PRINTER 2022', issuer: 'HIMAKOM UNILA', date: '2022', category: 'OTHER', url: '#' },
+        { id: 32, title: '2nd Place in Valorant', issuer: 'HIMAKOM UNILA', date: '2022', category: 'OTHER', url: '#' },
+        { id: 33, title: 'BIMTEK Artificial Intelligence', issuer: 'BRIN 2026', date: '2026', category: 'OTHER', url: '#' }
       ]
     },
     contact: {
@@ -524,19 +660,19 @@ export const translations = {
           title: 'Watch My Content',
           description: 'Subscribe channel YouTube saya untuk konten kreatif, tutorial, dan update terbaru.',
           button: 'Watch on YouTube',
-          url: 'https://youtube.com/@dedejuniarputra',
+          url: 'https://www.youtube.com/@dedejuniarputraunila6525',
         },
         instagram: {
           title: 'Follow My Journey',
           description: 'Ikuti perjalanan kreatif saya.',
           button: 'Go to Instagram',
-          url: 'https://instagram.com/dedejuniarputra',
+          url: 'https://www.instagram.com/dezxz__?igsh=MWY0Y294YW1pZmF3Yg%3D%3D',
         },
         linkedin: {
           title: "Let's Connect",
           description: 'Terhubung dengan saya secara profesional.',
           button: 'Go to Linkedin',
-          url: 'https://linkedin.com/in/dedejuniarputra',
+          url: 'https://www.linkedin.com/in/dedejuniarputraaa/',
         },
         tiktok: {
           title: 'Join the Fun',
@@ -565,7 +701,7 @@ type LanguageContextType = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('EN');
+  const [language, setLanguageState] = useState<Language>('ID');
 
   useEffect(() => {
     const savedLang = localStorage.getItem('portfolio_lang') as Language;

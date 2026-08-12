@@ -7,6 +7,7 @@ import siadikImg from '@/src/assets/siadik.png';
 import tennisImg from '@/src/assets/tennisinkuy.jpg';
 import aurorababyspaImg from '@/src/assets/aurorababyspa.png';
 import cekKhodamImg from '@/src/assets/cekkhodammulek.jpg';
+import portofolioImg from '@/src/assets/portofolio.png';
 
 interface ArchitectureNode {
   label: string;
@@ -16,7 +17,7 @@ interface ArchitectureNode {
 interface Project {
   id: string;
   title: string;
-  category: 'WEB' | 'MOBILE' | 'UI/UX';
+  category: 'WEB' | 'MOBILE';
   status: 'Completed' | 'In Progress';
   description: string;
   tech: string[];
@@ -35,7 +36,7 @@ interface Project {
 export default function Projects() {
   const { t, language } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [activeFilter, setActiveFilter] = useState<'ALL' | 'WEB' | 'MOBILE' | 'UI/UX'>('ALL');
+  const [activeFilter, setActiveFilter] = useState<'ALL' | 'WEB' | 'MOBILE'>('ALL');
   const [isExpanded, setIsExpanded] = useState(false);
 
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -192,6 +193,51 @@ export default function Projects() {
               'Katalog program kursus tenis meja & kurikulum latihan terstruktur',
               'Alur pendaftaran peserta online & penjadwalan sesi yang efisien',
               'Antarmuka web responsif yang dioptimalkan untuk aksesibilitas di semua perangkat',
+            ],
+    },
+
+    {
+      id: 'portofoliome',
+      title: 'PORTOFOLIO.ME',
+      role: 'FullStack Web Developer',
+      category: 'WEB',
+      status: 'Completed',
+      description:
+        language === 'EN'
+          ? 'PORTOFOLIO.ME is a modern, responsive personal portfolio website built with Next.js, React.js, and Tailwind CSS. Features dynamic multi-language switching (EN/ID), interactive skills showcase, project architecture details, and smooth glassmorphism dark theme UI.'
+          : 'PORTOFOLIO.ME adalah website portofolio pribadi modern dan responsif yang dibangun menggunakan Next.js, React.js, dan Tailwind CSS. Dilengkapi fitur beralih bahasa interaktif (EN/ID), showcase keahlian teknologi, detail arsitektur proyek, serta antarmuka dark glassmorphism yang elegan.',
+      tech: ['Next.js', 'React.js', 'Tailwind CSS', 'TypeScript', 'Vercel', 'Git'],
+      liveUrl: 'https://dedejuniarputra.vercel.app',
+      image: portofolioImg,
+      architectureSubtitle:
+        language === 'EN'
+          ? 'Modern Next.js App Router architecture and multi-language context flow.'
+          : 'Arsitektur Next.js App Router modern dan alur konteks multi-bahasa.',
+      nodes: {
+        row1: [
+          { label: 'Next.js App Router', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
+          { label: 'Language Context Provider', color: 'border-blue-500/40 text-blue-400 bg-blue-950/30' },
+        ],
+        row2: [
+          { label: 'Tailwind Glassmorphism UI', color: 'border-indigo-500/40 text-indigo-400 bg-indigo-950/30' },
+          { label: 'Interactive Component Layer', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
+        ],
+        row3: [
+          { label: 'Vercel Deployment', color: 'border-zinc-700 text-zinc-300 bg-zinc-900' },
+          { label: 'TypeScript Types', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
+        ],
+      },
+      features:
+        language === 'EN'
+          ? [
+              'Modern dark glassmorphism UI with responsive multi-language support (EN/ID)',
+              'Interactive skills showcase with real-time category filtering & custom icons',
+              'Production-ready Next.js App Router architecture deployed on Vercel',
+            ]
+          : [
+              'Antarmuka dark glassmorphism modern dengan dukungan multi-bahasa responsif (EN/ID)',
+              'Showcase keahlian interaktif dengan filter kategori & ikon kustom',
+              'Arsitektur Next.js App Router yang siap produksi dan dideploy di Vercel',
             ],
     },
 
@@ -421,49 +467,6 @@ export default function Projects() {
             ],
     },
 
-    {
-      id: 'uiux-system',
-      title: 'Dark Mode SaaS Design System',
-      category: 'UI/UX',
-      status: 'Completed',
-      description:
-        language === 'EN'
-          ? 'A high-fidelity minimalist UI/UX design system crafted with glassmorphic aesthetic, responsive component tokens, and fluid micro-interactions.'
-          : 'Sistem desain UI/UX minimalis high-fidelity yang dibuat dengan estetika glassmorphic, token komponen responsif, dan mikro-interaksi halus.',
-      tech: ['Figma', 'UI/UX', 'Design System', 'Glassmorphism', 'Prototyping'],
-      liveUrl: 'https://github.com/dedejuniarputra',
-      image: '/src/assets/projects/uiux-system.png',
-      architectureSubtitle:
-        language === 'EN'
-          ? 'UI/UX component hierarchy and design token system.'
-          : 'Hirarki komponen UI/UX dan sistem token desain.',
-      nodes: {
-        row1: [
-          { label: 'Design Tokens', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'Figma Library', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
-        ],
-        row2: [
-          { label: 'Component Specs', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
-          { label: 'UX Prototypes', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-        ],
-        row3: [
-          { label: 'Color Tokens', color: 'border-zinc-700 text-zinc-300 bg-zinc-900' },
-          { label: 'Micro-interactions', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-        ],
-      },
-      features:
-        language === 'EN'
-          ? [
-              'Custom dark-mode color palette with HSL token mapping',
-              'Responsive grid layout rules for Web & Mobile viewports',
-              'Interactive micro-animations and state hover triggers',
-            ]
-          : [
-              'Palet warna dark-mode kustom dengan pemetaan token HSL',
-              'Aturan tata letak grid responsif untuk tampilan Web & Mobile',
-              'Mikro-animasi interaktif dan pemicu kursor hover',
-            ],
-    },
   ];
 
   const filteredProjects = activeFilter === 'ALL'
@@ -525,7 +528,7 @@ export default function Projects() {
           }`}
         >
           <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-md shadow-xl max-w-full overflow-x-auto">
-            {(['ALL', 'WEB', 'MOBILE', 'UI/UX'] as const).map((filter) => {
+            {(['ALL', 'WEB', 'MOBILE'] as const).map((filter) => {
               const isActive = activeFilter === filter;
               return (
                 <button
@@ -783,11 +786,6 @@ function ProjectCard({
               // Clean Mobile Smartphone Icon
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
-            ) : project.category === 'UI/UX' ? (
-              // Clean Wireframe Layout Design Icon
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
               </svg>
             ) : (
               // Web Desktop Monitor Icon

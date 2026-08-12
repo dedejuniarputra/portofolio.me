@@ -8,6 +8,7 @@ export default function Certificates() {
   const sectionRef = useRef<HTMLElement>(null);
   const [sectionVisible, setSectionVisible] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<'ALL' | 'WEB' | 'MOBILE' | 'OTHER'>('ALL');
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -28,9 +29,13 @@ export default function Certificates() {
     return () => observer.disconnect();
   }, []);
 
-  const visibleItems = showAll
+  const filteredItems = activeFilter === 'ALL'
     ? t.certificates.items
-    : t.certificates.items.slice(0, 8);
+    : t.certificates.items.filter((item: any) => item.category === activeFilter);
+
+  const visibleItems = showAll
+    ? filteredItems
+    : filteredItems.slice(0, 8);
 
   return (
     <section id="certificates" ref={sectionRef} className="relative w-full pt-24 pb-20 bg-black text-white overflow-hidden select-none">
@@ -75,6 +80,36 @@ export default function Certificates() {
           <p className="text-zinc-500 text-sm font-mono tracking-wide">
             {t.certificates.subtitle}
           </p>
+        </div>
+
+        {/* ── Category Filter Tab Switcher ─────────────────────── */}
+        <div
+          className={`flex items-center justify-center pt-2 ${
+            sectionVisible ? 'sr-visible-pop' : 'sr-hidden'
+          }`}
+          style={sectionVisible ? { animationDelay: '50ms' } : undefined}
+        >
+          <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-zinc-950/80 border border-zinc-800/80 backdrop-blur-md shadow-xl max-w-full overflow-x-auto">
+            {(['ALL', 'WEB', 'MOBILE', 'OTHER'] as const).map((filter) => {
+              const isActive = activeFilter === filter;
+              return (
+                <button
+                  key={filter}
+                  onClick={() => {
+                    setActiveFilter(filter);
+                    setShowAll(false);
+                  }}
+                  className={`px-3.5 sm:px-5 py-1.5 rounded-full text-xs font-mono tracking-wide transition-all duration-300 cursor-pointer select-none whitespace-nowrap ${
+                    isActive
+                      ? 'bg-[#13ec7b]/10 border border-[#13ec7b]/40 text-[#13ec7b] font-semibold shadow-[0_0_15px_rgba(19,236,123,0.12)]'
+                      : 'text-zinc-400 hover:text-white border border-transparent hover:bg-zinc-800/50'
+                  }`}
+                >
+                  {filter}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* ── Certificate Cards Grid ──────────────────────────── */}
@@ -130,7 +165,7 @@ export default function Certificates() {
         </div>
 
         {/* ── See More / See Less Toggle Button ──────────────── */}
-        {t.certificates.items.length > 8 && (
+        {filteredItems.length > 8 && (
           <div className="flex justify-center pt-2">
             <button
               onClick={() => setShowAll(!showAll)}

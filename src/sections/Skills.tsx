@@ -3,6 +3,84 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/src/context/LanguageContext';
 
+/* ─── Custom Vector SVG Icons ────────────────────────────────────────── */
+const ChatGPTIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6 text-[#10a37f]" fill="currentColor">
+    <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0811 4.7792-2.7582a.7944.7944 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.5045 4.5045 0 0 1-4.4954 4.495zm-9.6607-4.1254a4.4707 4.4707 0 0 1-.5355-3.0137l.142.0859 4.7839 2.7582a.7705.7705 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4997 4.4997 0 0 1-6.1408-1.6464zM2.3401 8.5956a4.466 4.466 0 0 1 2.3655-1.9728V12.2a.7657.7657 0 0 0 .3879.6765l5.8143 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8314-2.7867A4.4997 4.4997 0 0 1 2.34 8.5956zm16.0993 3.8558l-5.8428-3.3685 2.02-1.1686a.0757.0757 0 0 1 .071 0l4.8314 2.7867a4.4954 4.4954 0 0 1-.6869 8.1131v-5.687a.7944.7944 0 0 0-.3927-.6757zm2.0104-3.0232l-.1419-.0859-4.7744-2.7582a.7753.7753 0 0 0-.7854 0L8.9053 9.9527V7.6203a.0757.0757 0 0 1 .0332-.0615l4.8314-2.7867a4.5 4.5 0 0 1 6.6809 4.6603zm-12.6401-4.135a4.4707 4.4707 0 0 1 2.8764 1.0408l-.1419.0811-4.7792 2.7582a.7944.7944 0 0 0-.3927.6813v6.7369L3.3444 15.34a.071.071 0 0 1-.038-.052V9.7054a4.5045 4.5045 0 0 1 4.4954-4.495zM12 14.3753l-2.6174-1.5112a.0804.0804 0 0 1-.038-.0663V9.769a.0804.0804 0 0 1 .038-.0663L12 8.1915l2.6174 1.5112a.0804.0804 0 0 1 .038.0663v3.0288a.0804.0804 0 0 1-.038.0663z" />
+  </svg>
+);
+
+const ClaudeIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-6 h-6" fill="#D97757">
+    <path d="M49.2 11.5c1.8-.2 3.1 3.5 3.7 8.3.6 4.8.4 10.7 0 15.6 4.2-3.6 9.4-6.8 14.4-9.1 5-2.3 8.8-1.7 8.6 0-.2 1.7-3.9 4.6-9.1 7.9-5.2 3.3-10.9 6.9-15.5 9.7 4.6 1.8 10.3 3.8 15.4 5.9 5.1 2.1 7.5 4.2 6.3 5.3-1.2 1.1-4.5.3-9.7-1.7-5.2-2-10.8-4.7-15.2-7.3 2.9 4.5 5.9 9.7 8.1 14.6 2.2 4.9 2.3 8.6.9 8.9-1.4.3-3.8-2.8-6.5-7.6-2.7-4.8-5.3-10.7-6.8-15.8-1.4 5.1-3.7 11-6.5 15.8-2.7 4.8-5.1 7.9-6.5 7.6-1.4-.3-1.3-4.1.9-8.9 2.2-4.9 5.2-10.1 8.1-14.6-4.4 2.6-10 5.3-15.2 7.3-5.2 2-8.5 2.8-9.7 1.7-1.2-1.1 1.2-3.2 6.3-5.3 5.1-2.1 10.8-4.1 15.4-5.9-4.6-2.8-10.3-6.4-15.5-9.7-5.2-3.3-8.9-6.2-9.1-7.9-.2-1.7 3.6-2.3 8.6 0 5 2.3 10.2 5.5 14.4 9.1-.4-4.9-.6-10.8 0-15.6.6-4.8 1.9-8.5 3.7-8.3z" />
+  </svg>
+);
+
+const GeminiIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6">
+    <defs>
+      <linearGradient id="gemini-grad-icon" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#4e87f5" />
+        <stop offset="50%" stopColor="#9b72cb" />
+        <stop offset="100%" stopColor="#d96570" />
+      </linearGradient>
+    </defs>
+    <path
+      fill="url(#gemini-grad-icon)"
+      d="M12 0C12 6.627 6.627 12 0 12c6.627 0 12 5.373 12 12 0-6.627 5.373-12 12-12-6.627 0-12-5.373-12-12z"
+    />
+  </svg>
+);
+
+const AntigravityIcon = () => (
+  <svg viewBox="0 0 100 100" className="w-6 h-6">
+    <defs>
+      <linearGradient id="antigravity-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+        <stop offset="0%" stopColor="#3B82F6" />
+        <stop offset="30%" stopColor="#06B6D4" />
+        <stop offset="55%" stopColor="#10B981" />
+        <stop offset="80%" stopColor="#F59E0B" />
+        <stop offset="100%" stopColor="#EF4444" />
+      </linearGradient>
+    </defs>
+    <path
+      fill="url(#antigravity-grad)"
+      d="M50 18c-5.5 0-13 11-20.5 32-3.2 9-7 15.5-12 19.5-2.5 2-4.5 3-6.5 4-1.8.9-2.5 1.8-1.5 2.5 1 .7 3 0 6.2-1.2 5.2-2 9.2-7 14.2-15.2 5.8-9.8 11.5-22.5 20.1-22.5s14.3 12.7 20.1 22.5c5 8.2 9 13.2 14.2 15.2 3.2 1.2 5.2 1.9 6.2 1.2 1-.7.3-1.6-1.5-2.5-2-1-4-2-6.5-4-5-4-8.8-10.5-12-19.5C63 29 55.5 18 50 18z"
+    />
+  </svg>
+);
+
+const HostingerIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6">
+    <rect x="9.7" y="1" width="4.6" height="9.1" rx="0.8" fill="#673DE6" />
+    <rect x="9.7" y="13.9" width="4.6" height="9.1" rx="0.8" fill="#673DE6" />
+    <rect x="2.8" y="7.4" width="4.6" height="9.1" rx="0.8" fill="#673DE6" />
+    <rect x="16.6" y="7.4" width="4.6" height="9.1" rx="0.8" fill="#673DE6" />
+  </svg>
+);
+
+const GetXIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6">
+    <rect width="24" height="24" rx="6" fill="#8E44AD" />
+    <path d="M7 7l10 10M17 7L7 17" stroke="#FFFFFF" strokeWidth="3.2" strokeLinecap="round" />
+  </svg>
+);
+
+const ProviderIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-6 h-6">
+    <path fill="#54C5F8" d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.2l6.8 3.8L12 11.8 5.2 8 12 4.2zM5 9.4l6 3.3v6.3l-6-3.3V9.4zm8 9.6v-6.3l6-3.3v6.3l-6 3.3z"/>
+  </svg>
+);
+
+const CUSTOM_ICONS: Record<string, React.ReactNode> = {
+  'ChatGPT': <ChatGPTIcon />,
+  'Claude': <ClaudeIcon />,
+  'Gemini': <GeminiIcon />,
+  'Antigravity': <AntigravityIcon />,
+  'GetX': <GetXIcon />,
+  'Provider': <ProviderIcon />,
+};
+
 /* ─── Brand logo map — uses Simple Icons & Devicon CDN ───────────────── */
 interface SkillMeta {
   iconUrl: string;   // CDN URL or empty string for fallback
@@ -12,107 +90,79 @@ interface SkillMeta {
 
 const SKILL_META: Record<string, SkillMeta> = {
   // ── Frontend ──────────────────────────────────────────────────────────
+  'HTML':           { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',                 bg: '#E34F2615', fallback: 'HTML' },
   'React.js':       { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',                 bg: '#61DAFB15', fallback: '⚛' },
   'Next.js':        { iconUrl: 'https://cdn.simpleicons.org/nextdotjs/white',                                                         bg: '#ffffff15', fallback: '▲' },
-  'TypeScript':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',       bg: '#3178C615', fallback: 'TS' },
+  'Bootstrap':      { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg',         bg: '#7952B315', fallback: 'BS' },
   'Tailwind CSS':   { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',     bg: '#06B6D415', fallback: '~' },
-  'JavaScript':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',       bg: '#F7DF1E15', fallback: 'JS' },
-  'HTML & CSS':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',                 bg: '#E34F2615', fallback: '</>' },
-  // ── Backend ───────────────────────────────────────────────────────────
-  'Laravel':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg', bg: '#FF2D2015', fallback: 'Lv' },
-  'PHP':            { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg',                     bg: '#8892BF15', fallback: 'PHP' },
-  'Node.js':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',               bg: '#33993315', fallback: '⬡' },
-  'REST API':       { iconUrl: '',                                                                                                    bg: '#13ec7b15', fallback: '⇄' },
-  // ── Mobile ────────────────────────────────────────────────────────────
-  'Flutter':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg',             bg: '#54C5F815', fallback: '◆' },
-  'Dart':           { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg',                   bg: '#0175C215', fallback: 'D' },
-  'Android Studio': { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg',bg: '#3DDC8415', fallback: '🤖' },
-  'Firebase':       { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg',           bg: '#FFCA2815', fallback: '🔥' },
-  'GetX':           { iconUrl: '',                                                                                                    bg: '#9B59B615', fallback: 'Gx' },
-  'Provider':       { iconUrl: '',                                                                                                    bg: '#79554815', fallback: 'Pv' },
-  // ── Database & Tools ──────────────────────────────────────────────────
+
+  // ── Backend & Database ────────────────────────────────────────────────
+  'Laravel':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg',             bg: '#FF2D2015', fallback: 'Lv' },
   'MySQL':          { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',                 bg: '#4479A115', fallback: 'My' },
+  'Firebase':       { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg',           bg: '#FFCA2815', fallback: '🔥' },
   'PostgreSQL':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',       bg: '#4169E115', fallback: 'Pg' },
-  'Git':            { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',                     bg: '#F0503215', fallback: '⎇' },
-  'GitHub':         { iconUrl: 'https://cdn.simpleicons.org/github/white',                                                            bg: '#ffffff15', fallback: '⊙' },
-  'Postman':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg',             bg: '#FF6C3715', fallback: '📮' },
-  'VS Code':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg',              bg: '#007ACC15', fallback: '</>' },
+  'Node.js':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',               bg: '#33993315', fallback: '⬡' },
+
+  // ── Mobile ────────────────────────────────────────────────────────────
+  'Android Studio': { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg',bg: '#3DDC8415', fallback: '🤖' },
+  'Flutter':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg',             bg: '#54C5F815', fallback: '◆' },
+  'Kotlin':         { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg',               bg: '#7F52FF15', fallback: 'K' },
+  'Dart':           { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg',                   bg: '#0175C215', fallback: 'D' },
+  'GetX':           { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg',             bg: '#9B59B615', fallback: 'Gx' },
+  'Provider':       { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg',             bg: '#79554815', fallback: 'Pv' },
+
+  // ── Tools & Hosting ──────────────────────────────────────────────────
+  'VS Code':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg', bg: '#007ACC15', fallback: '</>' },
+  'Antigravity':    { iconUrl: '', bg: '#13ec7b15', fallback: 'AG' },
+  'Git':            { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg', bg: '#F0503215', fallback: '⎇' },
+  'GitHub':         { iconUrl: 'https://cdn.simpleicons.org/github/white', bg: '#ffffff15', fallback: '⊙' },
+  'Laragon':        { iconUrl: 'https://cdn.simpleicons.org/laragon/00A9E0', bg: '#00A9E015', fallback: 'Lg' },
+  'Vercel':         { iconUrl: 'https://cdn.simpleicons.org/vercel/white', bg: '#ffffff15', fallback: '▲' },
+  'Hostinger':      { iconUrl: 'https://cdn.simpleicons.org/hostinger/673DE6', bg: '#673DE615', fallback: 'H' },
+  'Figma':          { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg', bg: '#F24E1E15', fallback: 'Fg' },
+
+  // ── AI Tools ──────────────────────────────────────────────────────────
+  'ChatGPT':        { iconUrl: '', bg: '#74aa9c15', fallback: 'AI' },
+  'Claude':         { iconUrl: '', bg: '#D9775715', fallback: 'Cl' },
+  'Gemini':         { iconUrl: '', bg: '#8E75FF15', fallback: 'Ge' },
 };
 
 
-/* ─── Single Skill Card ─────────────────────────────────────────────── */
-function SkillPill({ name }: { name: string }) {
+/* ─── Single Skill Card Component ───────────────────────────────────── */
+function SkillCard({ name }: { name: string }) {
   const meta = SKILL_META[name] ?? { iconUrl: '', bg: '#ffffff0e', fallback: '?' };
+  const [imgError, setImgError] = useState(false);
+  const customIcon = CUSTOM_ICONS[name];
 
   return (
-    <div className="flex-shrink-0 group flex items-center gap-3 pl-2 pr-5 py-2 rounded-2xl
-                    bg-zinc-900/50 border border-zinc-800/60
-                    hover:bg-zinc-800/50 hover:border-zinc-600/50
-                    transition-all duration-300 cursor-default">
-
-      {/* Brand icon container */}
+    <div className="group relative bg-zinc-950/70 border border-zinc-800/80 rounded-2xl p-4 flex flex-col items-center justify-center gap-2.5 backdrop-blur-xl hover:bg-zinc-900/60 hover:border-[#13ec7b]/50 hover:shadow-[0_0_20px_rgba(19,236,123,0.12)] transition-all duration-300 cursor-default">
+      {/* Brand Icon Box */}
       <div
-        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0
-                   group-hover:scale-110 transition-transform duration-300"
+        className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 border border-zinc-800/80 group-hover:border-[#13ec7b]/40 shadow-inner overflow-hidden"
         style={{ background: meta.bg }}
       >
-        {meta.iconUrl ? (
+        {customIcon ? (
+          customIcon
+        ) : meta.iconUrl && !imgError ? (
           /* eslint-disable-next-line @next/next/no-img-element */
           <img
             src={meta.iconUrl}
             alt={name}
-            width={22}
-            height={22}
-            className="object-contain"
+            width={26}
+            height={26}
+            className="w-6 h-6 object-contain filter drop-shadow"
             loading="lazy"
+            onError={() => setImgError(true)}
           />
         ) : (
-          <span className="text-sm font-bold text-zinc-300">{meta.fallback}</span>
+          <span className="text-xs font-bold text-[#13ec7b] font-mono">{meta.fallback}</span>
         )}
       </div>
 
-      {/* Skill name */}
-      <span className="text-sm font-semibold text-zinc-300 group-hover:text-white
-                       transition-colors duration-200 whitespace-nowrap tracking-wide">
+      {/* Name label */}
+      <span className="text-xs font-semibold text-zinc-300 group-hover:text-white transition-colors duration-200 text-center tracking-wide line-clamp-1">
         {name}
       </span>
-    </div>
-  );
-}
-
-/* ─── Marquee Row ───────────────────────────────────────────────────── */
-interface MarqueeRowProps {
-  items: string[];
-  reverse?: boolean;
-  speed?: number;
-}
-
-function MarqueeRow({ items, reverse = false, speed = 28 }: MarqueeRowProps) {
-  const tripled = [...items, ...items, ...items];
-  const [paused, setPaused] = useState(false);
-
-  return (
-    <div
-      className="relative overflow-hidden w-full py-1 cursor-pointer"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
-      {/* Left fade */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-black to-transparent" />
-      {/* Right fade */}
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-black to-transparent" />
-
-      <div
-        className="flex gap-3 w-max"
-        style={{
-          animation: `marquee-scroll${reverse ? '-reverse' : ''} ${speed}s linear infinite`,
-          animationPlayState: paused ? 'paused' : 'running',
-        }}
-      >
-        {tripled.map((item, i) => (
-          <SkillPill key={`${item}-${i}`} name={item} />
-        ))}
-      </div>
     </div>
   );
 }
@@ -147,14 +197,6 @@ export default function Skills() {
     <>
       {/* Inject keyframe animations */}
       <style>{`
-        @keyframes marquee-scroll {
-          0%   { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
-        }
-        @keyframes marquee-scroll-reverse {
-          0%   { transform: translateX(-33.333%); }
-          100% { transform: translateX(0); }
-        }
         @keyframes smooth-slide-up {
           from { opacity: 0; transform: translateY(24px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -178,7 +220,7 @@ export default function Skills() {
         .star-trail-particle { animation: star-trail-fade 0.75s ease-out forwards; }
       `}</style>
 
-      <section id="skills" ref={sectionRef} className="relative w-full pt-24 pb-20 bg-black text-white overflow-hidden">
+      <section id="skills" ref={sectionRef} className="relative w-full pt-24 pb-20 bg-black text-white overflow-hidden select-none">
         {/* Subtle background grid */}
         <div className="absolute inset-0 bg-grid-soft pointer-events-none [mask-image:radial-gradient(ellipse_at_center,black_75%,transparent_100%)]" />
 
@@ -219,64 +261,69 @@ export default function Skills() {
             </p>
           </div>
 
-            {/* ── Skill Category Rows ─────────────────────────────── */}
-          <div className="space-y-6">
-            {t.skills.categories.map((cat, index) => (
-              <div
-                key={cat.label}
-                className={`space-y-3 ${
-                  sectionVisible ? 'reveal-visible' : 'reveal-hidden'
-                }`}
-                style={sectionVisible ? { animationDelay: `${(index + 1) * 120}ms` } : {}}
-              >
-
-                {/* Category label */}
-                <div className="flex items-center gap-2 px-1">
-                  <div className="w-7 h-7 rounded-lg bg-[#052615] border border-[#13ec7b]/30 flex items-center justify-center text-[#13ec7b] shrink-0">
-                    {index === 0 && (
-                      // Frontend — code brackets
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                    )}
-                    {index === 1 && (
-                      // Backend — server rack
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">
-                        <rect x="2" y="3" width="20" height="5" rx="1" strokeLinecap="round" strokeLinejoin="round" />
-                        <rect x="2" y="10" width="20" height="5" rx="1" strokeLinecap="round" strokeLinejoin="round" />
-                        <circle cx="18" cy="5.5" r="0.8" fill="currentColor" />
-                        <circle cx="18" cy="12.5" r="0.8" fill="currentColor" />
-                      </svg>
-                    )}
-                    {index === 2 && (
-                      // Mobile — smartphone
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                    )}
-                    {index === 3 && (
-                      // Database & Tools — cylinder database
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">
-                        <ellipse cx="12" cy="5" rx="8" ry="3" strokeLinecap="round" />
-                        <path strokeLinecap="round" d="M4 5v6c0 1.657 3.582 3 8 3s8-1.343 8-3V5" />
-                        <path strokeLinecap="round" d="M4 11v6c0 1.657 3.582 3 8 3s8-1.343 8-3v-6" />
-                      </svg>
-                    )}
+          {/* ── Skills Split Container (Reference Image 2 & 3) ── */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            
+            {/* Left Column — Stat Circle Badge & Description */}
+            <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
+              
+              {/* Glowing Circular Tech Badge */}
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div className="relative group mb-6">
+                  <div className="w-40 h-40 sm:w-44 sm:h-44 rounded-full bg-gradient-to-br from-[#13ec7b]/25 via-zinc-900 to-black border-2 border-[#13ec7b]/40 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(19,236,123,0.18)] group-hover:scale-105 transition-transform duration-500">
+                    <span className="text-4xl sm:text-5xl font-black font-mono text-white tracking-tight drop-shadow-[0_0_15px_rgba(19,236,123,0.5)]">
+                      {t.skills.totalBadgeCount}
+                    </span>
+                    <span className="text-[10px] font-mono text-[#13ec7b] tracking-widest font-bold uppercase mt-1">
+                      {t.skills.totalBadgeLabel}
+                    </span>
+                    <span className="text-[9px] font-mono text-zinc-500 tracking-wider">
+                      STACK & TOOLS
+                    </span>
                   </div>
-                  <span className="text-xs font-semibold text-zinc-400 font-mono tracking-widest uppercase">
-                    {cat.label}
-                  </span>
-                  <div className="flex-1 h-px bg-zinc-800/60" />
+                  {/* Outer Ring Pulse */}
+                  <div className="absolute inset-0 rounded-full border border-[#13ec7b]/20 animate-ping pointer-events-none opacity-40" />
                 </div>
 
-                {/* Marquee row — alternating direction */}
-                <MarqueeRow
-                  items={cat.items}
-                  reverse={index % 2 !== 0}
-                  speed={20 + index * 5}
-                />
+                {/* Side Explanation */}
+                <p className="text-xs sm:text-sm text-zinc-400 font-mono leading-relaxed max-w-sm">
+                  {t.skills.sideDescription}
+                </p>
               </div>
-            ))}
+
+            </div>
+
+            {/* Right Column — Categorized Tech Grids */}
+            <div className="lg:col-span-8 space-y-10">
+              {t.skills.categories.map((cat, catIdx) => (
+                <div
+                  key={cat.label}
+                  className={`space-y-4 ${
+                    sectionVisible ? 'reveal-visible' : 'reveal-hidden'
+                  }`}
+                  style={sectionVisible ? { animationDelay: `${(catIdx + 1) * 100}ms` } : {}}
+                >
+                  {/* Category Header */}
+                  <div className="flex items-center gap-3">
+                    <span className="text-[#13ec7b] font-mono text-xs sm:text-sm font-extrabold tracking-widest">
+                      {cat.num}
+                    </span>
+                    <h3 className="text-xs sm:text-sm font-bold text-zinc-200 tracking-widest uppercase font-mono">
+                      {cat.label}
+                    </h3>
+                    <div className="flex-1 h-px bg-zinc-800/80" />
+                  </div>
+
+                  {/* Grid of Skill Cards */}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
+                    {cat.items.map((itemName) => (
+                      <SkillCard key={itemName} name={itemName} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
 
           {/* ── Interactive Code Snippets Showcase ─────────────── */}

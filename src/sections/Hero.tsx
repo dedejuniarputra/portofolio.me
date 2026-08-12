@@ -18,24 +18,37 @@ export default function Hero() {
   const roles = t.hero.roles;
 
   useEffect(() => {
-    const fullText = roles[currentRoleIndex] || roles[0];
+    let timer1: NodeJS.Timeout;
+    let timer2: NodeJS.Timeout;
 
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setCurrentText(fullText.substring(0, currentText.length + 1));
-        if (currentText.length + 1 === fullText.length) {
-          setTimeout(() => setIsDeleting(true), 2200);
-        }
+    const safeIndex = currentRoleIndex % (roles.length || 1);
+    const fullText = roles[safeIndex] || roles[0] || '';
+
+    if (!isDeleting) {
+      if (currentText !== fullText) {
+        timer1 = setTimeout(() => {
+          setCurrentText(fullText.substring(0, currentText.length + 1));
+        }, 70);
       } else {
-        setCurrentText(fullText.substring(0, currentText.length - 1));
-        if (currentText.length - 1 === 0) {
-          setIsDeleting(false);
-          setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
-        }
+        timer2 = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2200);
       }
-    }, isDeleting ? 30 : 70);
+    } else {
+      if (currentText.length > 0) {
+        timer1 = setTimeout(() => {
+          setCurrentText(fullText.substring(0, currentText.length - 1));
+        }, 30);
+      } else {
+        setIsDeleting(false);
+        setCurrentRoleIndex((prev) => (prev + 1) % (roles.length || 1));
+      }
+    }
 
-    return () => clearTimeout(timeout);
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
   }, [currentText, isDeleting, currentRoleIndex, roles]);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
@@ -154,17 +167,6 @@ export default function Hero() {
                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
               </svg>
             </a>
-
-            <a
-              href="mailto:dedejuniarputra00@gmail.com"
-              className="w-12 h-12 rounded-2xl bg-zinc-900/90 border border-zinc-800/80 flex items-center justify-center text-zinc-400 hover:text-[#13ec7b] hover:border-[#13ec7b]/50 hover:shadow-[0_0_15px_rgba(19,236,123,0.2)] transition-all cursor-pointer"
-              aria-label="Email"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </a>
-
             <a
               href="https://www.instagram.com/dezxz__?igsh=MWY0Y294YW1pZmF3Yg%3D%3D"
               target="_blank"
@@ -184,10 +186,10 @@ export default function Hero() {
         <div className="lg:col-span-6 flex justify-center items-center w-full py-6">
           <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-[410px]">
             
-            {/* Floating Pill Card 1: WEBSITE */}
+            {/* Floating Pill Card 1: OPEN TO WORK 2026 */}
             <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-5 z-30 px-3 py-1.5 bg-zinc-950/90 border border-zinc-800/90 rounded-xl shadow-2xl backdrop-blur-xl flex items-center gap-2 animate-float-slow hover:border-[#13ec7b]/60 transition-all duration-300">
-              <div className="w-2 h-2 rounded-full bg-[#13ec7b] shadow-[0_0_8px_#13ec7b]" />
-              <span className="text-[11px] font-mono font-bold tracking-wider text-white">WEBSITE</span>
+              <div className="w-2 h-2 rounded-full bg-[#13ec7b] shadow-[0_0_8px_#13ec7b] animate-pulse" />
+              <span className="text-[11px] font-mono font-bold tracking-wider text-white">OPEN TO WORK 2026</span>
             </div>
 
             {/* Floating Pill Card 2: MOBILE */}
@@ -196,10 +198,10 @@ export default function Hero() {
               <span className="text-[11px] font-mono font-bold tracking-wider text-white">MOBILE</span>
             </div>
 
-            {/* Floating Pill Card 3: AI Enthusiast */}
+            {/* Floating Pill Card 3: WEBSITE */}
             <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 z-30 px-3 py-1.5 bg-zinc-950/90 border border-zinc-800/90 rounded-xl shadow-2xl backdrop-blur-xl flex items-center gap-2 animate-float-delayed hover:border-purple-400/60 transition-all duration-300">
               <div className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.8)]" />
-              <span className="text-[11px] font-mono font-bold tracking-wider text-white">AI Enthusiast</span>
+              <span className="text-[11px] font-mono font-bold tracking-wider text-white">WEBSITE</span>
             </div>
 
             {/* Terminal Photo Card */}
