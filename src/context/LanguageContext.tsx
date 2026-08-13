@@ -39,7 +39,7 @@ export const translations = {
       name: "Dede Juniar Putra",
       bio1Suffix: ", a Software Engineer based in Bandar Lampung, Indonesia — specializing in web and mobile development, with a strong interest in System Analysis and IT Support. I am experienced in building systems end-to-end, from frontend UI to backend logic and database design, while understanding system requirements and troubleshooting.",
       bio2: "For web development, I build with Laravel, React.js, and Tailwind CSS, while for mobile development, I utilize Flutter. I am proficient in working with REST APIs, MySQL, Firebase, Git, as well as testing, debugging, troubleshooting, and system maintenance.",
-      bio3: "I hold a Bachelor's degree in Computer Science from the University of Lampung, with 2+ years of experience in Web Development and 1 year in Mobile Development. Currently, I am open to roles as a Software Engineer, Web Developer, Mobile Developer, System Analyst, or IT Support, as well as freelance opportunities.",
+      bio3: "I hold a Bachelor's degree in Computer Science from the University of Lampung, with 2+ years of experience in Web Development and 1+ year in Mobile Development. Currently, I am open to roles as a Software Engineer, Web Developer, Mobile Developer, System Analyst, or IT Support, as well as freelance opportunities.",
       stats: {
         projects: 'Projects Built',
         commits: 'Commits (2022 - 2026)',
@@ -381,7 +381,7 @@ export const translations = {
       name: "Dede Juniar Putra",
       bio1Suffix: ", seorang Software Engineer asal Bandar Lampung, Lampung — berfokus pada pengembangan web dan mobile, serta memiliki ketertarikan pada System Analyst dan IT Support. Saya terbiasa mengerjakan sistem dari sisi tampilan hingga backend dan basis data, sekaligus memahami alur kebutuhan sistem dan troubleshooting.",
       bio2: "Untuk pengembangan web saya menggunakan Laravel, React.js, dan Tailwind CSS, sedangkan untuk mobile development saya menggunakan Flutter. Saya juga terbiasa bekerja dengan REST API, MySQL, Firebase, Git, serta melakukan testing, debugging, troubleshooting, dan pemeliharaan sistem.",
-      bio3: "Saya merupakan lulusan S1 Ilmu Komputer Universitas Lampung dengan pengalaman 2+ tahun di Web Development dan 1 tahun di Mobile Development. Saat ini saya terbuka untuk peluang sebagai Software Engineer, Web Developer, Mobile Developer, System Analyst, maupun IT Support, serta menerima project freelance.",
+      bio3: "Saya merupakan lulusan S1 Ilmu Komputer Universitas Lampung dengan pengalaman 2+ tahun di Web Development dan 1+ tahun di Mobile Development. Saat ini saya terbuka untuk peluang sebagai Software Engineer, Web Developer, Mobile Developer, System Analyst, maupun IT Support, serta menerima project freelance.",
       stats: {
         projects: 'Proyek Selesai',
         commits: 'Komit Git (2025 - 2026)',
