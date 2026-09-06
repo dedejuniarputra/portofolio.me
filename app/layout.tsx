@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s | Dede Juniar Putra",
   },
   description:
-    "Portofolio resmi Dede Juniar Putra - Junior Software Engineer & AI Enthusiast. Menampilkan proyek mobile & web development, keahlian teknis, sertifikasi, dan pengalaman karier.",
+    "Portofolio resmi Dede Juniar Putra - Junior Software Developer & System Analyst. Menampilkan proyek mobile & web development, keahlian teknis, sertifikasi, dan pengalaman karier.",
   keywords: [
     "Dede Juniar Putra",
     "Portofolio Dede Juniar Putra",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dede Juniar Putra | Portofolio",
     description:
-      "Portofolio resmi Dede Juniar Putra - Junior Software Engineer & AI Enthusiast.",
+      "Portofolio resmi Dede Juniar Putra - Junior Software Developer & System Analyst.",
     url: "https://dedejuniarputra.me",
     siteName: "Dede Juniar Putra | Portofolio",
     locale: "id_ID",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dede Juniar Putra | Portofolio",
     description:
-      "Portofolio resmi Dede Juniar Putra - Junior Software Engineer & AI Enthusiast.",
+      "Portofolio resmi Dede Juniar Putra - Junior Software Developer & System Analyst.",
     images: ["/D.png"],
   },
   robots: {
@@ -102,7 +102,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Dede Juniar Putra",
   alternateName: ["Dede Juniar", "WHUSZ"],
-  jobTitle: "Junior Software Engineer & AI Enthusiast",
+  jobTitle: "Junior Software Developer & System Analyst",
   url: "https://dedejuniarputra.me",
   sameAs: [
     "https://github.com/dedejuniarputra",

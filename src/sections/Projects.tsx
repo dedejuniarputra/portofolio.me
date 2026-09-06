@@ -8,6 +8,7 @@ import tennisImg from '@/src/assets/tennisinkuy.jpg';
 import aurorababyspaImg from '@/src/assets/aurorababyspa.png';
 import cekKhodamImg from '@/src/assets/cekkhodammulek.jpg';
 import portofolioImg from '@/src/assets/portofolio.png';
+import goalTrackerImg from '@/src/assets/Goal.png';
 
 interface ArchitectureNode {
   label: string;
@@ -344,7 +345,7 @@ export default function Projects() {
           : 'GoalTracker adalah aplikasi manajemen tujuan berbasis web dengan estetika dark glassmorphism. Dirancang untuk memvisualisasikan target, melacak konsistensi harian hingga 100 hari dengan LocalStorage berprivasi penuh, serta perayaan pencapaian interaktif.',
       tech: ['HTML', 'Bootstrap','LocalStorage'],
       liveUrl: 'https://goaltracker-wheat.vercel.app',
-      image: '/src/assets/projects/cloud-analytics.png',
+      image: goalTrackerImg,
       architectureSubtitle:
         language === 'EN'
           ? 'Client-side state management and privacy-first local storage architecture.'
@@ -710,7 +711,12 @@ function ProjectCard({
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [sparkles, setSparkles] = useState<StarParticle[]>([]);
+  const [imageError, setImageError] = useState(false);
   const lastAddRef = useRef(0);
+
+  useEffect(() => {
+    setImageError(false);
+  }, [project.image]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = cardRef.current?.getBoundingClientRect();
@@ -734,6 +740,14 @@ function ProjectCard({
   const handleMouseLeave = () => {
     setSparkles([]);
   };
+
+  const imgSrc =
+    typeof project.image === 'object' && project.image !== null && 'src' in project.image
+      ? project.image.src
+      : typeof project.image === 'string'
+      ? project.image
+      : '';
+  const showPlaceholder = !imgSrc || imageError;
 
   return (
     <div
@@ -842,8 +856,49 @@ function ProjectCard({
 
       </div>
 
+      {/* Project Thumbnail Image Preview */}
+      <div
+        onClick={() => onSelect(project)}
+        className="relative z-10 my-4 w-full aspect-video rounded-xl overflow-hidden border border-zinc-800/80 bg-[#0c0c0e] group/img cursor-pointer transition-all duration-300 hover:border-[#13ec7b]/50 shadow-inner flex items-center justify-center select-none"
+      >
+        {!showPlaceholder ? (
+          <>
+            <img
+              src={imgSrc}
+              alt={project.title}
+              className="w-full h-full object-cover object-center transition-transform duration-500 ease-out group-hover/img:scale-105"
+              onError={() => setImageError(true)}
+            />
+            {/* Subtle Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover/img:opacity-20 transition-opacity" />
+
+            {/* Hover Quick "View Details" overlay */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
+              <span className="px-3 py-1.5 rounded-full bg-black/85 border border-[#13ec7b]/50 text-[#13ec7b] text-xs font-mono font-medium shadow-lg flex items-center gap-1.5 transform translate-y-2 group-hover/img:translate-y-0 transition-transform duration-300">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.573 16.49 16.638 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                {t.projects.viewDetails}
+              </span>
+            </div>
+          </>
+        ) : (
+          <div className="flex flex-col items-center justify-center p-6 text-center space-y-2">
+            <div className="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-600 shadow-sm">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+              </svg>
+            </div>
+            <span className="text-[10px] font-mono tracking-wider text-zinc-600 uppercase font-medium">
+              No Preview Image
+            </span>
+          </div>
+        )}
+      </div>
+
       {/* Card Body: Title & Description */}
-      <div className="relative z-10 space-y-2 my-4 flex-1 flex flex-col justify-start">
+      <div className="relative z-10 space-y-2 mb-4 flex-1 flex flex-col justify-start">
         <h3 className="text-lg sm:text-xl font-bold text-[#13ec7b] tracking-tight transition-colors">
           {project.title}
         </h3>

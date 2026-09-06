@@ -120,6 +120,7 @@ const SKILL_META: Record<string, SkillMeta> = {
   'Vercel':         { iconUrl: 'https://cdn.simpleicons.org/vercel/white', bg: '#ffffff15', fallback: '▲' },
   'Hostinger':      { iconUrl: 'https://cdn.simpleicons.org/hostinger/673DE6', bg: '#673DE615', fallback: 'H' },
   'Figma':          { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg', bg: '#F24E1E15', fallback: 'Fg' },
+  'WordPress':      { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg', bg: '#21759B15', fallback: 'W' },
 
   // ── AI Tools ──────────────────────────────────────────────────────────
   'ChatGPT':        { iconUrl: '', bg: '#74aa9c15', fallback: 'AI' },

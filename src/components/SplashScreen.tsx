@@ -122,7 +122,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
 
         {/* Subtitle / Role Tag */}
         <p className="text-[10px] min-[400px]:text-xs sm:text-sm font-semibold tracking-wider sm:tracking-widest text-zinc-400 uppercase mb-6 sm:mb-8 whitespace-nowrap max-w-full overflow-hidden text-ellipsis">
-          Junior Software Engineer & AI Enthusiast
+          Junior Software Developer & System Analyst
         </p>
 
         {/* Animated Progress Bar */}

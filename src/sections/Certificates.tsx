@@ -120,7 +120,14 @@ export default function Certificates() {
             return (
               <div
                 key={item.id}
+                onClick={() => {
+                  if (hasValidUrl) {
+                    window.open(item.url, '_blank', 'noopener,noreferrer');
+                  }
+                }}
                 className={`group relative bg-zinc-950/70 border border-zinc-800/80 rounded-2xl p-4 sm:p-5 backdrop-blur-xl hover:border-zinc-700/80 hover:bg-zinc-900/40 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex items-center justify-between gap-4 ${
+                  hasValidUrl ? 'cursor-pointer hover:border-[#13ec7b]/40' : ''
+                } ${
                   sectionVisible ? 'sr-visible-pop' : 'sr-hidden'
                 }`}
                 style={sectionVisible ? { animationDelay: `${(index % 4) * 40}ms` } : undefined}
@@ -148,6 +155,7 @@ export default function Certificates() {
                   target={hasValidUrl ? '_blank' : undefined}
                   rel={hasValidUrl ? 'noopener noreferrer' : undefined}
                   onClick={(e) => {
+                    e.stopPropagation();
                     if (!hasValidUrl) e.preventDefault();
                   }}
                   className={`p-2 rounded-xl border border-zinc-800 bg-zinc-900/60 hover:bg-zinc-800 hover:border-zinc-700 transition-all duration-300 text-zinc-400 hover:text-[#13ec7b] shrink-0 ${
