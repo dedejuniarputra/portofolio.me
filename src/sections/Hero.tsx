@@ -73,7 +73,7 @@ export default function Hero() {
   };
 
   const handleCopyCode = () => {
-    const infoString = `Dede Juniar Putra | Junior Software Engineer`;
+    const infoString = `Dede Juniar Putra | Junior Software Developer & System Analyst`;
     navigator.clipboard.writeText(infoString);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -127,11 +127,12 @@ export default function Hero() {
             </a>
 
             <a
-              href="#"
-              download
+              href="https://drive.google.com/file/d/1j-cTJrUaemfzdwytK8SzFtg5jNnEP_bS/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-3.5 sm:px-6 py-2.5 sm:py-3.5 bg-zinc-900/90 text-white font-semibold text-xs sm:text-sm rounded-xl sm:rounded-2xl border border-zinc-700/80 hover:border-[#13ec7b]/50 hover:text-[#13ec7b] transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
             >
-              Download CV
+              {t.hero.ctaCv}
             </a>
 
             <a

@@ -137,7 +137,7 @@ export default function Navbar() {
         }
       `}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-10 lg:px-16">
         <div className="flex items-center justify-between h-16">
           
           {/* Logo Section */}
@@ -203,14 +203,14 @@ export default function Navbar() {
             })}
 
             {/* Glassmorphism Capsule for Language & Realtime Views */}
-            <div className="flex items-center gap-2.5 px-3 py-1.5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md shadow-2xl hover:border-[#13ec7b]/40 transition-all duration-300">
+            <div className="flex items-center gap-2.5 px-3 py-1.5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md shadow-2xl hover:border-[#13ec7b]/40 transition-all duration-300 whitespace-nowrap shrink-0">
               {/* Globe / EN & ID Switcher */}
               <button 
                 onClick={toggleLanguage}
-                className="flex items-center gap-1.5 text-zinc-300 hover:text-[#13ec7b] text-xs font-medium transition-colors cursor-pointer focus:outline-none"
+                className="flex items-center gap-1.5 text-zinc-300 hover:text-[#13ec7b] text-xs font-medium transition-colors cursor-pointer focus:outline-none whitespace-nowrap shrink-0"
                 title="Switch Language (EN / ID)"
               >
-                <svg className="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 text-zinc-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="10" strokeWidth="1.8"/>
                   <path strokeWidth="1.8" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10z"/>
                 </svg>
@@ -218,30 +218,30 @@ export default function Navbar() {
               </button>
 
               {/* Vertical Line Separator */}
-              <div className="h-3.5 w-[1px] bg-zinc-800/90" />
+              <div className="h-3.5 w-[1px] bg-zinc-800/90 shrink-0" />
 
               {/* Realtime API Latency Badge */}
-              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-xs font-bold" title="Realtime API Signal Latency">
-                <span className="relative flex h-2 w-2">
+              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-xs font-bold whitespace-nowrap shrink-0" title="Realtime API Signal Latency">
+                <span className="relative flex h-2 w-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#13ec7b]" />
                 </span>
-                <span>API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
+                <span className="whitespace-nowrap">API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
               </div>
             </div>
           </div>
 
           {/* Mobile Right Controls: Language & API Capsule + Hamburger Button */}
-          <div className="flex items-center md:hidden gap-2">
+          <div className="flex items-center md:hidden gap-1.5 sm:gap-2 shrink-0">
             {/* Glassmorphism Capsule for Language & Realtime Views (Mobile) */}
-            <div className="flex items-center gap-2 px-2.5 py-1 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md shadow-lg">
+            <div className="flex items-center gap-2 px-2.5 py-1 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md shadow-lg whitespace-nowrap shrink-0">
               {/* Globe / EN & ID Switcher */}
               <button 
                 onClick={toggleLanguage}
-                className="flex items-center gap-1.5 text-zinc-300 hover:text-[#13ec7b] text-xs font-medium transition-colors cursor-pointer focus:outline-none"
+                className="flex items-center gap-1.5 text-zinc-300 hover:text-[#13ec7b] text-xs font-medium transition-colors cursor-pointer focus:outline-none whitespace-nowrap shrink-0"
                 title="Switch Language (EN / ID)"
               >
-                <svg className="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5 text-zinc-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <circle cx="12" cy="12" r="10" strokeWidth="1.8"/>
                   <path strokeWidth="1.8" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10z"/>
                 </svg>
@@ -249,22 +249,22 @@ export default function Navbar() {
               </button>
 
               {/* Vertical Line Separator */}
-              <div className="h-3.5 w-[1px] bg-zinc-800/90" />
+              <div className="h-3.5 w-[1px] bg-zinc-800/90 shrink-0" />
 
               {/* Realtime API Latency Badge */}
-              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-xs font-bold" title="Realtime API Signal Latency">
-                <span className="relative flex h-2 w-2">
+              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-[11px] sm:text-xs font-bold whitespace-nowrap shrink-0" title="Realtime API Signal Latency">
+                <span className="relative flex h-2 w-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-[#13ec7b]" />
                 </span>
-                <span>API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
+                <span className="whitespace-nowrap">API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
               </div>
             </div>
 
             {/* Hamburger Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-1.5 sm:p-2 text-zinc-400 hover:text-[#13ec7b] rounded-lg hover:bg-zinc-900 transition-colors focus:outline-none"
+              className="p-1.5 sm:p-2 text-zinc-400 hover:text-[#13ec7b] rounded-lg hover:bg-zinc-900 transition-colors focus:outline-none shrink-0"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (

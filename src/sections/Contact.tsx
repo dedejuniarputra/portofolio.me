@@ -210,6 +210,45 @@ export default function Contact() {
           </p>
         </div>
 
+        {/* ── Direct Email Action Bar ──────────────────────────── */}
+        <InteractiveContactCard
+          className={`bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden ${
+            sectionVisible ? 'sr-visible-pop' : 'sr-hidden'
+          }`}
+          style={sectionVisible ? { animationDelay: '80ms' } : undefined}
+        >
+          <div className="flex items-center gap-4 text-left z-10 w-full sm:w-auto">
+            <div className="w-12 h-12 rounded-xl bg-[#052615] border border-[#13ec7b]/30 flex items-center justify-center text-[#13ec7b] shrink-0">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <h4 className="text-base font-bold text-white leading-snug">{t.contact.directEmailTitle}</h4>
+              <p className="text-xs font-mono text-zinc-400">{t.contact.directEmailSub}</p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 z-10 w-full sm:w-auto">
+            <a
+              href={`mailto:${targetEmail}`}
+              className="max-w-full px-4 sm:px-5 py-2.5 rounded-xl bg-[#13ec7b] text-black font-mono text-xs font-bold hover:bg-[#13ec7b]/90 transition-colors shadow-lg flex items-center gap-2 overflow-hidden"
+            >
+              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+              </svg>
+              <span className="truncate">{targetEmail}</span>
+            </a>
+
+            <button
+              onClick={handleCopyEmail}
+              className="px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-[#13ec7b] font-mono text-xs font-medium transition-all cursor-pointer"
+            >
+              {copied ? '✓ Copied!' : 'Copy Email'}
+            </button>
+          </div>
+        </InteractiveContactCard>
+
         {/* ── Social Media Bento Cards Grid ──────────────────── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
 
@@ -379,45 +418,6 @@ export default function Contact() {
           </InteractiveContactCard>
 
         </div>
-
-        {/* ── Direct Email Action Bar ──────────────────────────── */}
-        <InteractiveContactCard
-          className={`bg-zinc-950/80 border border-zinc-800/80 rounded-2xl p-6 sm:p-8 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden ${
-            sectionVisible ? 'sr-visible-pop' : 'sr-hidden'
-          }`}
-          style={sectionVisible ? { animationDelay: '400ms' } : undefined}
-        >
-          <div className="flex items-center gap-4 text-left z-10 w-full sm:w-auto">
-            <div className="w-12 h-12 rounded-xl bg-[#052615] border border-[#13ec7b]/30 flex items-center justify-center text-[#13ec7b] shrink-0">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-            </div>
-            <div>
-              <h4 className="text-base font-bold text-white leading-snug">{t.contact.directEmailTitle}</h4>
-              <p className="text-xs font-mono text-zinc-400">{t.contact.directEmailSub}</p>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 z-10 w-full sm:w-auto">
-            <a
-              href={`mailto:${targetEmail}`}
-              className="max-w-full px-4 sm:px-5 py-2.5 rounded-xl bg-[#13ec7b] text-black font-mono text-xs font-bold hover:bg-[#13ec7b]/90 transition-colors shadow-lg flex items-center gap-2 overflow-hidden"
-            >
-              <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-              </svg>
-              <span className="truncate">{targetEmail}</span>
-            </a>
-
-            <button
-              onClick={handleCopyEmail}
-              className="px-4 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-[#13ec7b] font-mono text-xs font-medium transition-all cursor-pointer"
-            >
-              {copied ? '✓ Copied!' : 'Copy Email'}
-            </button>
-          </div>
-        </InteractiveContactCard>
       </div>
     </section>
   );

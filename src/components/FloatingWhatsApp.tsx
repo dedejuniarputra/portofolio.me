@@ -11,6 +11,7 @@ export default function FloatingWhatsApp({ phoneNumber = '6282289858037' }: Floa
   const { language } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Default pre-filled message tailored for recruitment & project offers
   const defaultMessage = language === 'EN'
@@ -28,94 +29,120 @@ export default function FloatingWhatsApp({ phoneNumber = '6282289858037' }: Floa
     return () => clearTimeout(timer);
   }, []);
 
+  // Monitor scroll position to show/hide Scroll-to-Top button
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 350) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   // Click handler: Directly open WhatsApp in new tab
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
+  // Scroll to top handler
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
   if (!isVisible) return null;
 
   return (
-    <div 
-      className="fixed bottom-6 right-6 z-40 flex flex-col items-end select-none font-sans pointer-events-none"
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-      onTouchStart={() => setIsOpen(true)}
-    >
+    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end select-none font-sans pointer-events-none">
       
-      {/* ── Chat Preview Tooltip Box (Tampil saat disentuh/dihover) ── */}
+      {/* ── Main Floating WhatsApp Button Icon ─────────────────────────── */}
       <div 
-        className={`mb-3 w-72 sm:w-80 bg-zinc-950/95 border border-emerald-500/40 rounded-2xl p-4 shadow-[0_10px_35px_rgba(0,0,0,0.9)] backdrop-blur-xl relative overflow-hidden group transition-all duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] transform origin-bottom-right ${
-          isOpen 
-            ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto shadow-[0_10px_35px_rgba(19,236,123,0.2)]' 
-            : 'opacity-0 scale-90 translate-y-4 pointer-events-none'
-        }`}
+        className="relative group pointer-events-auto flex items-center justify-center"
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+        onTouchStart={() => setIsOpen(true)}
       >
-        {/* Top ambient green glow */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-[#25D366] to-teal-400" />
-
-        {/* Header row with Avatar & Close Button */}
-        <div className="flex items-center justify-between pb-3 border-b border-zinc-800/80">
-          <div className="flex items-center gap-2.5">
-            <div className="relative">
-              <div className="w-9 h-9 rounded-full bg-emerald-950 border border-emerald-500/50 flex items-center justify-center text-emerald-400 font-bold font-mono text-sm shadow-md">
-                D
-              </div>
-              <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#25D366] ring-2 ring-zinc-950 animate-pulse" />
-            </div>
-            <div className="space-y-0.5">
-              <h4 className="text-xs font-bold text-white leading-none">Dede Juniar Putra</h4>
-              <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#25D366]" />
-                {language === 'EN' ? 'Available for Hire' : 'Terbuka Rekrutmen & Proyek'}
-              </span>
-            </div>
-          </div>
-
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsOpen(false);
-            }}
-            className="p-1 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800/60 transition-colors focus:outline-none cursor-pointer"
-            title="Tutup pratinjau chat"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        {/* Chat Bubble Body */}
-        <div className="py-3 text-xs text-zinc-300 leading-relaxed font-sans space-y-2">
-          <div className="bg-zinc-900/80 border border-zinc-800 rounded-xl p-2.5 text-zinc-200 shadow-inner">
-            <p>
-              {language === 'EN'
-                ? 'Hi there! 👋 Interested in hiring me for a software engineering role, job position, or project collaboration? Let’s chat on WhatsApp!'
-                : 'Halo! 👋 Tertarik merekrut saya untuk posisi Software Engineer, proyek web/mobile, atau peluang kerja? Chat langsung via WhatsApp!'}
-            </p>
-          </div>
-        </div>
-
-        {/* Action Button inside Popover */}
-        <a
-          href={whatsappUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-mono text-xs font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-[0_0_15px_rgba(37,211,102,0.4)] group/link cursor-pointer"
+        {/* ── Chat Preview Tooltip Box (Tampil saat disentuh/dihover) ── */}
+        <div 
+          className={`absolute bottom-[calc(100%+12px)] right-0 w-[calc(100vw-2rem)] max-w-xs sm:w-80 bg-zinc-950/95 border border-emerald-500/40 rounded-2xl p-4 shadow-[0_10px_35px_rgba(0,0,0,0.9)] backdrop-blur-xl overflow-hidden group transition-all duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] transform origin-bottom-right z-50 ${
+            isOpen 
+              ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto shadow-[0_10px_35px_rgba(19,236,123,0.2)]' 
+              : 'opacity-0 scale-90 translate-y-4 pointer-events-none'
+          }`}
+          onMouseEnter={() => setIsOpen(true)}
+          onMouseLeave={() => setIsOpen(false)}
         >
-          <WhatsAppIcon className="w-4 h-4 fill-current" />
-          <span>{language === 'EN' ? 'Discuss Job Opportunity' : 'Diskusi Peluang Kerja'}</span>
-          <span className="group-hover/link:translate-x-1 transition-transform">→</span>
-        </a>
-      </div>
+          {/* Top ambient green glow */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-[#25D366] to-teal-400" />
 
-      {/* ── Main Floating Button Icon ─────────────────────────── */}
-      <div className="relative group pointer-events-auto">
+          {/* Header row with Avatar & Close Button */}
+          <div className="flex items-center justify-between pb-3 border-b border-zinc-800/80">
+            <div className="flex items-center gap-2.5">
+              <div className="relative">
+                <div className="w-9 h-9 rounded-full bg-emerald-950 border border-emerald-500/50 flex items-center justify-center text-emerald-400 font-bold font-mono text-sm shadow-md">
+                  D
+                </div>
+                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#25D366] ring-2 ring-zinc-950 animate-pulse" />
+              </div>
+              <div className="space-y-0.5">
+                <h4 className="text-xs font-bold text-white leading-none">Dede Juniar Putra</h4>
+                <span className="text-[10px] font-mono text-emerald-400 flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#25D366]" />
+                  {language === 'EN' ? 'Available for Hire' : 'Terbuka Rekrutmen & Proyek'}
+                </span>
+              </div>
+            </div>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
+              className="p-1 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800/60 transition-colors focus:outline-none cursor-pointer"
+              title="Tutup pratinjau chat"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Chat Bubble Body */}
+          <div className="py-3 text-xs text-zinc-300 leading-relaxed font-sans space-y-2">
+            <div className="bg-zinc-900/80 border border-zinc-800 rounded-xl p-2.5 text-zinc-200 shadow-inner">
+              <p>
+                {language === 'EN'
+                  ? 'Hi there! 👋 Interested in hiring me for a software developer role, system analyst, or project collaboration? Let’s chat on WhatsApp!'
+                  : 'Halo! 👋 Tertarik merekrut saya untuk posisi Software Developer, System Analyst, atau proyek web/mobile? Chat langsung via WhatsApp!'}
+              </p>
+            </div>
+          </div>
+
+          {/* Action Button inside Popover */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-mono text-xs font-bold flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-[0_0_15px_rgba(37,211,102,0.4)] group/link cursor-pointer"
+          >
+            <WhatsAppIcon className="w-4 h-4 fill-current" />
+            <span>{language === 'EN' ? 'Discuss Job Opportunity' : 'Diskusi Peluang Kerja'}</span>
+            <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+
         <button
           onClick={handleClick}
-          className="relative flex items-center justify-center w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#25D366] via-[#128C7E] to-[#075E54] text-white shadow-[0_0_25px_rgba(37,211,102,0.5)] hover:shadow-[0_0_35px_rgba(37,211,102,0.8)] hover:scale-110 transition-all duration-300 border border-emerald-400/40 group focus:outline-none cursor-pointer"
+          className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#25D366] via-[#128C7E] to-[#075E54] text-white shadow-[0_0_25px_rgba(37,211,102,0.5)] hover:shadow-[0_0_35px_rgba(37,211,102,0.8)] hover:scale-110 transition-all duration-300 border border-emerald-400/40 group focus:outline-none cursor-pointer"
           aria-label="Chat via WhatsApp"
         >
           {/* Animated Pulsing Ring */}
@@ -125,7 +152,37 @@ export default function FloatingWhatsApp({ phoneNumber = '6282289858037' }: Floa
           <span className="absolute top-1 right-1 w-3 h-3 rounded-full bg-[#25D366] ring-2 ring-zinc-950 z-10" />
 
           {/* WhatsApp Vector Logo */}
-          <WhatsAppIcon className="w-7 h-7 sm:w-8 sm:h-8 fill-current drop-shadow-md relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+          <WhatsAppIcon className="w-6 h-6 sm:w-8 sm:h-8 fill-current drop-shadow-md relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+        </button>
+      </div>
+
+      {/* ── Scroll To Top Button (Dibawah WhatsApp) ───────────── */}
+      <div
+        className={`pointer-events-auto transition-all duration-350 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          showScrollTop
+            ? 'opacity-100 scale-100 translate-y-0 max-h-16 mt-2.5 sm:mt-3'
+            : 'opacity-0 scale-75 translate-y-4 max-h-0 mt-0 pointer-events-none overflow-hidden'
+        }`}
+      >
+        <button
+          onClick={handleScrollToTop}
+          className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-zinc-950/90 border border-zinc-800 hover:border-[#13ec7b]/60 text-zinc-300 hover:text-[#13ec7b] shadow-[0_0_25px_rgba(0,0,0,0.8)] hover:shadow-[0_0_30px_rgba(19,236,123,0.35)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 active:scale-95 group focus:outline-none cursor-pointer"
+          aria-label={language === 'EN' ? 'Scroll to top' : 'Kembali ke atas'}
+          title={language === 'EN' ? 'Back to top' : 'Kembali ke atas'}
+        >
+          {/* Ambient Glow on Hover */}
+          <span className="absolute inset-0 rounded-2xl bg-[#13ec7b]/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+          {/* Arrow Up Icon */}
+          <svg
+            className="w-5 h-5 sm:w-6 sm:h-6 group-hover:-translate-y-1 transition-transform duration-300 relative z-10 text-zinc-300 group-hover:text-[#13ec7b]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            strokeWidth="2.5"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
         </button>
       </div>
 
