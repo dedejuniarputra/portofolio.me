@@ -9,6 +9,7 @@ import aurorababyspaImg from '@/src/assets/aurorababyspa.png';
 import cekKhodamImg from '@/src/assets/cekkhodammulek.jpg';
 import portofolioImg from '@/src/assets/portofolio.png';
 import goalTrackerImg from '@/src/assets/Goal.png';
+import laundrykuyImg from '@/src/assets/laundrykuy.png';
 
 interface ArchitectureNode {
   label: string;
@@ -293,14 +294,14 @@ export default function Projects() {
       title: 'LAUNDRY.KUY',
       role: 'Mobile Developer',
       category: 'MOBILE',
-      status: 'In Progress',
+      status: 'Completed',
       description:
         language === 'EN'
           ? 'Laundry.Kuy is a mobile application built with Flutter, Firebase, and GetX for laundry service booking and management. Features an admin dashboard for order processing and real-time status tracking for users via unique receipt codes or QR scanning.'
           : 'Laundry.Kuy adalah aplikasi mobile berbasis Flutter, Firebase, dan GetX untuk pemesanan dan manajemen layanan laundry. Dilengkapi dengan portal admin untuk pengelolaan pesanan serta fitur pelacakan status bagi pengguna menggunakan kode unik atau pemindaian QR code dari struk transaksi.',
       tech: ['Flutter', 'Dart', 'Firebase', 'GetX', 'QR Code', 'Git'],
-      liveUrl: 'https://github.com/dedejuniarputra/laundrykuy.',
-      image: '/src/assets/projects/laundry.kuy.jpg',
+      liveUrl: 'https://laundry-bfe40.web.app/',
+      image: laundrykuyImg,
       architectureSubtitle:
         language === 'EN'
           ? 'Real-time mobile order tracking & QR code verification architecture.'
@@ -330,6 +331,50 @@ export default function Projects() {
               'Portal pengelolaan pesanan admin & manajemen layanan laundry secara realtime',
               'Pelacakan status pesanan pengguna via input kode unik & pemindaian QR code struk',
               'Sistem autentikasi, riwayat transaksi, dan manajemen state responsif berbasis GetX',
+            ],
+    },
+
+    {
+      id: 'absensiku',
+      title: 'ABSENSIKU',
+      role: 'Mobile & Backend Developer',
+      category: 'MOBILE',
+      status: 'In Progress',
+      description:
+        language === 'EN'
+          ? 'Absensiku is a mobile-based attendance and presence tracking application built with Flutter, integrated with a Laravel REST API and MySQL database. Features GPS geolocation verification, real-time check-in/check-out, attendance history, and administrative presence reporting.'
+          : 'Absensiku adalah aplikasi presensi dan pencatatan kehadiran berbasis mobile yang dikembangkan menggunakan Flutter dengan backend REST API Laravel dan database MySQL. Dilengkapi validasi lokasi (geolokasi GPS), check-in/check-out real-time, rekap riwayat kehadiran, serta pelaporan data presensi.',
+      tech: ['Flutter', 'Dart', 'Laravel', 'REST API', 'MySQL', 'Git'],
+      liveUrl: 'https://github.com/dedejuniarputra/absensiku',
+      architectureSubtitle:
+        language === 'EN'
+          ? 'Mobile attendance tracking & Laravel REST API database architecture.'
+          : 'Arsitektur pelacakan absensi mobile dan integrasi database REST API Laravel.',
+      nodes: {
+        row1: [
+          { label: 'Flutter Mobile UI', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
+          { label: 'GPS Geolocation Engine', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
+        ],
+        row2: [
+          { label: 'REST API Gateway', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
+          { label: 'Laravel Backend API', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
+        ],
+        row3: [
+          { label: 'MySQL Relational DB', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
+          { label: 'Attendance History Hub', color: 'border-pink-500/40 text-pink-400 bg-pink-950/30' },
+        ],
+      },
+      features:
+        language === 'EN'
+          ? [
+              'Real-time mobile attendance check-in & check-out with GPS geolocation validation',
+              'Laravel REST API backend integration for secure authentication & data processing',
+              'Optimized MySQL database management for attendance logs, history & summary reports',
+            ]
+          : [
+              'Pencatatan presensi check-in & check-out mobile real-time dengan validasi GPS geolokasi',
+              'Integrasi backend REST API Laravel untuk autentikasi aman & pemrosesan data presensi',
+              'Pengelolaan database MySQL teroptimasi untuk log riwayat absensi & laporan kehadiran',
             ],
     },
 
@@ -465,6 +510,50 @@ export default function Projects() {
               'Katalog produk baju distro interaktif & manajemen keranjang belanja (cart)',
               'Sistem autentikasi pelanggan, konfirmasi pembayaran & riwayat transaksi',
               'Dashboard admin untuk pengelolaan stok produk, detail pesanan & status transaksi',
+            ],
+    },
+
+    {
+      id: 'livein',
+      title: 'LIVE.IN',
+      role: 'Frontend & React Developer',
+      category: 'WEB',
+      status: 'In Progress',
+      description:
+        language === 'EN'
+          ? 'LIVE.IN is a modern web-based client photo selection and gallery platform built with React.js. Enables photographers to input Google Drive folder links, automatically generating an interactive live gallery where clients can curate and select photos for printing, customize selection limits & deadlines, filter approved shots, and download final high-resolution assets directly via Google Drive.'
+          : 'LIVE.IN adalah platform web manajemen galeri dan seleksi foto klien yang dibangun menggunakan React.js. Memungkinkan fotografer menginput tautan folder Google Drive untuk menghasilkan galeri live interaktif, di mana klien dapat memilih foto untuk dicetak sesuai kuota dan batas waktu, memfilter hasil kurasi, serta mengunduh foto pilihan secara langsung via Google Drive.',
+      tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'Google Drive API', 'REST API', 'Git'],
+      liveUrl: 'https://github.com/dedejuniarputra/livein',
+      architectureSubtitle:
+        language === 'EN'
+          ? 'Live photo curation gallery pipeline and Google Drive integration architecture.'
+          : 'Pipeline kurasi galeri foto live dan arsitektur integrasi Google Drive.',
+      nodes: {
+        row1: [
+          { label: 'Admin Studio Portal', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
+          { label: 'Drive Folder Parser', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
+        ],
+        row2: [
+          { label: 'Client Live Gallery', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
+          { label: 'Photo Selection Engine', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
+        ],
+        row3: [
+          { label: 'WhatsApp Notification', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
+          { label: 'Drive Direct Downloader', color: 'border-pink-500/40 text-pink-400 bg-pink-950/30' },
+        ],
+      },
+      features:
+        language === 'EN'
+          ? [
+              'Automated Google Drive folder parsing & interactive client live photo showcase',
+              'Client photo curation & selection engine with configurable limits, deadlines & print formats',
+              'Instant direct Drive download permissions & automated WhatsApp client notification flow',
+            ]
+          : [
+              'Parsing folder Google Drive otomatis & showcase galeri foto live interaktif untuk klien',
+              'Fitur kurasi/seleksi foto dengan pengaturan kuota maksimal, deadline & format cetak',
+              'Akses unduh langsung via Google Drive untuk foto terpilih & integrasi alur WhatsApp',
             ],
     },
 
