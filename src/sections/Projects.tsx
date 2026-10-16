@@ -11,11 +11,6 @@ import portofolioImg from '@/src/assets/portofolio.png';
 import goalTrackerImg from '@/src/assets/Goal.png';
 import laundrykuyImg from '@/src/assets/laundrykuy.png';
 
-interface ArchitectureNode {
-  label: string;
-  color: string; // Tailwind border & text color classes
-}
-
 interface Project {
   id: string;
   title: string;
@@ -25,13 +20,7 @@ interface Project {
   tech: string[];
   liveUrl: string;
   role?: string;
-  architectureSubtitle: string;
   image?: string | any;
-  nodes: {
-    row1: ArchitectureNode[];
-    row2: ArchitectureNode[];
-    row3: ArchitectureNode[];
-  };
   features: string[];
 }
 
@@ -75,24 +64,6 @@ export default function Projects() {
       tech: ['Laravel', 'Tailwind CSS', 'JavaScript', 'MySQL', 'Git'],
       liveUrl: 'https://livesostory.online',
       image: livesostoryImg,
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Photography portfolio architecture and WhatsApp API booking integration.'
-          : 'Arsitektur portofolio fotografi dan integrasi pemesanan WhatsApp API.',
-      nodes: {
-        row1: [
-          { label: 'Client Web UI', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'REST API Gateway', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
-        ],
-        row2: [
-          { label: 'Laravel Backend', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
-          { label: 'WhatsApp API Engine', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-        ],
-        row3: [
-          { label: 'Git Workflow', color: 'border-zinc-700 text-zinc-300 bg-zinc-900' },
-          { label: 'MySQL Database', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -121,24 +92,6 @@ export default function Projects() {
       tech: ['Laravel', 'Bootstrap', 'JavaScript','MySQL', 'Git'],
       liveUrl: 'https://siadik.bandarlampungkota.go.id',
       image: siadikImg,
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Employee attendance & administrative data management architecture.'
-          : 'Arsitektur absensi pegawai dan alur pengelolaan data administrasi.',
-      nodes: {
-        row1: [
-          { label: 'Employee Portal', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'Validation Layer', color: 'border-blue-500/40 text-blue-400 bg-blue-950/30' },
-        ],
-        row2: [
-          { label: 'Admin Panel', color: 'border-indigo-500/40 text-indigo-400 bg-indigo-950/30' },
-          { label: 'Attendance Engine', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-        ],
-        row3: [
-          { label: 'File Storage', color: 'border-zinc-700 text-zinc-300 bg-zinc-900' },
-          { label: 'MySQL DB', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -166,24 +119,6 @@ export default function Projects() {
       tech: ['Laravel', 'Bootstrap', 'JavaScript', 'MySQL', 'Git'],
       liveUrl: 'https://github.com/dedejuniarputra/TennisInKuy',
       image: tennisImg,
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Course management system & online registration flow architecture.'
-          : 'Arsitektur sistem manajemen kursus dan alur pendaftaran online.',
-      nodes: {
-        row1: [
-          { label: 'User Portal', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'Registration Layer', color: 'border-blue-500/40 text-blue-400 bg-blue-950/30' },
-        ],
-        row2: [
-          { label: 'Admin Dashboard', color: 'border-indigo-500/40 text-indigo-400 bg-indigo-950/30' },
-          { label: 'Course Engine', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-        ],
-        row3: [
-          { label: 'File Storage', color: 'border-zinc-700 text-zinc-300 bg-zinc-900' },
-          { label: 'MySQL DB', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -211,24 +146,6 @@ export default function Projects() {
       tech: ['Next.js', 'React.js', 'Tailwind CSS', 'TypeScript', 'Vercel', 'Git'],
       liveUrl: 'https://dedejuniarputra.vercel.app',
       image: portofolioImg,
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Modern Next.js App Router architecture and multi-language context flow.'
-          : 'Arsitektur Next.js App Router modern dan alur konteks multi-bahasa.',
-      nodes: {
-        row1: [
-          { label: 'Next.js App Router', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'Language Context Provider', color: 'border-blue-500/40 text-blue-400 bg-blue-950/30' },
-        ],
-        row2: [
-          { label: 'Tailwind Glassmorphism UI', color: 'border-indigo-500/40 text-indigo-400 bg-indigo-950/30' },
-          { label: 'Interactive Component Layer', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-        ],
-        row3: [
-          { label: 'Vercel Deployment', color: 'border-zinc-700 text-zinc-300 bg-zinc-900' },
-          { label: 'TypeScript Types', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -256,24 +173,6 @@ export default function Projects() {
       tech: ['Flutter', 'Dart', 'Firebase', 'GetX', 'WhatsApp API', 'Git'],
       liveUrl: 'https://aurorababyspa.web.app',
       image: aurorababyspaImg,
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Cross-platform mobile booking architecture and real-time cloud sync.'
-          : 'Arsitektur pemesanan mobile lintas platform dan sinkronisasi cloud real-time.',
-      nodes: {
-        row1: [
-          { label: 'Flutter Mobile App', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'GetX State Layer', color: 'border-blue-500/40 text-blue-400 bg-blue-950/30' },
-        ],
-        row2: [
-          { label: 'Firebase Backend', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-          { label: 'WhatsApp API Engine', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
-        ],
-        row3: [
-          { label: 'Cloud Firestore', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-          { label: 'Admin Dashboard', color: 'border-pink-500/40 text-pink-400 bg-pink-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -302,24 +201,6 @@ export default function Projects() {
       tech: ['Flutter', 'Dart', 'Firebase', 'GetX', 'QR Code', 'Git'],
       liveUrl: 'https://laundry-bfe40.web.app/',
       image: laundrykuyImg,
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Real-time mobile order tracking & QR code verification architecture.'
-          : 'Arsitektur pelacakan pesanan mobile realtime dan verifikasi QR code.',
-      nodes: {
-        row1: [
-          { label: 'Flutter App UI', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
-          { label: 'QR Scanner Engine', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-        ],
-        row2: [
-          { label: 'Firebase Auth', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-          { label: 'GetX State Controller', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
-        ],
-        row3: [
-          { label: 'Cloud Firestore', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-          { label: 'Admin Order Hub', color: 'border-pink-500/40 text-pink-400 bg-pink-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -346,24 +227,6 @@ export default function Projects() {
           : 'Absensiku adalah aplikasi presensi dan pencatatan kehadiran berbasis mobile yang dikembangkan menggunakan Flutter dengan backend REST API Laravel dan database MySQL. Dilengkapi validasi lokasi (geolokasi GPS), check-in/check-out real-time, rekap riwayat kehadiran, serta pelaporan data presensi.',
       tech: ['Flutter', 'Dart', 'Laravel', 'REST API', 'MySQL', 'Git'],
       liveUrl: 'https://github.com/dedejuniarputra/absensiku',
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Mobile attendance tracking & Laravel REST API database architecture.'
-          : 'Arsitektur pelacakan absensi mobile dan integrasi database REST API Laravel.',
-      nodes: {
-        row1: [
-          { label: 'Flutter Mobile UI', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'GPS Geolocation Engine', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
-        ],
-        row2: [
-          { label: 'REST API Gateway', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-          { label: 'Laravel Backend API', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
-        ],
-        row3: [
-          { label: 'MySQL Relational DB', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-          { label: 'Attendance History Hub', color: 'border-pink-500/40 text-pink-400 bg-pink-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -391,24 +254,6 @@ export default function Projects() {
       tech: ['HTML', 'Bootstrap','LocalStorage'],
       liveUrl: 'https://goaltracker-wheat.vercel.app',
       image: goalTrackerImg,
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Client-side state management and privacy-first local storage architecture.'
-          : 'Manajemen state sisi klien dan arsitektur penyimpanan lokal mengutamakan privasi.',
-      nodes: {
-        row1: [
-          { label: 'React Glass UI', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'Splash Screen', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
-        ],
-        row2: [
-          { label: 'Checklist Engine', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
-          { label: 'Confetti Trigger', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-        ],
-        row3: [
-          { label: 'Browser LocalStorage', color: 'border-zinc-700 text-zinc-300 bg-zinc-900' },
-          { label: 'Mastery Tracker', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -436,24 +281,6 @@ export default function Projects() {
       tech: ['HTML5', 'Bootstrap', 'JavaScript', 'CSS3', 'Git'],
       liveUrl: 'https://deeonly-cekkhodamlek.vercel.app/',
       image: cekKhodamImg,
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Client-side randomized logic and DOM rendering architecture.'
-          : 'Logika pengacak sisi klien dan arsitektur rendering DOM.',
-      nodes: {
-        row1: [
-          { label: 'User Input UI', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'DOM Handler', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
-        ],
-        row2: [
-          { label: 'Khodam Engine', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
-          { label: 'Randomizer', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-        ],
-        row3: [
-          { label: 'Bootstrap Grid', color: 'border-zinc-700 text-zinc-300 bg-zinc-900' },
-          { label: 'Result Card', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -481,24 +308,6 @@ export default function Projects() {
       tech: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript', 'CSS3', 'Git'],
       liveUrl: 'https://github.com/dedejuniarputra/PROJECT_WEARNITY.',
       image: '/src/assets/projects/wearnity.png',
-      architectureSubtitle:
-        language === 'EN'
-          ? 'E-commerce transactional pipeline and relational database architecture.'
-          : 'Pipeline transaksi e-commerce dan arsitektur database relasional.',
-      nodes: {
-        row1: [
-          { label: 'Customer Portal', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'Shopping Cart', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
-        ],
-        row2: [
-          { label: 'Admin Dashboard', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
-          { label: 'Order Engine', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-        ],
-        row3: [
-          { label: 'MySQL Relational DB', color: 'border-zinc-700 text-zinc-300 bg-zinc-900' },
-          { label: 'Payment Handler', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -525,24 +334,6 @@ export default function Projects() {
           : 'LIVE.IN adalah platform web manajemen galeri dan seleksi foto klien yang dibangun menggunakan React.js. Memungkinkan fotografer menginput tautan folder Google Drive untuk menghasilkan galeri live interaktif, di mana klien dapat memilih foto untuk dicetak sesuai kuota dan batas waktu, memfilter hasil kurasi, serta mengunduh foto pilihan secara langsung via Google Drive.',
       tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'Google Drive API', 'REST API', 'Git'],
       liveUrl: 'https://github.com/dedejuniarputra/livein',
-      architectureSubtitle:
-        language === 'EN'
-          ? 'Live photo curation gallery pipeline and Google Drive integration architecture.'
-          : 'Pipeline kurasi galeri foto live dan arsitektur integrasi Google Drive.',
-      nodes: {
-        row1: [
-          { label: 'Admin Studio Portal', color: 'border-emerald-500/40 text-emerald-400 bg-emerald-950/30' },
-          { label: 'Drive Folder Parser', color: 'border-sky-500/40 text-sky-400 bg-sky-950/30' },
-        ],
-        row2: [
-          { label: 'Client Live Gallery', color: 'border-purple-500/40 text-purple-400 bg-purple-950/30' },
-          { label: 'Photo Selection Engine', color: 'border-amber-500/40 text-amber-400 bg-amber-950/30' },
-        ],
-        row3: [
-          { label: 'WhatsApp Notification', color: 'border-teal-500/40 text-teal-400 bg-teal-950/30' },
-          { label: 'Drive Direct Downloader', color: 'border-pink-500/40 text-pink-400 bg-pink-950/30' },
-        ],
-      },
       features:
         language === 'EN'
           ? [
@@ -683,7 +474,7 @@ export default function Projects() {
 
       </div>
 
-      {/* Architecture & Detail Modal Dialog */}
+      {/* Project Detail Modal Dialog */}
       {selectedProject && (
         <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 sm:p-6 animate-fade-in select-text">
           <div className="bg-[#09090b] border border-zinc-800 rounded-2xl w-full max-w-2xl p-6 sm:p-8 shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto">
@@ -916,7 +707,7 @@ function ProjectCard({
         {/* Right: 2 Action Buttons */}
         <div className="flex items-center gap-2">
           
-          {/* Left Button: Architecture / Detail Modal Trigger */}
+          {/* Left Button: Detail Modal Trigger */}
           <button
             onClick={() => onSelect(project)}
             className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-[#13ec7b]/50 text-zinc-400 hover:text-[#13ec7b] hover:shadow-[0_0_12px_rgba(19,236,123,0.2)] transition-all flex items-center justify-center cursor-pointer focus:outline-none"
