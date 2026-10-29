@@ -109,6 +109,7 @@ function getLogo(id: string) {
       return <LivesostoryLogo />;
     case 'diskominfo':
       return <DiskominfoLogo />;
+    case 'asdos-os':
     case 'asdos-amp':
     case 'asdos-mat':
       return <UnilaLogo />;
@@ -120,11 +121,51 @@ function getLogo(id: string) {
   }
 }
 
+function getDynamicDuration(item: { id: string; period: string; duration: string }, lang: 'EN' | 'ID', currentDate: Date | null): string {
+  const isOngoing = item.id === 'freelance' || item.period.toLowerCase().includes('present') || item.period.toLowerCase().includes('sekarang');
+  if (!isOngoing || !currentDate) return item.duration;
+
+  // Freelance started Jan 2026 (year: 2026, month: 0)
+  const startYear = 2026;
+  const startMonth = 0;
+
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.getMonth();
+
+  let totalMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth) + 1;
+  if (totalMonths < 1) totalMonths = 1;
+
+  if (totalMonths < 12) {
+    return lang === 'ID'
+      ? `${totalMonths} BULAN`
+      : `${totalMonths} ${totalMonths === 1 ? 'MONTH' : 'MONTHS'}`;
+  }
+
+  const years = Math.floor(totalMonths / 12);
+  const remainingMonths = totalMonths % 12;
+
+  if (lang === 'ID') {
+    return remainingMonths === 0
+      ? `${years} TAHUN`
+      : `${years} TAHUN ${remainingMonths} BULAN`;
+  } else {
+    const yrStr = `${years} ${years === 1 ? 'YEAR' : 'YEARS'}`;
+    if (remainingMonths === 0) return yrStr;
+    const moStr = `${remainingMonths} ${remainingMonths === 1 ? 'MONTH' : 'MONTHS'}`;
+    return `${yrStr} ${moStr}`;
+  }
+}
+
 export default function Journey() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const [sectionVisible, setSectionVisible] = useState(false);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [currentDate, setCurrentDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setCurrentDate(new Date());
+  }, []);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -250,7 +291,7 @@ export default function Journey() {
                         <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-[#13ec7b] pt-1">
                           <span className="font-semibold">{item.period}</span>
                           <span className="text-zinc-600">•</span>
-                          <span className="text-zinc-300 font-bold uppercase">{item.duration}</span>
+                          <span className="text-zinc-300 font-bold uppercase">{getDynamicDuration(item, language, currentDate)}</span>
                           {item.workType && (
                             <>
                               <span className="text-zinc-600">•</span>

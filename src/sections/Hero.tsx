@@ -91,7 +91,7 @@ export default function Hero() {
           
           {/* Status Pill Badge */}
           {/* Computer Intro Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-zinc-950/80 rounded-full font-mono text-[#13ec7b] text-xs sm:text-sm tracking-[0.2em] uppercase">
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 bg-zinc-950/80 border border-[#13ec7b]/25 rounded-full font-mono text-[#13ec7b] text-xs sm:text-sm tracking-wide">
             {/* Animated Clean Computer Icon */}
             <svg className="w-5 h-5 text-[#13ec7b] drop-shadow-[0_0_8px_rgba(19,236,123,0.6)] animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

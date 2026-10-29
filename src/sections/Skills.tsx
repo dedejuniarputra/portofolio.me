@@ -90,18 +90,36 @@ interface SkillMeta {
 
 const SKILL_META: Record<string, SkillMeta> = {
   // ── Frontend ──────────────────────────────────────────────────────────
+  'Python':         { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',                 bg: '#3776AB15', fallback: 'Py' },
+  'PYTHON':         { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',                 bg: '#3776AB15', fallback: 'Py' },
   'HTML':           { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',                 bg: '#E34F2615', fallback: 'HTML' },
+  'CSS':            { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',                  bg: '#1572B615', fallback: 'CSS' },
+  'CSS3':           { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg',                  bg: '#1572B615', fallback: 'CSS' },
+  'JavaScript':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',         bg: '#F7DF1E15', fallback: 'JS' },
+  'JAVASCRIPT':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',         bg: '#F7DF1E15', fallback: 'JS' },
+  'JS':             { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',         bg: '#F7DF1E15', fallback: 'JS' },
   'React.js':       { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',                 bg: '#61DAFB15', fallback: '⚛' },
   'Next.js':        { iconUrl: 'https://cdn.simpleicons.org/nextdotjs/white',                                                         bg: '#ffffff15', fallback: '▲' },
+  'Vue.js':         { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg',                 bg: '#4FC08D15', fallback: 'V' },
+  'VUE.JS':         { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg',                 bg: '#4FC08D15', fallback: 'V' },
+  'Vue':            { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg',                 bg: '#4FC08D15', fallback: 'V' },
   'Bootstrap':      { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg',         bg: '#7952B315', fallback: 'BS' },
   'Tailwind CSS':   { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg',     bg: '#06B6D415', fallback: '~' },
+  'Shadcn':         { iconUrl: 'https://cdn.simpleicons.org/shadcnui/white',                                                          bg: '#ffffff15', fallback: 'Cn' },
+  'SHADCN':         { iconUrl: 'https://cdn.simpleicons.org/shadcnui/white',                                                          bg: '#ffffff15', fallback: 'Cn' },
 
   // ── Backend & Database ────────────────────────────────────────────────
   'Laravel':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg',             bg: '#FF2D2015', fallback: 'Lv' },
+  'CodeIgniter':    { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/codeigniter/codeigniter-plain.svg',        bg: '#EE432315', fallback: 'CI' },
+  'Codeigniter':    { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/codeigniter/codeigniter-plain.svg',        bg: '#EE432315', fallback: 'CI' },
+  'CODEIGNITER':    { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/codeigniter/codeigniter-plain.svg',        bg: '#EE432315', fallback: 'CI' },
   'MySQL':          { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',                 bg: '#4479A115', fallback: 'My' },
   'Firebase':       { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg',           bg: '#FFCA2815', fallback: '🔥' },
   'PostgreSQL':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',       bg: '#4169E115', fallback: 'Pg' },
+  'Supabase':       { iconUrl: 'https://cdn.simpleicons.org/supabase/3ECF8E',                                                         bg: '#3ECF8E15', fallback: 'Sb' },
+  'SUPABASE':       { iconUrl: 'https://cdn.simpleicons.org/supabase/3ECF8E',                                                         bg: '#3ECF8E15', fallback: 'Sb' },
   'Node.js':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',               bg: '#33993315', fallback: '⬡' },
+  'WordPress':      { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg',           bg: '#21759B15', fallback: 'W' },
 
   // ── Mobile ────────────────────────────────────────────────────────────
   'Android Studio': { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg',bg: '#3DDC8415', fallback: '🤖' },
@@ -113,14 +131,17 @@ const SKILL_META: Record<string, SkillMeta> = {
 
   // ── Tools & Hosting ──────────────────────────────────────────────────
   'VS Code':        { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg', bg: '#007ACC15', fallback: '</>' },
-  'Antigravity':    { iconUrl: '', bg: '#13ec7b15', fallback: 'AG' },
   'Git':            { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg', bg: '#F0503215', fallback: '⎇' },
   'GitHub':         { iconUrl: 'https://cdn.simpleicons.org/github/white', bg: '#ffffff15', fallback: '⊙' },
-  'Laragon':        { iconUrl: 'https://cdn.simpleicons.org/laragon/00A9E0', bg: '#00A9E015', fallback: 'Lg' },
+  'Docker':         { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg', bg: '#2496ED15', fallback: 'Dk' },
+  'Cloudflare':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg', bg: '#F3802015', fallback: 'CF' },
+  'CloudFlare':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg', bg: '#F3802015', fallback: 'CF' },
+  'CLOUDFLARE':     { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original.svg', bg: '#F3802015', fallback: 'CF' },
+  'Redis':          { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg', bg: '#D82C2015', fallback: 'Rd' },
+  'REDIS':          { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg', bg: '#D82C2015', fallback: 'Rd' },
   'Vercel':         { iconUrl: 'https://cdn.simpleicons.org/vercel/white', bg: '#ffffff15', fallback: '▲' },
   'Hostinger':      { iconUrl: 'https://cdn.simpleicons.org/hostinger/673DE6', bg: '#673DE615', fallback: 'H' },
   'Figma':          { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg', bg: '#F24E1E15', fallback: 'Fg' },
-  'WordPress':      { iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg', bg: '#21759B15', fallback: 'W' },
 
   // ── AI Tools ──────────────────────────────────────────────────────────
   'ChatGPT':        { iconUrl: '', bg: '#74aa9c15', fallback: 'AI' },
@@ -136,12 +157,9 @@ function SkillCard({ name }: { name: string }) {
   const customIcon = CUSTOM_ICONS[name];
 
   return (
-    <div className="group relative bg-zinc-950/70 border border-zinc-800/80 rounded-2xl p-4 flex flex-col items-center justify-center gap-2.5 backdrop-blur-xl hover:bg-zinc-900/60 hover:border-[#13ec7b]/50 hover:shadow-[0_0_20px_rgba(19,236,123,0.12)] transition-all duration-300 cursor-default">
-      {/* Brand Icon Box */}
-      <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300 border border-zinc-800/80 group-hover:border-[#13ec7b]/40 shadow-inner overflow-hidden"
-        style={{ background: meta.bg }}
-      >
+    <div className="group relative bg-zinc-950/80 border border-zinc-800 hover:border-[#13ec7b] px-3.5 py-2 sm:px-4 sm:py-2.5 inline-flex items-center gap-2.5 sm:gap-3 transition-all duration-200 cursor-default hover:bg-zinc-900/70 hover:shadow-[0_0_15px_rgba(19,236,123,0.12)] hover:-translate-y-0.5 select-none">
+      {/* Brand Icon */}
+      <div className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
         {customIcon ? (
           customIcon
         ) : meta.iconUrl && !imgError ? (
@@ -149,19 +167,19 @@ function SkillCard({ name }: { name: string }) {
           <img
             src={meta.iconUrl}
             alt={name}
-            width={26}
-            height={26}
-            className="w-6 h-6 object-contain filter drop-shadow"
+            width={24}
+            height={24}
+            className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
             loading="lazy"
             onError={() => setImgError(true)}
           />
         ) : (
-          <span className="text-xs font-bold text-[#13ec7b] font-mono">{meta.fallback}</span>
+          <span className="text-xs font-bold text-[#13ec7b] font-mono leading-none">{meta.fallback}</span>
         )}
       </div>
 
       {/* Name label */}
-      <span className="text-xs font-semibold text-zinc-300 group-hover:text-white transition-colors duration-200 text-center tracking-wide line-clamp-1">
+      <span className="text-xs sm:text-[13px] font-bold font-mono text-zinc-200 group-hover:text-white tracking-wider uppercase whitespace-nowrap">
         {name}
       </span>
     </div>
@@ -262,69 +280,35 @@ export default function Skills() {
             </p>
           </div>
 
-          {/* ── Skills Split Container (Reference Image 2 & 3) ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-            
-            {/* Left Column — Stat Circle Badge & Description */}
-            <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-6">
-              
-              {/* Glowing Circular Tech Badge */}
-              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-                <div className="relative group mb-6">
-                  <div className="w-40 h-40 sm:w-44 sm:h-44 rounded-full bg-gradient-to-br from-[#13ec7b]/25 via-zinc-900 to-black border-2 border-[#13ec7b]/40 flex flex-col items-center justify-center shadow-[0_0_40px_rgba(19,236,123,0.18)] group-hover:scale-105 transition-transform duration-500">
-                    <span className="text-4xl sm:text-5xl font-black font-mono text-white tracking-tight drop-shadow-[0_0_15px_rgba(19,236,123,0.5)]">
-                      {t.skills.totalBadgeCount}
-                    </span>
-                    <span className="text-[10px] font-mono text-[#13ec7b] tracking-widest font-bold uppercase mt-1">
-                      {t.skills.totalBadgeLabel}
-                    </span>
-                    <span className="text-[9px] font-mono text-zinc-500 tracking-wider">
-                      STACK & TOOLS
-                    </span>
-                  </div>
-                  {/* Outer Ring Pulse */}
-                  <div className="absolute inset-0 rounded-full border border-[#13ec7b]/20 animate-ping pointer-events-none opacity-40" />
+          {/* ── Categorized Tech Grids ── */}
+          <div className="space-y-10">
+            {t.skills.categories.map((cat, catIdx) => (
+              <div
+                key={cat.label}
+                className={`space-y-4 ${
+                  sectionVisible ? 'reveal-visible' : 'reveal-hidden'
+                }`}
+                style={sectionVisible ? { animationDelay: `${(catIdx + 1) * 100}ms` } : {}}
+              >
+                {/* Category Header */}
+                <div className="flex items-center gap-3">
+                  <span className="text-[#13ec7b] font-mono text-xs sm:text-sm font-extrabold tracking-widest">
+                    {cat.num}
+                  </span>
+                  <h3 className="text-xs sm:text-sm font-bold text-zinc-200 tracking-widest uppercase font-mono">
+                    {cat.label}
+                  </h3>
+                  <div className="flex-1 h-px bg-zinc-800/80" />
                 </div>
 
-                {/* Side Explanation */}
-                <p className="text-xs sm:text-sm text-zinc-400 font-mono leading-relaxed max-w-sm">
-                  {t.skills.sideDescription}
-                </p>
+                {/* Collage of Skill Cards */}
+                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+                  {cat.items.map((itemName) => (
+                    <SkillCard key={itemName} name={itemName} />
+                  ))}
+                </div>
               </div>
-
-            </div>
-
-            {/* Right Column — Categorized Tech Grids */}
-            <div className="lg:col-span-8 space-y-10">
-              {t.skills.categories.map((cat, catIdx) => (
-                <div
-                  key={cat.label}
-                  className={`space-y-4 ${
-                    sectionVisible ? 'reveal-visible' : 'reveal-hidden'
-                  }`}
-                  style={sectionVisible ? { animationDelay: `${(catIdx + 1) * 100}ms` } : {}}
-                >
-                  {/* Category Header */}
-                  <div className="flex items-center gap-3">
-                    <span className="text-[#13ec7b] font-mono text-xs sm:text-sm font-extrabold tracking-widest">
-                      {cat.num}
-                    </span>
-                    <h3 className="text-xs sm:text-sm font-bold text-zinc-200 tracking-widest uppercase font-mono">
-                      {cat.label}
-                    </h3>
-                    <div className="flex-1 h-px bg-zinc-800/80" />
-                  </div>
-
-                  {/* Grid of Skill Cards */}
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
-                    {cat.items.map((itemName) => (
-                      <SkillCard key={itemName} name={itemName} />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-
+            ))}
           </div>
 
           {/* ── Interactive Code Snippets Showcase ─────────────── */}

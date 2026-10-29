@@ -10,6 +10,7 @@ import cekKhodamImg from '@/src/assets/cekkhodammulek.jpg';
 import portofolioImg from '@/src/assets/portofolio.png';
 import goalTrackerImg from '@/src/assets/Goal.png';
 import laundrykuyImg from '@/src/assets/laundrykuy.png';
+import dashboardImg from '@/src/assets/Dashboard.png';
 
 interface Project {
   id: string;
@@ -26,7 +27,6 @@ interface Project {
 
 export default function Projects() {
   const { t, language } = useLanguage();
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeFilter, setActiveFilter] = useState<'ALL' | 'WEB' | 'MOBILE'>('ALL');
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -51,6 +51,33 @@ export default function Projects() {
   }, []);
 
   const projectsData: Project[] = [
+    {
+      id: 'portofoliome',
+      title: 'PORTOFOLIO.ME',
+      role: 'FullStack Web Developer',
+      category: 'WEB',
+      status: 'Completed',
+      description:
+        language === 'EN'
+          ? 'PORTOFOLIO.ME is a modern, responsive personal portfolio website built with Next.js, React.js, and Tailwind CSS. Features dynamic multi-language switching (EN/ID), interactive skills showcase, project architecture details, and smooth glassmorphism dark theme UI.'
+          : 'PORTOFOLIO.ME adalah website portofolio pribadi modern dan responsif yang dibangun menggunakan Next.js, React.js, dan Tailwind CSS. Dilengkapi fitur beralih bahasa interaktif (EN/ID), showcase keahlian teknologi, detail arsitektur proyek, serta antarmuka dark glassmorphism yang elegan.',
+      tech: ['Next.js', 'React.js', 'Tailwind CSS', 'TypeScript', 'Vercel', 'Git'],
+      liveUrl: 'https://dedejuniarputra.vercel.app',
+      image: portofolioImg,
+      features:
+        language === 'EN'
+          ? [
+              'Modern dark glassmorphism UI with responsive multi-language support (EN/ID)',
+              'Interactive skills showcase with real-time category filtering & custom icons',
+              'Production-ready Next.js App Router architecture deployed on Vercel',
+            ]
+          : [
+              'Antarmuka dark glassmorphism modern dengan dukungan multi-bahasa responsif (EN/ID)',
+              'Showcase keahlian interaktif dengan filter kategori & ikon kustom',
+              'Arsitektur Next.js App Router yang siap produksi dan dideploy di Vercel',
+            ],
+    },
+
     {
       id: 'livesostory.co',
       title: 'LIVESOSTORY.CO',
@@ -78,7 +105,6 @@ export default function Projects() {
             ],
     },
 
-
     {
       id: 'siadik',
       title: 'SIADIK BANDAR LAMPUNG',
@@ -103,7 +129,34 @@ export default function Projects() {
               'Sistem absensi pegawai berbasis web & pengelolaan data administrasi kepegawaian',
               'Antarmuka pengguna responsif yang dirancang dari Figma dengan Bootstrap & JS',
               'Arsitektur sistem yang stabil, aman, dan dioptimalkan untuk kebutuhan dinas',
-                ],
+            ],
+    },
+
+    {
+      id: 'livein',
+      title: 'LIVE.IN',
+      role: 'Frontend & React Developer',
+      category: 'WEB',
+      status: 'Completed',
+      description:
+        language === 'EN'
+          ? 'LIVE.IN is a modern web-based client photo selection and gallery platform built with React.js. Enables photographers to input Google Drive folder links, automatically generating an interactive live gallery where clients can curate and select photos for printing, customize selection limits & deadlines, filter approved shots, and download final high-resolution assets directly via Google Drive.'
+          : 'LIVE.IN adalah platform web manajemen galeri dan seleksi foto klien yang dibangun menggunakan React.js. Memungkinkan fotografer menginput tautan folder Google Drive untuk menghasilkan galeri live interaktif, di mana klien dapat memilih foto untuk dicetak sesuai kuota dan batas waktu, memfilter hasil kurasi, serta mengunduh foto pilihan secara langsung via Google Drive.',
+      tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'Google Drive API', 'REST API', 'Git'],
+      liveUrl: 'https://github.com/dedejuniarputra/livein',
+      image: dashboardImg,
+      features:
+        language === 'EN'
+          ? [
+              'Automated Google Drive folder parsing & interactive client live photo showcase',
+              'Client photo curation & selection engine with configurable limits, deadlines & print formats',
+              'Instant direct Drive download permissions & automated WhatsApp client notification flow',
+            ]
+          : [
+              'Parsing folder Google Drive otomatis & showcase galeri foto live interaktif untuk klien',
+              'Fitur kurasi/seleksi foto dengan pengaturan kuota maksimal, deadline & format cetak',
+              'Akses unduh langsung via Google Drive untuk foto terpilih & integrasi alur WhatsApp',
+            ],
     },
 
     {
@@ -134,33 +187,6 @@ export default function Projects() {
     },
 
     {
-      id: 'portofoliome',
-      title: 'PORTOFOLIO.ME',
-      role: 'FullStack Web Developer',
-      category: 'WEB',
-      status: 'Completed',
-      description:
-        language === 'EN'
-          ? 'PORTOFOLIO.ME is a modern, responsive personal portfolio website built with Next.js, React.js, and Tailwind CSS. Features dynamic multi-language switching (EN/ID), interactive skills showcase, project architecture details, and smooth glassmorphism dark theme UI.'
-          : 'PORTOFOLIO.ME adalah website portofolio pribadi modern dan responsif yang dibangun menggunakan Next.js, React.js, dan Tailwind CSS. Dilengkapi fitur beralih bahasa interaktif (EN/ID), showcase keahlian teknologi, detail arsitektur proyek, serta antarmuka dark glassmorphism yang elegan.',
-      tech: ['Next.js', 'React.js', 'Tailwind CSS', 'TypeScript', 'Vercel', 'Git'],
-      liveUrl: 'https://dedejuniarputra.vercel.app',
-      image: portofolioImg,
-      features:
-        language === 'EN'
-          ? [
-              'Modern dark glassmorphism UI with responsive multi-language support (EN/ID)',
-              'Interactive skills showcase with real-time category filtering & custom icons',
-              'Production-ready Next.js App Router architecture deployed on Vercel',
-            ]
-          : [
-              'Antarmuka dark glassmorphism modern dengan dukungan multi-bahasa responsif (EN/ID)',
-              'Showcase keahlian interaktif dengan filter kategori & ikon kustom',
-              'Arsitektur Next.js App Router yang siap produksi dan dideploy di Vercel',
-            ],
-    },
-
-    {
       id: 'aurorababyspa',
       title: 'AURORA BABY SPA',
       role: 'Mobile & Web Developer',
@@ -184,9 +210,8 @@ export default function Projects() {
               'Sistem pemesanan & reservasi jadwal spa bayi secara intuitif',
               'Otomatisasi konfirmasi detail reservasi langsung via WhatsApp API',
               'Dashboard admin real-time untuk manajemen layanan, voucher & laporan transaksi',
-          ],
+            ],
     },
-
 
     {
       id: 'laundrykuy',
@@ -212,32 +237,6 @@ export default function Projects() {
               'Portal pengelolaan pesanan admin & manajemen layanan laundry secara realtime',
               'Pelacakan status pesanan pengguna via input kode unik & pemindaian QR code struk',
               'Sistem autentikasi, riwayat transaksi, dan manajemen state responsif berbasis GetX',
-            ],
-    },
-
-    {
-      id: 'absensiku',
-      title: 'ABSENSIKU',
-      role: 'Mobile & Backend Developer',
-      category: 'MOBILE',
-      status: 'In Progress',
-      description:
-        language === 'EN'
-          ? 'Absensiku is a mobile-based attendance and presence tracking application built with Flutter, integrated with a Laravel REST API and MySQL database. Features GPS geolocation verification, real-time check-in/check-out, attendance history, and administrative presence reporting.'
-          : 'Absensiku adalah aplikasi presensi dan pencatatan kehadiran berbasis mobile yang dikembangkan menggunakan Flutter dengan backend REST API Laravel dan database MySQL. Dilengkapi validasi lokasi (geolokasi GPS), check-in/check-out real-time, rekap riwayat kehadiran, serta pelaporan data presensi.',
-      tech: ['Flutter', 'Dart', 'Laravel', 'REST API', 'MySQL', 'Git'],
-      liveUrl: 'https://github.com/dedejuniarputra/absensiku',
-      features:
-        language === 'EN'
-          ? [
-              'Real-time mobile attendance check-in & check-out with GPS geolocation validation',
-              'Laravel REST API backend integration for secure authentication & data processing',
-              'Optimized MySQL database management for attendance logs, history & summary reports',
-            ]
-          : [
-              'Pencatatan presensi check-in & check-out mobile real-time dengan validasi GPS geolokasi',
-              'Integrasi backend REST API Laravel untuk autentikasi aman & pemrosesan data presensi',
-              'Pengelolaan database MySQL teroptimasi untuk log riwayat absensi & laporan kehadiran',
             ],
     },
 
@@ -296,6 +295,32 @@ export default function Projects() {
     },
 
     {
+      id: 'absensiku',
+      title: 'ABSENSIKU',
+      role: 'Mobile & Backend Developer',
+      category: 'MOBILE',
+      status: 'In Progress',
+      description:
+        language === 'EN'
+          ? 'Absensiku is a mobile-based attendance and presence tracking application built with Flutter, integrated with a Laravel REST API and MySQL database. Features GPS geolocation verification, real-time check-in/check-out, attendance history, and administrative presence reporting.'
+          : 'Absensiku adalah aplikasi presensi dan pencatatan kehadiran berbasis mobile yang dikembangkan menggunakan Flutter dengan backend REST API Laravel dan database MySQL. Dilengkapi validasi lokasi (geolokasi GPS), check-in/check-out real-time, rekap riwayat kehadiran, serta pelaporan data presensi.',
+      tech: ['Flutter', 'Dart', 'Laravel', 'REST API', 'MySQL', 'Git'],
+      liveUrl: 'https://github.com/dedejuniarputra/absensiku',
+      features:
+        language === 'EN'
+          ? [
+              'Real-time mobile attendance check-in & check-out with GPS geolocation validation',
+              'Laravel REST API backend integration for secure authentication & data processing',
+              'Optimized MySQL database management for attendance logs, history & summary reports',
+            ]
+          : [
+              'Pencatatan presensi check-in & check-out mobile real-time dengan validasi GPS geolokasi',
+              'Integrasi backend REST API Laravel untuk autentikasi aman & pemrosesan data presensi',
+              'Pengelolaan database MySQL teroptimasi untuk log riwayat absensi & laporan kehadiran',
+            ],
+    },
+
+    {
       id: 'wearnity',
       title: 'WEARNITY',
       role: 'FullStack Web Developer',
@@ -321,33 +346,6 @@ export default function Projects() {
               'Dashboard admin untuk pengelolaan stok produk, detail pesanan & status transaksi',
             ],
     },
-
-    {
-      id: 'livein',
-      title: 'LIVE.IN',
-      role: 'Frontend & React Developer',
-      category: 'WEB',
-      status: 'In Progress',
-      description:
-        language === 'EN'
-          ? 'LIVE.IN is a modern web-based client photo selection and gallery platform built with React.js. Enables photographers to input Google Drive folder links, automatically generating an interactive live gallery where clients can curate and select photos for printing, customize selection limits & deadlines, filter approved shots, and download final high-resolution assets directly via Google Drive.'
-          : 'LIVE.IN adalah platform web manajemen galeri dan seleksi foto klien yang dibangun menggunakan React.js. Memungkinkan fotografer menginput tautan folder Google Drive untuk menghasilkan galeri live interaktif, di mana klien dapat memilih foto untuk dicetak sesuai kuota dan batas waktu, memfilter hasil kurasi, serta mengunduh foto pilihan secara langsung via Google Drive.',
-      tech: ['React.js', 'JavaScript', 'Tailwind CSS', 'Google Drive API', 'REST API', 'Git'],
-      liveUrl: 'https://github.com/dedejuniarputra/livein',
-      features:
-        language === 'EN'
-          ? [
-              'Automated Google Drive folder parsing & interactive client live photo showcase',
-              'Client photo curation & selection engine with configurable limits, deadlines & print formats',
-              'Instant direct Drive download permissions & automated WhatsApp client notification flow',
-            ]
-          : [
-              'Parsing folder Google Drive otomatis & showcase galeri foto live interaktif untuk klien',
-              'Fitur kurasi/seleksi foto dengan pengaturan kuota maksimal, deadline & format cetak',
-              'Akses unduh langsung via Google Drive untuk foto terpilih & integrasi alur WhatsApp',
-            ],
-    },
-
   ];
 
   const filteredProjects = activeFilter === 'ALL'
@@ -439,7 +437,6 @@ export default function Projects() {
               key={`${activeFilter}-${project.id}`}
               project={project}
               index={idx}
-              onSelect={setSelectedProject}
               t={t}
             />
           ))}
@@ -474,64 +471,6 @@ export default function Projects() {
 
       </div>
 
-      {/* Project Detail Modal Dialog */}
-      {selectedProject && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 sm:p-6 animate-fade-in select-text">
-          <div className="bg-[#09090b] border border-zinc-800 rounded-2xl w-full max-w-2xl p-6 sm:p-8 shadow-2xl relative space-y-6 max-h-[90vh] overflow-y-auto">
-            
-            {/* Modal Top Header */}
-            <div className="flex items-start justify-between pb-4 border-b border-zinc-800 gap-4">
-              <div className="space-y-1">
-                <div className="flex items-center gap-2.5 flex-wrap">
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#13ec7b] tracking-tight">
-                    {selectedProject.title}
-                  </h3>
-                  {selectedProject.role && (
-                    <span className="px-2.5 py-0.5 rounded-full bg-amber-950/40 border border-amber-500/40 text-white text-xs font-mono flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                      {selectedProject.role}
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs sm:text-sm text-zinc-400 text-justify leading-relaxed">
-                  {selectedProject.description}
-                </p>
-              </div>
-
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="p-2 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition-colors focus:outline-none cursor-pointer flex-shrink-0"
-                title={t.projects.modalClose}
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Project Image Preview Frame */}
-            <ProjectImagePreview
-              image={selectedProject.image}
-              title={selectedProject.title}
-            />
-
-            {/* Key Implementation Highlights */}
-            <div className="space-y-3 pt-2">
-              <h4 className="text-sm font-semibold tracking-wide font-mono uppercase text-[#13ec7b]">
-                {language === 'EN' ? 'Features:' : 'Fitur:'}
-              </h4>
-              <ul className="space-y-2 text-xs sm:text-sm text-zinc-300 list-disc list-inside leading-relaxed">
-                {selectedProject.features.map((feat, idx) => (
-                  <li key={idx} className="text-zinc-400">
-                    <span className="text-zinc-200 font-medium">{feat}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      )}
-
     </section>
   );
 }
@@ -543,50 +482,13 @@ interface StarParticle {
   size: number;
 }
 
-function ProjectImagePreview({ image, title }: { image?: string | any; title: string }) {
-  const [imageError, setImageError] = useState(false);
-
-  useEffect(() => {
-    setImageError(false);
-  }, [image]);
-
-  const imgSrc = typeof image === 'object' && image !== null && 'src' in image ? image.src : (typeof image === 'string' ? image : '');
-  const showPlaceholder = !imgSrc || imageError;
-
-  return (
-    <div className="bg-[#0c0c0e] border border-zinc-800/80 rounded-xl overflow-hidden shadow-inner flex items-center justify-center min-h-[220px] sm:min-h-[260px] max-h-[360px] relative w-full select-none">
-      {!showPlaceholder ? (
-        <img
-          src={imgSrc}
-          alt={title}
-          className="w-full h-full object-cover object-center"
-          onError={() => setImageError(true)}
-        />
-      ) : (
-        <div className="flex flex-col items-center justify-center p-8 text-center space-y-3">
-          <div className="w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-500 shadow-md">
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-            </svg>
-          </div>
-          <span className="text-[11px] font-mono tracking-widest text-zinc-500 uppercase font-medium">
-            No Preview Image
-          </span>
-        </div>
-      )}
-    </div>
-  );
-}
-
 function ProjectCard({
   project,
   index,
-  onSelect,
   t,
 }: {
   project: Project;
   index: number;
-  onSelect: (p: Project) => void;
   t: any;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -704,22 +606,8 @@ function ProjectCard({
           </span>
         </div>
 
-        {/* Right: 2 Action Buttons */}
-        <div className="flex items-center gap-2">
-          
-          {/* Left Button: Detail Modal Trigger */}
-          <button
-            onClick={() => onSelect(project)}
-            className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-[#13ec7b]/50 text-zinc-400 hover:text-[#13ec7b] hover:shadow-[0_0_12px_rgba(19,236,123,0.2)] transition-all flex items-center justify-center cursor-pointer focus:outline-none"
-            title={t.projects.viewDetails}
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.8">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.573 16.49 16.638 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </button>
-
-          {/* Right Button: External Live Link */}
+        {/* Right: External Live Link Button */}
+        <div>
           <a
             href={project.liveUrl}
             target="_blank"
@@ -731,15 +619,17 @@ function ProjectCard({
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
             </svg>
           </a>
-
         </div>
 
       </div>
 
       {/* Project Thumbnail Image Preview */}
-      <div
-        onClick={() => onSelect(project)}
-        className="relative z-10 my-4 w-full aspect-video rounded-xl overflow-hidden border border-zinc-800/80 bg-[#0c0c0e] group/img cursor-pointer transition-all duration-300 hover:border-[#13ec7b]/50 shadow-inner flex items-center justify-center select-none"
+      <a
+        href={project.liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative z-10 my-4 w-full aspect-video rounded-xl overflow-hidden border border-zinc-800/80 bg-[#0c0c0e] group/img transition-all duration-300 hover:border-[#13ec7b]/50 shadow-inner flex items-center justify-center select-none cursor-pointer block"
+        title={t.projects.liveDemo}
       >
         {!showPlaceholder ? (
           <>
@@ -750,18 +640,7 @@ function ProjectCard({
               onError={() => setImageError(true)}
             />
             {/* Subtle Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover/img:opacity-20 transition-opacity" />
-
-            {/* Hover Quick "View Details" overlay */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
-              <span className="px-3 py-1.5 rounded-full bg-black/85 border border-[#13ec7b]/50 text-[#13ec7b] text-xs font-mono font-medium shadow-lg flex items-center gap-1.5 transform translate-y-2 group-hover/img:translate-y-0 transition-transform duration-300">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.573 16.49 16.638 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                {t.projects.viewDetails}
-              </span>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover/img:opacity-10 transition-opacity" />
           </>
         ) : (
           <div className="flex flex-col items-center justify-center p-6 text-center space-y-2">
@@ -775,7 +654,7 @@ function ProjectCard({
             </span>
           </div>
         )}
-      </div>
+      </a>
 
       {/* Card Body: Title & Description */}
       <div className="relative z-10 space-y-2 mb-4 flex-1 flex flex-col justify-start">

@@ -3,40 +3,60 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '@/src/context/LanguageContext';
 
+function ClockIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  );
+}
+
 export default function Navbar() {
   const { language, toggleLanguage, t } = useLanguage();
   const [activeMenuId, setActiveMenuId] = useState('about');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [apiLatency, setApiLatency] = useState<number | null>(null);
+  const [timeString, setTimeString] = useState<string>('');
   const [scrolled, setScrolled] = useState(false);
   const activeIdRef = useRef('about');
 
+  // ── Realtime WIB Clock (Asia/Jakarta, UTC+7) ──────────────────────
   useEffect(() => {
-    let isMounted = true;
-
-    const checkLatency = async () => {
-      const start = performance.now();
+    const updateTime = () => {
       try {
-        const res = await fetch('/api/ping', { cache: 'no-store' });
-        if (res.ok) {
-          const end = performance.now();
-          const latency = Math.max(1, Math.round(end - start));
-          if (isMounted) setApiLatency(latency);
-        }
+        const formatted = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'Asia/Jakarta',
+          hour: 'numeric',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true,
+        }).format(new Date());
+        setTimeString(`${formatted} WIB`);
       } catch {
-        if (isMounted) setApiLatency(null);
+        const now = new Date();
+        const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+        const wib = new Date(utc + 7 * 3600000);
+        const hours = wib.getHours();
+        const minutes = String(wib.getMinutes()).padStart(2, '0');
+        const seconds = String(wib.getSeconds()).padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        const h12 = hours % 12 || 12;
+        setTimeString(`${h12}:${minutes}:${seconds} ${ampm} WIB`);
       }
     };
 
-    checkLatency();
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
 
-    // Ping API latency every 5 seconds to keep signal realtime
-    const interval = setInterval(checkLatency, 5000);
-
-    return () => {
-      isMounted = false;
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   }, []);
 
   // ── Scroll blur & ScrollSpy & Hash Sync ───────────────────────────
@@ -177,7 +197,7 @@ export default function Navbar() {
             <span className="text-zinc-500 text-xl font-bold font-mono group-hover:text-[#13ec7b] transition-colors">&gt;</span>
           </a>
 
-          {/* Navigation Links + Language & Visitor Counter (Desktop) */}
+          {/* Navigation Links + Language & Realtime Clock (Desktop) */}
           <div className="hidden md:flex items-center gap-5 lg:gap-7 xl:gap-8">
             {menuItems.map((item) => {
               const isActive = activeMenuId === item.id;
@@ -202,7 +222,7 @@ export default function Navbar() {
               );
             })}
 
-            {/* Glassmorphism Capsule for Language & Realtime Views */}
+            {/* Glassmorphism Capsule for Language & Realtime WIB Clock */}
             <div className="flex items-center gap-2.5 px-3 py-1.5 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md shadow-2xl hover:border-[#13ec7b]/40 transition-all duration-300 whitespace-nowrap shrink-0">
               {/* Globe / EN & ID Switcher */}
               <button 
@@ -220,20 +240,22 @@ export default function Navbar() {
               {/* Vertical Line Separator */}
               <div className="h-3.5 w-[1px] bg-zinc-800/90 shrink-0" />
 
-              {/* Realtime API Latency Badge */}
-              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-xs font-bold whitespace-nowrap shrink-0" title="Realtime API Signal Latency">
-                <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#13ec7b]" />
+              {/* Realtime WIB Clock Badge */}
+              <div
+                className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-xs font-bold whitespace-nowrap shrink-0"
+                title="Waktu Indonesia Barat (WIB)"
+              >
+                <ClockIcon className="w-3.5 h-3.5 shrink-0" />
+                <span className="whitespace-nowrap tabular-nums">
+                  {timeString || '--:--:-- WIB'}
                 </span>
-                <span className="whitespace-nowrap">API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
               </div>
             </div>
           </div>
 
-          {/* Mobile Right Controls: Language & API Capsule + Hamburger Button */}
+          {/* Mobile Right Controls: Language & Clock Capsule + Hamburger Button */}
           <div className="flex items-center md:hidden gap-1.5 sm:gap-2 shrink-0">
-            {/* Glassmorphism Capsule for Language & Realtime Views (Mobile) */}
+            {/* Glassmorphism Capsule for Language & Realtime WIB Clock (Mobile) */}
             <div className="flex items-center gap-2 px-2.5 py-1 bg-zinc-950/80 border border-zinc-800/80 rounded-xl backdrop-blur-md shadow-lg whitespace-nowrap shrink-0">
               {/* Globe / EN & ID Switcher */}
               <button 
@@ -251,13 +273,15 @@ export default function Navbar() {
               {/* Vertical Line Separator */}
               <div className="h-3.5 w-[1px] bg-zinc-800/90 shrink-0" />
 
-              {/* Realtime API Latency Badge */}
-              <div className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-[11px] sm:text-xs font-bold whitespace-nowrap shrink-0" title="Realtime API Signal Latency">
-                <span className="relative flex h-2 w-2 shrink-0">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#13ec7b] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#13ec7b]" />
+              {/* Realtime WIB Clock Badge */}
+              <div
+                className="flex items-center gap-1.5 text-[#13ec7b] cursor-default font-mono text-[11px] sm:text-xs font-bold whitespace-nowrap shrink-0"
+                title="Waktu Indonesia Barat (WIB)"
+              >
+                <ClockIcon className="w-3.5 h-3.5 shrink-0" />
+                <span className="whitespace-nowrap tabular-nums">
+                  {timeString || '--:--:-- WIB'}
                 </span>
-                <span className="whitespace-nowrap">API: {apiLatency !== null ? `${apiLatency}ms` : '--ms'}</span>
               </div>
             </div>
 

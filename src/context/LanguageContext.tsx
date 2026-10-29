@@ -16,7 +16,7 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      badgeText: 'HI, HOW ARE YOU?',
+      badgeText: 'Hi, my name is?',
       roles: [
         'Junior Software Developer & System Analyst',
         'Mobile Developer',
@@ -83,28 +83,21 @@ export const translations = {
       categories: [
         {
           num: '01',
-          label: 'FRONTEND',
-          items: ['HTML', 'React.js', 'Next.js', 'Bootstrap', 'Tailwind CSS'],
+          label: 'MY STACK & DEVELOPMENT',
+          items: [
+            'Python', 'HTML', 'CSS', 'JavaScript', 'Laravel', 'CodeIgniter', 'React.js',
+            'Next.js', 'Vue.js', 'Tailwind CSS', 'Bootstrap', 'Shadcn', 'WordPress', 'Node.js',
+            'MySQL', 'PostgreSQL', 'Firebase', 'Supabase',
+            'Flutter', 'Kotlin', 'GetX', 'Provider',
+          ],
         },
         {
           num: '02',
-          label: 'BACKEND & DATABASE',
-          items: ['Laravel', 'MySQL', 'Firebase', 'PostgreSQL', 'Node.js'],
-        },
-        {
-          num: '03',
-          label: 'MOBILE DEVELOPMENT',
-          items: ['Android Studio', 'Flutter', 'Kotlin', 'GetX', 'Provider'],
-        },
-        {
-          num: '04',
-          label: 'TOOLS & HOSTING',
-          items: ['VS Code', 'Antigravity', 'Git', 'GitHub', 'Laragon', 'Vercel', 'Hostinger', 'Figma', 'WordPress'],
-        },
-        {
-          num: '05',
-          label: 'AI TOOLS',
-          items: ['ChatGPT', 'Claude', 'Gemini'],
+          label: 'OTHER TOOLS & TECHNOLOGIES',
+          items: [
+            'VS Code', 'Android Studio', 'Git', 'GitHub', 'Docker', 'Figma',
+            'Cloudflare', 'Redis', 'ChatGPT', 'Claude', 'Gemini',
+          ],
         },
       ],
     },
@@ -147,13 +140,13 @@ export const translations = {
       items: [
         {
           id: 'freelance',
-          role: 'Freelance',
+          role: 'Freelance Web & Mobile Apps',
           company: 'Freelance',
           location: 'REMOTE / ON-SITE',
           type: 'PART-TIME',
           year: '2026',
           period: 'Jan 2026 - Present',
-          duration: '8 MONTHS',
+          duration: '10 MONTHS',
           skills: 'Full-Stack Web Development, React.js, Laravel, Flutter & +10 skills',
           details: [
             'Developing custom full-stack web and mobile applications using Next.js, React.js, Laravel, and Flutter tailored to client needs.',
@@ -164,41 +157,21 @@ export const translations = {
           ]
         },
         {
-          id: 'aurorababyspa',
-          role: 'Mobile Flutter Developer',
-          company: 'AURORABABYSPA',
-          location: 'BANDAR LAMPUNG',
-          type: 'PART-TIME',
-          year: '2026',
-          period: 'Feb 2026 - Jun 2026',
-          duration: '5 MONTHS',
-          workType: 'ON-SITE',
-          skills: 'Mobile Development, Flutter, Firebase, GetX, REST API & +5 skills',
-          details: [
-            'Developed a multiplatform mobile application using Flutter, Firebase, and GetX to digitalize Aurora Baby Spa booking services.',
-            'Implemented authentication, service booking, payment, notification, and transaction history features to enhance user experience.',
-            'Integrated Firebase Authentication, Cloud Firestore, Firebase Storage, and REST APIs for real-time data management.',
-            'Performed testing, debugging, troubleshooting, and app optimization to ensure performance, stability, and maintainability.',
-            'Collaborated throughout requirements analysis, development, testing, and application refinement until production deployment.'
-          ]
-        },
-        {
           id: 'livesostory',
           role: 'FullStack Web Developer',
           company: 'LIVESOSTORY.CO',
           location: 'BANDAR LAMPUNG',
           type: 'PART-TIME',
           year: '2026',
-          period: 'Jan 2026 - Mar 2026',
-          duration: '3 MONTHS',
+          period: 'Jan 2026 - September 2026',
+          duration: '9 MONTHS',
           workType: 'ON-SITE',
-          skills: 'Full-Stack Web Development, Laravel, Tailwind CSS, REST API, WhatsApp API & +5 skills',
+          skills: 'Full-Stack Web Development, Laravel, React.js, Tailwind CSS, REST API, WhatsApp API & +5 skills',
           details: [
-            'Developed and maintained a professional photography website built with Laravel and Tailwind CSS.',
-            'Performed troubleshooting, debugging, testing, and application fixes to ensure high stability and performance.',
-            'Integrated REST APIs and WhatsApp API to automate service booking workflows.',
-            'Managed MySQL databases and assisted in system maintenance to support operational requirements.',
-            'Collaborated with the team using Git, documented development processes, and provided technical support throughout application deployment.'
+            'Developed and maintained the primary service and booking website built with Laravel, Tailwind CSS, and MySQL database tailored to business requirements.',
+            'Engineered the internal "Live.In" system using React.js to facilitate seamless client photo sharing via automated Google Drive folder link detection.',
+            'Integrated REST APIs, WhatsApp API, and external services to automate booking workflows, file distribution, and customer communications.',
+            'Performed testing, debugging, troubleshooting, performance optimization, and system maintenance using Git to ensure both applications operate with high stability and efficiency.'
           ]
         },
         {
@@ -225,7 +198,7 @@ export const translations = {
           role: 'Coordinator & Assistant Lecturer – Mobile Application and Technology',
           company: 'UNIVERSITAS LAMPUNG',
           location: 'FEB & FMIPA UNILA',
-          type: 'PART-TIME',
+          type: 'PARUH-WAKTU',
           year: '2025',
           period: 'Agust 2025 - Des 2025',
           duration: '5 MONTHS',
@@ -240,22 +213,21 @@ export const translations = {
           ]
         },
         {
-          id: 'himakom',
-          role: 'Volunter Panitia Acara',
-          company: 'HIMAKOM UNILA',
+          id: 'asdos-os',
+          role: 'Coordinator & Assistant Lecturer – Operating System',
+          company: 'UNIVERSITAS LAMPUNG',
           location: 'FMIPA UNILA',
-          type: 'PART-TIME',
-          year: '2022 - 2023',
-          period: 'Sept 2022 - Okto 2023',
-          duration: '1 TAHUN 2 BULAN',
+          type: 'PARUH-WAKTU',
+          year: '2024',
+          period: 'Jan 2024 - Jun 2024',
+          duration: '6 MONTHS',
           workType: 'ON-SITE',
-          skills: 'Public Relations (Humas), Event Management, Teamwork, Communication & +5 skills',
+          skills: 'Operating Systems, Linux, VirtualBox, Command Line, Server Basics, Mentoring & +5 skills',
           details: [
-            'Contributed as a committee member in various HIMAKOM events, including PRINTER 2023, LKMMIK-TD, PRJXHT, and KWI, specifically within the Public Relations Division (Humas).',
-            'Coordinated with committee members and key stakeholders to ensure smooth event execution, including communication with participants and stakeholders.',
-            'Assisted in event planning, coordination, and execution to ensure activities ran according to schedule and target objectives.',
-            'Handled operational challenges during events by prioritizing effective communication, teamwork, and rapid problem solving.',
-            'Developed communication, service, time management, adaptability, and collaboration skills within a dynamic working environment.'
+            'Mentored 80+ students in understanding Operating System concepts and laboratory practicums using Linux and VirtualBox.',
+            'Provided technical guidance in fundamental server practices and command-line usage (CMD/Linux), including troubleshooting during lab sessions.',
+            'Compiled and managed laboratory practicum modules and instructional documentation using Microsoft Word, Excel, and PowerPoint.',
+            'Collaborated with lecturers and the assistant team in executing and evaluating learning outcomes while developing technical mentoring, problem solving, communication, and teamwork skills.'
           ]
         }
       ]
@@ -307,9 +279,9 @@ export const translations = {
     },
     contact: {
       sectionTag: '// GET IN TOUCH',
-      titlePart1: "Let's Build",
-      titleHighlight: 'Something',
-      titlePart2: 'Together',
+      titlePart1: "Let's",
+      titleHighlight: 'Talk',
+      titlePart2: '',
       subtitle: "If you'd like to collaborate, discuss a project, or just connect, feel free to send me a message. I'm always open to learning opportunities and interesting ideas.",
       directEmailTitle: 'Direct Email',
       directEmailSub: 'Send me a direct email for project inquiries',
@@ -359,7 +331,7 @@ export const translations = {
       contact: 'Kontak',
     },
     hero: {
-      badgeText: 'HALO, APA KABAR MU?',
+      badgeText: 'Hi, nama saya?',
       roles: [
         'Junior Software Developer & System Analyst',
         'Mobile Developer',
@@ -426,28 +398,21 @@ export const translations = {
       categories: [
         {
           num: '01',
-          label: 'FRONTEND',
-          items: ['HTML', 'React.js', 'Next.js', 'Bootstrap', 'Tailwind CSS'],
+          label: 'MY STACK & DEVELOPMENT',
+          items: [
+            'Python', 'HTML', 'CSS', 'JavaScript', 'Laravel', 'CodeIgniter', 'React.js',
+            'Next.js', 'Vue.js', 'Tailwind CSS', 'Bootstrap', 'Shadcn', 'WordPress', 'Node.js',
+            'MySQL', 'PostgreSQL', 'Firebase', 'Supabase',
+            'Flutter', 'Kotlin', 'GetX', 'Provider',
+          ],
         },
         {
           num: '02',
-          label: 'BACKEND & DATABASE',
-          items: ['Laravel', 'MySQL', 'Firebase', 'PostgreSQL', 'Node.js'],
-        },
-        {
-          num: '03',
-          label: 'MOBILE DEVELOPMENT',
-          items: ['Android Studio', 'Flutter', 'Kotlin', 'GetX', 'Provider'],
-        },
-        {
-          num: '04',
-          label: 'TOOLS & HOSTING',
-          items: ['VS Code', 'Antigravity', 'Git', 'GitHub', 'Laragon', 'Vercel', 'Hostinger', 'Figma', 'WordPress'],
-        },
-        {
-          num: '05',
-          label: 'AI TOOLS',
-          items: ['ChatGPT', 'Claude', 'Gemini'],
+          label: 'OTHER TOOLS & TECHNOLOGIES',
+          items: [
+            'VS Code', 'Android Studio', 'Git', 'GitHub', 'Docker', 'Figma',
+            'Cloudflare', 'Redis', 'ChatGPT', 'Claude', 'Gemini',
+          ],
         },
       ],
     },
@@ -490,13 +455,13 @@ export const translations = {
       items: [
         {
           id: 'freelance',
-          role: 'Freelance',
+          role: 'Freelance Web & Mobile Apps',
           company: 'Freelance',
           location: 'REMOTE / ON-SITE',
           type: 'PART-TIME',
           year: '2026',
           period: 'Jan 2026 - Sekarang',
-          duration: '8 BULAN',
+          duration: '10 BULAN',
           skills: 'Full-Stack Web Development, React.js, Laravel, Flutter & +10 keahlian',
           details: [
             'Mengembangkan aplikasi web dan mobile full-stack kustom berbasis Next.js, React.js, Laravel, dan Flutter sesuai kebutuhan spesifik klien.',
@@ -507,41 +472,21 @@ export const translations = {
           ]
         },
         {
-          id: 'aurorababyspa',
-          role: 'Mobile Flutter Developer',
-          company: 'AURORABABYSPA',
-          location: 'BANDAR LAMPUNG',
-          type: 'PART-TIME',
-          year: '2026',
-          period: 'Feb 2026 - Jun 2026',
-          duration: '5 BULAN',
-          workType: 'ON-SITE',
-          skills: 'Mobile Development, Flutter, Firebase, GetX, REST API & +5 keahlian',
-          details: [
-            'Mengembangkan aplikasi mobile multiplatform menggunakan Flutter, Firebase, dan GetX untuk digitalisasi layanan pemesanan Aurora Baby Spa.',
-            'Mengimplementasikan fitur autentikasi, pemesanan layanan, pembayaran, notifikasi, dan riwayat transaksi guna meningkatkan pengalaman pengguna.',
-            'Mengintegrasikan Firebase Authentication, Cloud Firestore, Firebase Storage, serta REST API untuk pengelolaan data secara real-time.',
-            'Melakukan testing, debugging, troubleshooting, dan optimasi aplikasi guna memastikan performa, stabilitas, dan kemudahan pemeliharaan aplikasi.',
-            'Berkolaborasi dalam proses analisis kebutuhan, pengembangan, pengujian, dan penyempurnaan aplikasi hingga siap digunakan.'
-          ]
-        },
-        {
           id: 'livesostory',
           role: 'FullStack Web Developer',
           company: 'LIVESOSTORY.CO',
           location: 'BANDAR LAMPUNG',
           type: 'PART-TIME',
           year: '2026',
-          period: 'Jan 2026 - Mar 2026',
-          duration: '3 BULAN',
+          period: 'Jan 2026 - September 2026',
+          duration: '9 BULAN',
           workType: 'ON-SITE',
-          skills: 'Full-Stack Web Development, Laravel, Tailwind CSS, REST API, WhatsApp API & +5 keahlian',
+          skills: 'Full-Stack Web Development, Laravel, React.js, Tailwind CSS, REST API, WhatsApp API & +5 keahlian',
           details: [
-            'Mengembangkan dan memelihara website fotografi profesional berbasis Laravel dan Tailwind CSS.',
-            'Melakukan troubleshooting, debugging, testing, serta perbaikan aplikasi untuk memastikan sistem berjalan stabil dan optimal.',
-            'Mengintegrasikan REST API dan WhatsApp API untuk mendukung otomatisasi proses pemesanan layanan.',
-            'Mengelola database MySQL serta membantu pemeliharaan sistem sesuai kebutuhan operasional.',
-            'Berkolaborasi dengan tim menggunakan Git, mendokumentasikan proses pengembangan, serta memberikan dukungan teknis selama proses implementasi aplikasi.'
+            'Mengembangkan dan memelihara website layanan serta pemesanan utama menggunakan Laravel, Tailwind CSS, dan database MySQL sesuai kebutuhan bisnis.',
+            'Membangun sistem internal "Live.In" berbasis React.js untuk memfasilitasi berbagi (sharing) foto klien secara praktis melalui fitur deteksi otomatis folder tautan Google Drive.',
+            'Mengintegrasikan REST API, WhatsApp API, dan layanan eksternal untuk mendukung otomatisasi proses pemesanan, distribusi file, serta komunikasi pelanggan.',
+            'Melakukan testing, debugging, troubleshooting, optimasi performa, dan pemeliharaan sistem menggunakan Git untuk memastikan kedua aplikasi berjalan stabil dan optimal.'
           ]
         },
         {
@@ -568,7 +513,7 @@ export const translations = {
           role: 'Coordinator & Assistant Lecturer – Mobile Application and Technology',
           company: 'UNIVERSITAS LAMPUNG',
           location: 'FEB & FMIPA UNILA',
-          type: 'PART-TIME',
+          type: 'PARUH-WAKTU',
           year: '2025',
           period: 'Agust 2025 - Des 2025',
           duration: '5 BULAN',
@@ -583,22 +528,21 @@ export const translations = {
           ]
         },
         {
-          id: 'himakom',
-          role: 'Volunter Panitia Acara',
-          company: 'HIMAKOM UNILA',
+          id: 'asdos-os',
+          role: 'Coordinator & Assistant Lecturer – Operating System',
+          company: 'UNIVERSITAS LAMPUNG',
           location: 'FMIPA UNILA',
-          type: 'PART-TIME',
-          year: '2022 - 2023',
-          period: 'Sept 2022 - Okto 2023',
-          duration: '1 TAHUN 2 BULAN',
+          type: 'PARUH-WAKTU',
+          year: '2024',
+          period: 'Jan 2024 - Juni 2024',
+          duration: '6 BULAN',
           workType: 'ON-SITE',
-          skills: 'Public Relations (Humas), Event Management, Teamwork, Communication & +5 keahlian',
+          skills: 'Operating Systems, Linux, VirtualBox, Command Line, Server Basics, Mentoring & +5 keahlian',
           details: [
-            'Berkontribusi sebagai panitia dalam berbagai kegiatan HIMAKOM, seperti PRINTER 2023, LKMMIK-TD, PRJXHT, dan KWI, khususnya pada Divisi Hubungan Masyarakat (Humas).',
-            'Berkoordinasi dengan panitia dan berbagai pihak untuk mendukung kelancaran pelaksanaan kegiatan, termasuk komunikasi dengan peserta dan stakeholder.',
-            'Membantu proses perencanaan, koordinasi, dan pelaksanaan acara agar berjalan sesuai jadwal dan target yang telah ditentukan.',
-            'Menangani berbagai kendala operasional selama kegiatan dengan mengutamakan komunikasi yang efektif, kerja sama tim, dan penyelesaian masalah secara cepat.',
-            'Mengembangkan kemampuan komunikasi, pelayanan, manajemen waktu, adaptasi, serta kolaborasi dalam lingkungan kerja yang dinamis.'
+            'Membimbing 80+ mahasiswa dalam memahami materi dan praktikum Sistem Operasi menggunakan Linux dan VirtualBox.',
+            'Memberikan pendampingan teknis dalam praktik dasar server dan penggunaan command line (CMD/Linux), termasuk troubleshooting selama praktikum.',
+            'Menyusun dan mengelola modul praktikum serta dokumentasi pembelajaran menggunakan Microsoft Word, Excel, dan PowerPoint.',
+            'Berkolaborasi dengan dosen dan tim asisten dalam pelaksanaan serta evaluasi pembelajaran, sekaligus mengembangkan kemampuan technical mentoring, problem solving, komunikasi, dan teamwork.'
           ]
         }
       ]
@@ -650,9 +594,9 @@ export const translations = {
     },
     contact: {
       sectionTag: '// SEGERA TERHUBUNG',
-      titlePart1: 'Mari Membangun',
-      titleHighlight: 'Sesuatu',
-      titlePart2: 'Bersama',
+      titlePart1: 'Mari',
+      titleHighlight: 'Bicara',
+      titlePart2: '',
       subtitle: 'Jika Anda ingin berkolaborasi, mendiskusikan proyek, atau sekadar terhubung, jangan ragu untuk mengirim pesan. Saya selalu terbuka untuk peluang belajar dan ide-ide menarik.',
       directEmailTitle: 'Email Langsung',
       directEmailSub: 'Kirimkan email langsung untuk diskusi proyek',

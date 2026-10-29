@@ -2,10 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/src/components/Navbar";
 import SplashScreen from "@/src/components/SplashScreen";
-import FloatingWhatsApp from "@/src/components/FloatingWhatsApp";
+import ScrollToTop from "@/src/components/ScrollToTop";
 import { LanguageProvider } from "@/src/context/LanguageContext";
 import "./globals.css";
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -156,7 +155,7 @@ export default function RootLayout({
             <SplashScreen />
             <Navbar />
             {children}
-            <FloatingWhatsApp />
+            <ScrollToTop />
           </LanguageProvider>
         </div>
       </body>
