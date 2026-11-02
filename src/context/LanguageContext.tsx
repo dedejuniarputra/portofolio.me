@@ -39,8 +39,8 @@ export const translations = {
       bio1Prefix: "Hello, I'm ",
       name: "Dede Juniar Putra",
       bio1Suffix: ", a Junior Software Developer based in Bandar Lampung, Indonesia — specializing in web development with a foundational understanding of mobile application development. I have experience developing applications across the frontend, backend, and database layers, while understanding system requirements analysis and troubleshooting.",
-      bio2: "In web development, I have experience using Laravel, PHP, JavaScript, and Tailwind CSS, along with MySQL for database management. For mobile development, I have experience with Flutter, Kotlin, and Firebase. I also understand REST APIs, Git & GitHub, and am accustomed to testing, debugging, troubleshooting, and system maintenance. Currently, I am expanding my skills with React.js, Next.js, and WordPress to broaden my expertise in website development and management.",
-      bio3: "I hold a Bachelor's degree in Computer Science from the University of Lampung, with 2 years of experience in Web Development and Mobile Development. Currently, I am open to roles as a Software Engineer, Web Developer, Mobile Developer, System Analyst, or IT Support. I am ready to continuously learn, sharpen my skills, and contribute through effective technology solutions tailored to user needs.",
+      bio2: "In web development, I have experience using Laravel, CodeIgniter, Vue.js, PHP, JavaScript, and Tailwind CSS, along with MySQL for database management. For mobile development, I have experience with Flutter, Kotlin, and Firebase. I also understand REST APIs, Git & GitHub, and am accustomed to testing, debugging, troubleshooting, and system maintenance. Currently, I am expanding my skills with React.js, Next.js, and WordPress to broaden my expertise in website development and management.",
+      bio3: "I hold a Bachelor's degree in Computer Science from the University of Lampung, with 2 years of experience in Web Development and Mobile Development gained through internships, part-time work, academic coursework, and personal projects. Currently, I am open to roles as a Software Engineer, Web Developer, Mobile Developer, System Analyst, or IT Support. I am ready to continuously learn, sharpen my skills, and contribute through effective technology solutions tailored to user needs.",
       stats: {
         projects: 'Projects Built',
         commits: 'Commits (2022 - 2026)',
@@ -139,39 +139,21 @@ export const translations = {
       present: 'Present',
       items: [
         {
-          id: 'freelance',
-          role: 'Freelance Web & Mobile Apps',
-          company: 'Freelance',
-          location: 'REMOTE / ON-SITE',
-          type: 'PART-TIME',
-          year: '2026',
-          period: 'Jan 2026 - Present',
-          duration: '10 MONTHS',
-          skills: 'Full-Stack Web Development, React.js, Laravel, Flutter & +10 skills',
-          details: [
-            'Developing custom full-stack web and mobile applications using Next.js, React.js, Laravel, and Flutter tailored to client needs.',
-            'Architecting robust REST APIs, secure authentication systems, and scalable database models using MySQL/PostgreSQL.',
-            'Implementing modern, highly responsive, and interactive UI/UX interfaces adhering to professional design standards.',
-            'Performing end-to-end testing, debugging, performance optimization, and ongoing maintenance to ensure application stability.',
-            'Communicating and collaborating directly with diverse clients to deliver performant, user-centered digital solutions.'
-          ]
-        },
-        {
           id: 'livesostory',
           role: 'FullStack Web Developer',
           company: 'LIVESOSTORY.CO',
           location: 'BANDAR LAMPUNG',
           type: 'PART-TIME',
           year: '2026',
-          period: 'Jan 2026 - September 2026',
-          duration: '9 MONTHS',
+          period: 'Jan 2026 - Agust 2026',
+          duration: '8 MONTHS',
           workType: 'ON-SITE',
           skills: 'Full-Stack Web Development, Laravel, React.js, Tailwind CSS, REST API, WhatsApp API & +5 skills',
           details: [
-            'Developed and maintained the primary service and booking website built with Laravel, Tailwind CSS, and MySQL database tailored to business requirements.',
-            'Engineered the internal "Live.In" system using React.js to facilitate seamless client photo sharing via automated Google Drive folder link detection.',
-            'Integrated REST APIs, WhatsApp API, and external services to automate booking workflows, file distribution, and customer communications.',
-            'Performed testing, debugging, troubleshooting, performance optimization, and system maintenance using Git to ensure both applications operate with high stability and efficiency.'
+            'Developed and maintained the LIVESTORY.CO photography service and booking website using Laravel, Tailwind CSS, and MySQL to support business operations and improve the customer booking experience.',
+            'Built an internal web application called Live.In using React.js, featuring automatic Google Drive folder link detection to streamline photo sharing and client photo distribution.',
+            'Integrated REST APIs, WhatsApp API, and external services to automate booking workflows, simplify file distribution, and enhance customer communication. Performed database management, testing, debugging, troubleshooting, and performance optimization to ensure system reliability.',
+            'Assisted with photo and video editing while developing editing skills and learning post-production techniques to support the company\'s photography and videography services.'
           ]
         },
         {
@@ -242,10 +224,12 @@ export const translations = {
       seeMore: 'See More Certificates',
       seeLess: 'See Less',
       items: [
+        { id: 34, title: 'Software Engineering', issuer: 'RevoU', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1tlSfwtshEPjbOC6bHcQLzOuZem1gHfz9/view?usp=drive_link' },
         { id: 1, title: 'Front-end Untuk Pemula', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1MeC3V9Oj146_D-1yrhjT3HshlMj2A6ue/view?usp=drive_link' },
         { id: 2, title: 'Dasar Pemrograman Javascript', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1bTSLiu6gM5rxK4yKRa_PTyYolGN2j-WE/view?usp=drive_link' },
         { id: 3, title: 'Dasar Pemrograman Web', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1xhzsU8O7wsfaM-0JvH5yhZOS1RKOvjym/view?usp=drive_link' },
         { id: 17, title: 'WordPress Development', issuer: 'MySkill', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1iGE8xoP9WDBGFx7tCDMPhrf39AuOifjv/view?usp=drive_link' },
+        { id: 35, title: 'AI Career', issuer: 'ASEAN Foundation', date: '2026', category: 'OTHER', url: 'https://drive.google.com/file/d/1fRTO7Xm9SrhAr91nf8H7t8gZWfyznosO/view?usp=drive_link' },
         { id: 4, title: 'Belajar Dasar AI', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: 'https://drive.google.com/file/d/1zl2qyMK8x4_1gQiIcn5_9T35excXfL7i/view?usp=drive_link' },
         { id: 5, title: 'Belajar Dasar IT Support', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: 'https://drive.google.com/file/d/18t0XQc9Bw-9_Y01V13u-6z5769jVd13g/view?usp=drive_link' },
         { id: 6, title: 'Belajar Membuat Aplikasi Flutter untuk Pemula', issuer: 'DICODING INDONESIA', date: '2026', category: 'MOBILE', url: 'https://drive.google.com/file/d/1XBx2UdlR14oGpgkVpzwx8Jmc82vukqDy/view?usp=drive_link' },
@@ -354,8 +338,8 @@ export const translations = {
       bio1Prefix: "Halo, saya ",
       name: "Dede Juniar Putra",
       bio1Suffix: ", seorang Junior Software Developer asal Bandar Lampung, Lampung — berfokus pada pengembangan web dan memiliki pemahaman dasar dalam pengembangan aplikasi mobile. Saya memiliki pengalaman mengembangkan aplikasi dari sisi frontend, backend, hingga basis data, serta memahami proses analisis kebutuhan sistem dan troubleshooting.",
-      bio2: "Dalam pengembangan web, saya memiliki pengalaman menggunakan Laravel, PHP, JavaScript, dan Tailwind CSS, serta MySQL untuk pengelolaan database. Untuk mobile development, saya memiliki pengalaman menggunakan Flutter, Kotlin, dan Firebase. Saya juga memahami REST API, Git & GitHub, serta terbiasa melakukan testing, debugging, troubleshooting, dan pemeliharaan sistem. Saat ini saya sedang mempelajari React.js, Next.js, dan WordPress untuk memperluas kemampuan serta pemahaman saya dalam pengembangan dan pengelolaan website.",
-      bio3: "Saya merupakan lulusan S1 Ilmu Komputer Universitas Lampung dengan pengalaman 2 tahun di bidang Web Development dan Mobile Development. Saat ini saya terbuka untuk peluang sebagai Software Engineer, Web Developer, Mobile Developer, System Analyst, maupun IT Support. Saya siap terus belajar, mengembangkan kemampuan, dan berkontribusi melalui solusi teknologi yang efektif serta sesuai dengan kebutuhan pengguna.",
+      bio2: "Dalam pengembangan web, saya memiliki pengalaman menggunakan Laravel, CodeIgniter, Vue.js, PHP, JavaScript, dan Tailwind CSS, serta MySQL untuk pengelolaan database. Untuk mobile development, saya memiliki pengalaman menggunakan Flutter, Kotlin, dan Firebase. Saya juga memahami REST API, Git & GitHub, serta terbiasa melakukan testing, debugging, troubleshooting, dan pemeliharaan sistem. Saat ini saya sedang mempelajari React.js, Next.js, dan WordPress untuk memperluas kemampuan serta pemahaman saya dalam pengembangan dan pengelolaan website.",
+      bio3: "Saya merupakan lulusan S1 Ilmu Komputer Universitas Lampung dengan pengalaman 2 tahun di bidang Web Development dan Mobile Development yang diperoleh melalui program magang, pekerjaan part-time, serta proyek akademik dan pribadi. Saat ini saya terbuka untuk peluang sebagai Software Engineer, Web Developer, Mobile Developer, System Analyst, maupun IT Support. Saya siap terus belajar, mengembangkan kemampuan, dan berkontribusi melalui solusi teknologi yang efektif serta sesuai dengan kebutuhan pengguna.",
       stats: {
         projects: 'Proyek Selesai',
         commits: 'Komit Git (2025 - 2026)',
@@ -454,39 +438,21 @@ export const translations = {
       present: 'Sekarang',
       items: [
         {
-          id: 'freelance',
-          role: 'Freelance Web & Mobile Apps',
-          company: 'Freelance',
-          location: 'REMOTE / ON-SITE',
-          type: 'PART-TIME',
-          year: '2026',
-          period: 'Jan 2026 - Sekarang',
-          duration: '10 BULAN',
-          skills: 'Full-Stack Web Development, React.js, Laravel, Flutter & +10 keahlian',
-          details: [
-            'Mengembangkan aplikasi web dan mobile full-stack kustom berbasis Next.js, React.js, Laravel, dan Flutter sesuai kebutuhan spesifik klien.',
-            'Merancang arsitektur REST API yang andal, aman, serta pemodelan database MySQL/PostgreSQL untuk mendukung performa tinggi.',
-            'Mendesain serta mengimplementasikan antarmuka pengguna (UI/UX) yang responsif, modern, dan interaktif sesuai standar profesional.',
-            'Melakukan testing, debugging, optimasi performa, serta pemeliharaan berkala guna memastikan keamanan dan stabilitas aplikasi.',
-            'Berkomunikasi dan berkolaborasi secara langsung dengan klien untuk menghadirkan solusi digital yang inovatif dan berkinerja tinggi.'
-          ]
-        },
-        {
           id: 'livesostory',
           role: 'FullStack Web Developer',
           company: 'LIVESOSTORY.CO',
           location: 'BANDAR LAMPUNG',
           type: 'PART-TIME',
           year: '2026',
-          period: 'Jan 2026 - September 2026',
-          duration: '9 BULAN',
+          period: 'Jan 2026 - Agust 2026',
+          duration: '8 BULAN',
           workType: 'ON-SITE',
           skills: 'Full-Stack Web Development, Laravel, React.js, Tailwind CSS, REST API, WhatsApp API & +5 keahlian',
           details: [
-            'Mengembangkan dan memelihara website layanan serta pemesanan utama menggunakan Laravel, Tailwind CSS, dan database MySQL sesuai kebutuhan bisnis.',
-            'Membangun sistem internal "Live.In" berbasis React.js untuk memfasilitasi berbagi (sharing) foto klien secara praktis melalui fitur deteksi otomatis folder tautan Google Drive.',
-            'Mengintegrasikan REST API, WhatsApp API, dan layanan eksternal untuk mendukung otomatisasi proses pemesanan, distribusi file, serta komunikasi pelanggan.',
-            'Melakukan testing, debugging, troubleshooting, optimasi performa, dan pemeliharaan sistem menggunakan Git untuk memastikan kedua aplikasi berjalan stabil dan optimal.'
+            'Mengembangkan dan memelihara website layanan fotografi dan reservasi LIVESTORY.CO menggunakan Laravel, Tailwind CSS, dan MySQL untuk mendukung operasional bisnis serta meningkatkan pengalaman pemesanan pelanggan.',
+            'Membangun aplikasi web internal bernama Live.In menggunakan React.js dengan fitur deteksi otomatis tautan folder Google Drive untuk mempermudah proses sharing dan distribusi foto kepada klien.',
+            'Mengintegrasikan REST API, WhatsApp API, dan layanan eksternal untuk otomatisasi alur pemesanan, menyederhanakan distribusi file, serta meningkatkan komunikasi pelanggan. Mengelola database, testing, debugging, troubleshooting, dan optimasi performa guna memastikan keandalan sistem.',
+            'Membantu proses editing foto dan video sekaligus mengembangkan keterampilan pengeditan dan mempelajari teknik pascaproduksi guna mendukung layanan fotografi serta videografi perusahaan.'
           ]
         },
         {
@@ -557,10 +523,12 @@ export const translations = {
       seeMore: 'Lihat Lebih Banyak Sertifikat',
       seeLess: 'Tampilkan Lebih Sedikit',
       items: [
+        { id: 34, title: 'Software Engineering', issuer: 'RevoU', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1tlSfwtshEPjbOC6bHcQLzOuZem1gHfz9/view?usp=drive_link' },
         { id: 1, title: 'Front-end Untuk Pemula', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1MeC3V9Oj146_D-1yrhjT3HshlMj2A6ue/view?usp=drive_link' },
         { id: 2, title: 'Dasar Pemrograman Javascript', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1bTSLiu6gM5rxK4yKRa_PTyYolGN2j-WE/view?usp=drive_link' },
         { id: 3, title: 'Dasar Pemrograman Web', issuer: 'Dicoding Camp 2026', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1xhzsU8O7wsfaM-0JvH5yhZOS1RKOvjym/view?usp=drive_link' },
         { id: 17, title: 'WordPress Development', issuer: 'MySkill', date: '2026', category: 'WEB', url: 'https://drive.google.com/file/d/1iGE8xoP9WDBGFx7tCDMPhrf39AuOifjv/view?usp=drive_link' },
+        { id: 35, title: 'AI Career', issuer: 'ASEAN Foundation', date: '2026', category: 'OTHER', url: 'https://drive.google.com/file/d/1fRTO7Xm9SrhAr91nf8H7t8gZWfyznosO/view?usp=drive_link' },
         { id: 4, title: 'Belajar Dasar AI', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: 'https://drive.google.com/file/d/1zl2qyMK8x4_1gQiIcn5_9T35excXfL7i/view?usp=drive_link' },
         { id: 5, title: 'Belajar Dasar IT Support', issuer: 'DICODING INDONESIA', date: '2026', category: 'OTHER', url: 'https://drive.google.com/file/d/18t0XQc9Bw-9_Y01V13u-6z5769jVd13g/view?usp=drive_link' },
         { id: 6, title: 'Belajar Membuat Aplikasi Flutter untuk Pemula', issuer: 'DICODING INDONESIA', date: '2026', category: 'MOBILE', url: 'https://drive.google.com/file/d/1XBx2UdlR14oGpgkVpzwx8Jmc82vukqDy/view?usp=drive_link' },

@@ -61,7 +61,7 @@ export default function Projects() {
         language === 'EN'
           ? 'PORTOFOLIO.ME is a modern, responsive personal portfolio website built with Next.js, React.js, and Tailwind CSS. Features dynamic multi-language switching (EN/ID), interactive skills showcase, project architecture details, and smooth glassmorphism dark theme UI.'
           : 'PORTOFOLIO.ME adalah website portofolio pribadi modern dan responsif yang dibangun menggunakan Next.js, React.js, dan Tailwind CSS. Dilengkapi fitur beralih bahasa interaktif (EN/ID), showcase keahlian teknologi, detail arsitektur proyek, serta antarmuka dark glassmorphism yang elegan.',
-      tech: ['Next.js', 'React.js', 'Tailwind CSS', 'TypeScript', 'Vercel', 'Git'],
+      tech: ['Next.js', 'React.js', 'Tailwind CSS', 'TypeScript', 'Vercel', 'Git', 'SEO'],
       liveUrl: 'https://dedejuniarputra.vercel.app',
       image: portofolioImg,
       features:
@@ -88,7 +88,7 @@ export default function Projects() {
         language === 'EN'
           ? 'LivesoStory.co is a web-based photography platform built with Laravel and Tailwind CSS. Integrated with REST API and WhatsApp API to automate seamless booking workflows and deliver a responsive digital showcase.'
           : 'LivesoStory.co adalah platform fotografi berbasis web yang dibangun dengan Laravel dan Tailwind CSS. Terintegrasi dengan REST API dan WhatsApp API untuk otomatisasi alur pemesanan layanan yang cepat dan responsif.',
-      tech: ['Laravel', 'Tailwind CSS', 'JavaScript', 'MySQL', 'Git'],
+      tech: ['Laravel', 'Tailwind CSS', 'JavaScript', 'MySQL', 'WhatsApp API', 'Git', 'SEO'],
       liveUrl: 'https://livesostory.online',
       image: livesostoryImg,
       features:
@@ -241,33 +241,6 @@ export default function Projects() {
     },
 
     {
-      id: 'goaltracker',
-      title: 'GoalTracker',
-      role: 'Frontend Developer',
-      category: 'WEB',
-      status: 'Completed',
-      description:
-        language === 'EN'
-          ? 'GoalTracker is a web-based goal management platform featuring a modern dark glassmorphism UI. Built to visualize targets, track daily consistency up to 100 days with privacy-focused LocalStorage, and deliver interactive achievement celebrations.'
-          : 'GoalTracker adalah aplikasi manajemen tujuan berbasis web dengan estetika dark glassmorphism. Dirancang untuk memvisualisasikan target, melacak konsistensi harian hingga 100 hari dengan LocalStorage berprivasi penuh, serta perayaan pencapaian interaktif.',
-      tech: ['HTML', 'Bootstrap','LocalStorage'],
-      liveUrl: 'https://goaltracker-wheat.vercel.app',
-      image: goalTrackerImg,
-      features:
-        language === 'EN'
-          ? [
-              'Dark glassmorphism UI with futuristic splash screen animation',
-              'Automated daily checklist tracking up to 100 days with Smart Editing',
-              '100% completion achievement celebration with confetti & private LocalStorage',
-            ]
-          : [
-              'Antarmuka dark glassmorphism dengan animasi splash screen futuristik',
-              'Sistem pelacakan checklist harian otomatis hingga 100 hari & Smart Editing',
-              'Perayaan pencapaian 100% dengan confetti interaktif & penyimpanan LocalStorage privat',
-            ],
-    },
-
-    {
       id: 'khodam',
       title: 'CEK KHODAMMU LEK',
       role: 'Frontend Web Developer',
@@ -291,6 +264,33 @@ export default function Projects() {
               'Generator khodam acak otomatis berbasis input nama pengguna',
               'Antarmuka web responsif dan ramah pengguna dengan Bootstrap',
               'Pengalaman pengguna interaktif dengan manipulasi DOM JavaScript',
+            ],
+    },
+
+    {
+      id: 'goaltracker',
+      title: 'GoalTracker',
+      role: 'Frontend Developer',
+      category: 'WEB',
+      status: 'Completed',
+      description:
+        language === 'EN'
+          ? 'GoalTracker is a web-based goal management platform featuring a modern dark glassmorphism UI. Built to visualize targets, track daily consistency up to 100 days with privacy-focused LocalStorage, and deliver interactive achievement celebrations.'
+          : 'GoalTracker adalah aplikasi manajemen tujuan berbasis web dengan estetika dark glassmorphism. Dirancang untuk memvisualisasikan target, melacak konsistensi harian hingga 100 hari dengan LocalStorage berprivasi penuh, serta perayaan pencapaian interaktif.',
+      tech: ['HTML', 'Bootstrap','LocalStorage'],
+      liveUrl: 'https://goaltracker-wheat.vercel.app',
+      image: goalTrackerImg,
+      features:
+        language === 'EN'
+          ? [
+              'Dark glassmorphism UI with futuristic splash screen animation',
+              'Automated daily checklist tracking up to 100 days with Smart Editing',
+              '100% completion achievement celebration with confetti & private LocalStorage',
+            ]
+          : [
+              'Antarmuka dark glassmorphism dengan animasi splash screen futuristik',
+              'Sistem pelacakan checklist harian otomatis hingga 100 hari & Smart Editing',
+              'Perayaan pencapaian 100% dengan confetti interaktif & penyimpanan LocalStorage privat',
             ],
     },
 
@@ -328,9 +328,9 @@ export default function Projects() {
       status: 'In Progress',
       description:
         language === 'EN'
-          ? 'Wearnity is a web-based e-commerce platform built with PHP and MySQL for a streetwear distro brand. Features product catalog browsing, dynamic shopping cart management, user authentication, payment confirmation, and admin order control.'
-          : 'Wearnity adalah platform e-commerce berbasis PHP & MySQL yang dirancang untuk toko pakaian distro. Menyediakan katalog produk busana streetwear, alur keranjang belanja (cart), registrasi pengguna, serta konfirmasi pembayaran dan manajemen pesanan admin.',
-      tech: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript', 'CSS3', 'Git'],
+          ? 'Wearnity is a web-based e-commerce platform built with Laravel, Vue.js, and MySQL for a streetwear distro brand. Features product catalog browsing, dynamic shopping cart management, user authentication, payment confirmation, and admin order control.'
+          : 'Wearnity adalah platform e-commerce berbasis Laravel, Vue.js & MySQL yang dirancang untuk toko pakaian distro. Menyediakan katalog produk busana streetwear, alur keranjang belanja (cart), registrasi pengguna, serta konfirmasi pembayaran dan manajemen pesanan admin.',
+      tech: ['Laravel', 'Vue.js', 'PHP', 'MySQL', 'Tailwind CSS', 'REST API', 'Git', 'SEO'],
       liveUrl: 'https://github.com/dedejuniarputra/PROJECT_WEARNITY.',
       image: '/src/assets/projects/wearnity.png',
       features:
@@ -344,6 +344,32 @@ export default function Projects() {
               'Katalog produk baju distro interaktif & manajemen keranjang belanja (cart)',
               'Sistem autentikasi pelanggan, konfirmasi pembayaran & riwayat transaksi',
               'Dashboard admin untuk pengelolaan stok produk, detail pesanan & status transaksi',
+            ],
+    },
+
+    {
+      id: 'smart-home-care',
+      title: 'SMART HOME CARE',
+      role: 'Frontend Developer',
+      category: 'WEB',
+      status: 'In Progress',
+      description:
+        language === 'EN'
+          ? 'Smart Home Care is a landing page for professional home-visit healthcare services, specializing in wound care and medical nursing directly at patients\' homes.'
+          : 'Smart Home Care adalah landing page layanan kesehatan home-visit, berfokus pada perawatan luka dan tindakan medis oleh perawat profesional langsung di rumah pasien.',
+      tech: ['React.js', 'Tailwind CSS', 'Shadcn UI', 'WhatsApp API', 'Git', 'SEO'],
+      liveUrl: 'https://github.com/dedejuniarputra',
+      features:
+        language === 'EN'
+          ? [
+              'Professional home-visit healthcare and wound care service landing page',
+              'Responsive showcase for specialized nursing services and home medical treatments',
+              'Direct WhatsApp consultation and patient appointment scheduling integration',
+            ]
+          : [
+              'Landing page layanan perawatan luka dan kesehatan home-visit oleh perawat profesional',
+              'Showcase responsif untuk tindakan medis mandiri dan reservasi ke rumah pasien',
+              'Integrasi alur konsultasi dan booking jadwal perawat langsung via WhatsApp',
             ],
     },
   ];
