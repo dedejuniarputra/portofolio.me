@@ -11,6 +11,7 @@ import portofolioImg from '@/src/assets/portofolio.png';
 import goalTrackerImg from '@/src/assets/Goal.png';
 import laundrykuyImg from '@/src/assets/laundrykuy.png';
 import dashboardImg from '@/src/assets/Dashboard.png';
+import ulcerScanImg from '@/src/assets/UIcerScan.jpg';
 
 interface Project {
   id: string;
@@ -75,6 +76,33 @@ export default function Projects() {
               'Antarmuka dark glassmorphism modern dengan dukungan multi-bahasa responsif (EN/ID)',
               'Showcase keahlian interaktif dengan filter kategori & ikon kustom',
               'Arsitektur Next.js App Router yang siap produksi dan dideploy di Vercel',
+            ],
+    },
+
+    {
+      id: 'ulcerscan',
+      title: 'UIcerScan',
+      role: 'Mobile & ML Developer',
+      category: 'MOBILE',
+      status: 'Completed',
+      description:
+        language === 'EN'
+          ? 'UIcerScan is an intelligent mobile application built with Flutter that integrates an optimized YOLOv12 deep learning model converted to TensorFlow Lite (TFLite). Enables real-time on-device diabetic foot ulcer detection via camera and gallery images, featuring dynamic severity grade (Wagner-Meggit 1–4) bounding boxes and confidence score visualization offline.'
+          : 'UIcerScan adalah aplikasi mobile berbasis Flutter yang mengintegrasikan model deep learning YOLOv12 teroptimasi TensorFlow Lite (TFLite). Mendukung deteksi luka kaki diabetik secara real-time via kamera dan galeri, dilengkapi visualisasi bounding box dinamis berorientasi grade keparahan (Grade 1–4 Wagner-Meggit) serta skor keyakinan secara offline.',
+      tech: ['Flutter', 'Python', 'YOLOv12', 'TensorFlow Lite', 'Roboflow', 'Kaggle'],
+      liveUrl: 'https://github.com/dedejuniarputra',
+      image: ulcerScanImg,
+      features:
+        language === 'EN'
+          ? [
+              'Real-time & image-based diabetic foot ulcer detection running fully offline via camera & gallery',
+              'YOLOv12 deep learning model trained on Kaggle & converted to TFLite for fast on-device inference',
+              'Dynamic bounding box visualization with 4-class Wagner-Meggit severity grades & confidence scoring',
+            ]
+          : [
+              'Deteksi luka kaki diabetik real-time & analisis gambar via kamera serta galeri secara offline',
+              'Model deep learning YOLOv12 dilatih di Kaggle & dikonversi ke TFLite untuk inferensi on-device cepat',
+              'Visualisasi bounding box dinamis dengan klasifikasi 4 grade Wagner-Meggit dan skor keyakinan',
             ],
     },
 
@@ -187,33 +215,6 @@ export default function Projects() {
     },
 
     {
-      id: 'aurorababyspa',
-      title: 'AURORA BABY SPA',
-      role: 'Mobile & Web Developer',
-      category: 'MOBILE',
-      status: 'Completed',
-      description:
-        language === 'EN'
-          ? 'Aurora Baby Spa is a cross-platform mobile application developed using Flutter, Firebase, and GetX. Built to digitize baby spa bookings featuring intuitive schedule reservation, automated WhatsApp API confirmation, and a real-time admin dashboard for service, schedule, and transaction management.'
-          : 'Aurora Baby Spa adalah aplikasi mobile lintas platform berbasis Flutter, Firebase, dan GetX. Dirancang untuk mendigitalisasi pemesanan spa bayi melalui sistem reservasi intuitif, otomatisasi konfirmasi via WhatsApp API, serta dashboard admin real-time untuk pengelolaan layanan, jadwal, dan laporan transaksi.',
-      tech: ['Flutter', 'Dart', 'Firebase', 'GetX', 'WhatsApp API', 'Git'],
-      liveUrl: 'https://aurorababyspa.web.app',
-      image: aurorababyspaImg,
-      features:
-        language === 'EN'
-          ? [
-              'Intuitive baby spa booking & schedule reservation system',
-              'Automated reservation detail confirmation via WhatsApp API integration',
-              'Real-time administrative dashboard for services, vouchers & transaction reports',
-            ] 
-          : [
-              'Sistem pemesanan & reservasi jadwal spa bayi secara intuitif',
-              'Otomatisasi konfirmasi detail reservasi langsung via WhatsApp API',
-              'Dashboard admin real-time untuk manajemen layanan, voucher & laporan transaksi',
-            ],
-    },
-
-    {
       id: 'laundrykuy',
       title: 'LAUNDRY.KUY',
       role: 'Mobile Developer',
@@ -237,6 +238,33 @@ export default function Projects() {
               'Portal pengelolaan pesanan admin & manajemen layanan laundry secara realtime',
               'Pelacakan status pesanan pengguna via input kode unik & pemindaian QR code struk',
               'Sistem autentikasi, riwayat transaksi, dan manajemen state responsif berbasis GetX',
+            ],
+    },
+
+    {
+      id: 'aurorababyspa',
+      title: 'AURORA BABY SPA',
+      role: 'Mobile & Web Developer',
+      category: 'MOBILE',
+      status: 'Completed',
+      description:
+        language === 'EN'
+          ? 'Aurora Baby Spa is a cross-platform mobile application developed using Flutter, Firebase, and GetX. Built to digitize baby spa bookings featuring intuitive schedule reservation, automated WhatsApp API confirmation, and a real-time admin dashboard for service, schedule, and transaction management.'
+          : 'Aurora Baby Spa adalah aplikasi mobile lintas platform berbasis Flutter, Firebase, dan GetX. Dirancang untuk mendigitalisasi pemesanan spa bayi melalui sistem reservasi intuitif, otomatisasi konfirmasi via WhatsApp API, serta dashboard admin real-time untuk pengelolaan layanan, jadwal, dan laporan transaksi.',
+      tech: ['Flutter', 'Dart', 'Firebase', 'GetX', 'WhatsApp API', 'Git'],
+      liveUrl: 'https://aurorababyspa.web.app',
+      image: aurorababyspaImg,
+      features:
+        language === 'EN'
+          ? [
+              'Intuitive baby spa booking & schedule reservation system',
+              'Automated reservation detail confirmation via WhatsApp API integration',
+              'Real-time administrative dashboard for services, vouchers & transaction reports',
+            ] 
+          : [
+              'Sistem pemesanan & reservasi jadwal spa bayi secara intuitif',
+              'Otomatisasi konfirmasi detail reservasi langsung via WhatsApp API',
+              'Dashboard admin real-time untuk manajemen layanan, voucher & laporan transaksi',
             ],
     },
 
